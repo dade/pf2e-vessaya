@@ -1,0 +1,156 @@
+{
+	"id": "pf2e-vessaya",
+	"title": "PF2e Vessaya",
+	"description": "Content for custom world.",
+	"authors": [
+		{
+			"name": "Dale Emasiri",
+			"discord": "badgr_",
+			"url": "https://foundryvtt.com",
+			"flags": {}
+		}
+	],
+	"version": "1.0.0",
+	"compatibility": {
+		"minimum": "12",
+		"verified": "12"
+	},
+	"esmodules": [
+		"pf2e-vessaya.mjs"
+	],
+	"styles": [],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "lang/en.json",
+			"flags": {}
+		}
+	],
+	"relationships": {
+		"systems": [
+			{
+				"id": "pf2e",
+				"type": "system",
+				"compatibility": {
+					"minimum": "6.9.0",
+					"verified": "6.9.0"
+				}
+			}
+		]
+	},
+	"packs": [
+		{
+			"name": "vessaya-classes",
+			"label": "Classes",
+			"path": "packs/vessaya-classes",
+			"type": "Item",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"system": "pf2e",
+			"flags": {}
+		},
+		{
+			"name": "vessaya-origins",
+			"label": "Classes",
+			"path": "packs/vessaya-origins",
+			"type": "Item",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"system": "pf2e",
+			"flags": {}
+		},
+		{
+			"name": "vessaya-feats",
+			"label": "Classes",
+			"path": "packs/vessaya-feats",
+			"type": "Item",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"system": "pf2e",
+			"flags": {}
+		},
+		{
+			"name": "vessaya-spells",
+			"label": "Classes",
+			"path": "packs/vessaya-spells",
+			"type": "Item",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"system": "pf2e",
+			"flags": {}
+		},
+		{
+			"name": "vessaya-equipment",
+			"label": "Classes",
+			"path": "packs/vessaya-equipment",
+			"type": "Item",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"system": "pf2e",
+			"flags": {}
+		},
+		{
+			"name": "vessaya-equipment-gm",
+			"label": "Classes",
+			"path": "packs/vessaya-equipment-gm",
+			"type": "Item",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"system": "pf2e",
+			"flags": {}
+		},
+		{
+			"name": "vessaya-actors",
+			"label": "Classes",
+			"path": "packs/vessaya-classes",
+			"type": "Item",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"system": "pf2e",
+			"flags": {}
+		}
+	],
+	"packfolders": [
+		{
+			"name": "Vessaya Player",
+			"color": "#ua14a9",
+			"sorting": "m",
+			"packs": [
+				"vessaya-classes",
+				"vessaya-origins",
+				"vessaya-feats",
+				"vessaya-equipment",
+				"vessaya-spells"
+			]
+		},
+		{
+			"name": "Vessaya GM",
+			"color": "#ua14a9",
+			"sorting": "m",
+			"packs": [
+				"vessaya-actors",
+				"vessaya-equipment-gm"
+			]
+		}
+	],
+	"flags": {
+		"hotReload": false,
+	},
+	"manifest": "https://github.com/dade/pf2e-vessaya/releases/latest/download/module.json",
+	"download": "https://github.com/dade/pf2e-vessaya/archive/1.0.0.zip"
+}
