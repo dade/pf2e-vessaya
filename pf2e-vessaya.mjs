@@ -1,3 +1,5 @@
+import { LANGUAGE_BY_RARITIES } from "./scripts/consts.mjs"
+
 /**
  * Hooks
  */
@@ -11,19 +13,19 @@ Hooks.once("ready", async () => {
 	const currentVersion = game.modules.get("pf2e-vessaya").version
 	const lastVersion = game.modules.get("pf2e-vessaya", "lastVersion")
 
-	console.log(currentVersion, lastVersion)
-
 	if (foundry.utils.isNewerVersion(currentVersion, lastVersion)) {
 		// Do some logic here
 	}
 
 	const pf2e = CONFIG.PF2E
 
-	// Preserve the original languages
-	let pf2elang = pf2e.languages
+	// The following code is ugly as balls. I will write a function for this
+	// because this looks disgusting... but it works!
+	let savedLangs = game.settings.get("pf2e", "homebrew.languageRarities")
+	savedLangs._source.rare.push("oldtor")
+	savedLangs._source.commonLanguage = "vessi"
 
-	// How we do this...
-	// We set up a bunch of languages, then...
-	// in game.pf2e.settings.campaign.languages.common
-	// we = [ "langs" ]
+	savedLangs._source.rare.sort()
+
+	await game.settings.set("pf2e", "homebrew.languageRarities", savedLangs)
 })
