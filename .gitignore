@@ -1,2 +1,2 @@
 eslint.config.mjs
-packs/*
+/packs/*/_source
