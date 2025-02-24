@@ -51,6 +51,18 @@
 			"flags": {}
 		},
 		{
+			"name": "vessaya-deities",
+			"label": "Deities",
+			"path": "packs/vessaya-deities",
+			"type": "Item",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"system": "pf2e",
+			"flags": {}
+		},
+		{
 			"name": "vessaya-origins",
 			"label": "Origins",
 			"path": "packs/vessaya-origins",
@@ -130,9 +142,10 @@
 			"sorting": "m",
 			"packs": [
 				"vessaya-classes",
-				"vessaya-origins",
-				"vessaya-feats",
+				"vessaya-deities",
 				"vessaya-equipment",
+				"vessaya-feats",
+				"vessaya-origins",
 				"vessaya-spells"
 			]
 		},

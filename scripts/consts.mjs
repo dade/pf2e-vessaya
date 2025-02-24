@@ -8,10 +8,13 @@ const COMMON_LANGUAGES = [
 	"halfling",
 	"jotun",
 	"orcish",
+	"sakvaroth",
 	"vessi"
 ]
 
 const UNCOMMON_LANGUAGES = [
+	"aklo",
+	"chthonian",
 	"selduin",
 	"amurrun",
 	"cyclops",
@@ -40,15 +43,22 @@ const RARE_LANGUAGES = [
 	"lashunta",
 ]
 
+const SECRET_LANGUAGES = [
+	"wildsong"
+]
+
+const COMMON_LANGUAGE = "vessi"
+
 const LANGUAGE_RARITIES = [
 	"common", "uncommon", "rare", "secret"
 ]
 
-const LANGUAGE_BY_RARITIES = {
+const LANGUAGES_BY_RARITY = {
 	common: COMMON_LANGUAGES,
 	uncommon: UNCOMMON_LANGUAGES,
 	rare: RARE_LANGUAGES,
-	secret: ["wildsong"]
+	secret: SECRET_LANGUAGES,
+	commonLanguage: COMMON_LANGUAGE
 }
 
 const LANGUAGES = ["common", ...COMMON_LANGUAGES, ...UNCOMMON_LANGUAGES, ...RARE_LANGUAGES, "wildsong"]
@@ -57,5 +67,5 @@ LANGUAGES.sort()
 export {
 	LANGUAGES,
 	LANGUAGE_RARITIES,
-	LANGUAGE_BY_RARITIES
+	LANGUAGES_BY_RARITY
 }

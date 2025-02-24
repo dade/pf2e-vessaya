@@ -1,4 +1,16 @@
-import { LANGUAGE_BY_RARITIES } from "./scripts/consts.mjs"
+import { LANGUAGES_BY_RARITY } from "./scripts/consts.mjs"
+
+function updateSource(source, langs) {
+	let origLangs = source._source
+	let i
+
+	for (i of Object.keys(origLangs)) {
+		if (!langs[i])
+			continue
+		if (Array.isArray(langs[i]))
+			origLangs.unavailable.push(origLangs[i])
+	}
+}
 
 /**
  * Hooks
@@ -18,14 +30,6 @@ Hooks.once("ready", async () => {
 	}
 
 	const pf2e = CONFIG.PF2E
-
-	// The following code is ugly as balls. I will write a function for this
-	// because this looks disgusting... but it works!
 	let savedLangs = game.settings.get("pf2e", "homebrew.languageRarities")
-	savedLangs._source.rare.push("oldtor")
-	savedLangs._source.commonLanguage = "vessi"
 
-	savedLangs._source.rare.sort()
-
-	await game.settings.set("pf2e", "homebrew.languageRarities", savedLangs)
-})
+	updateSource(savedLangs, LANGUAGES_BY_RARITY)
