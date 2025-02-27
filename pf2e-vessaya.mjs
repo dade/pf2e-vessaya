@@ -1,15 +1,24 @@
 import { LANGUAGES_BY_RARITY } from "./scripts/consts.mjs"
 
-function updateSource(source, langs) {
+async function updateSource(source, langs) {
 	let origLangs = source._source
-	let i
+	let i, s
 
 	for (i of Object.keys(origLangs)) {
-		if (!langs[i])
-			continue
-		if (Array.isArray(langs[i]))
-			origLangs.unavailable.push(origLangs[i])
+		if (langs[i] && Array.isArray(langs[i])) {
+			for (s of origLangs[i]) {
+				if (!langs[i].includes(s))
+					origLangs.unavailable.push(s)
+			}
+		}
 	}
+
+	origLangs.commonLanguage = langs.commonLanguage
+	origLangs.rare = langs.rare
+	origLangs.uncommon = langs.uncommon
+	origLangs.secret = langs.secret
+
+	await game.settings.set("pf2e", "homebrew.languageRarities", source)
 }
 
 /**
@@ -29,7 +38,6 @@ Hooks.once("ready", async () => {
 		// Do some logic here
 	}
 
-	const pf2e = CONFIG.PF2E
 	let savedLangs = game.settings.get("pf2e", "homebrew.languageRarities")
 
 	updateSource(savedLangs, LANGUAGES_BY_RARITY)

@@ -169,6 +169,11 @@
 					"oldtor": "VESSAYA.LANG.OLDTOR",
 					"ruulkan": "VESSAYA.LANG.RUULKAN",
 					"selduin": "VESSAYA.LANG.SELDUIN"
+				},
+				"weaponGroups": {
+					"gunblade": "Gunblade",
+				},
+				"baseWeapons": {
 				}
 			}
 		}
