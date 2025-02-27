@@ -171,9 +171,10 @@
 					"selduin": "VESSAYA.LANG.SELDUIN"
 				},
 				"weaponGroups": {
-					"gunblade": "Gunblade",
+					"gunblade": "Gunblade"
 				},
 				"baseWeapons": {
+					"gunblade": "Gunblade"
 				}
 			}
 		}

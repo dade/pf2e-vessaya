@@ -1,7 +1,5 @@
-2025/02/27-22:49:11.409 19110 Recovering log #28
-2025/02/27-22:49:11.425 19110 Delete type=0 #28
-2025/02/27-22:49:11.425 19110 Delete type=3 #26
-2025/02/27-23:36:06.110 674c Level-0 table #33: started
-2025/02/27-23:36:06.111 674c Level-0 table #33: 0 bytes OK
-2025/02/27-23:36:06.117 674c Delete type=0 #31
-2025/02/27-23:36:06.129 674c Manual compaction at level-0 from '!folders!TFLm9MRzJ7QrE6ue' @ 72057594037927935 : 1 .. '!items!owKPd5f3H1CJy1oc' @ 0 : 0; will stop at (end)
+2025/02/28-00:20:31.452 14edc Log #35: 0 ops saved to Table #36 OK
+2025/02/28-00:20:31.456 14edc Archiving C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-deities/000035.log: OK
+2025/02/28-00:20:31.457 14edc Table #21: 16 entries OK
+2025/02/28-00:20:31.465 14edc Archiving C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-deities/MANIFEST-000034: OK
+2025/02/28-00:20:31.476 14edc **** Repaired leveldb C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-deities; recovered 1 files; 7881 bytes. Some data may have been lost. ****

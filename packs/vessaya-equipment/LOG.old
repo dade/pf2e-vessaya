@@ -1,7 +1,6 @@
-2025/02/27-22:49:11.495 19110 Recovering log #106
-2025/02/27-22:49:11.511 19110 Delete type=0 #106
-2025/02/27-22:49:11.511 19110 Delete type=3 #104
-2025/02/27-23:36:06.162 674c Level-0 table #111: started
-2025/02/27-23:36:06.162 674c Level-0 table #111: 0 bytes OK
-2025/02/27-23:36:06.171 674c Delete type=0 #109
-2025/02/27-23:36:06.200 674c Manual compaction at level-0 from 'undefined' @ 72057594037927935 : 1 .. 'undefined' @ 0 : 0; will stop at (end)
+2025/02/28-00:20:31.643 17a68 Log #113: 0 ops saved to Table #114 OK
+2025/02/28-00:20:31.644 17a68 Archiving C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-equipment/000113.log: OK
+2025/02/28-00:20:31.653 17a68 Table #95: 2 entries OK
+2025/02/28-00:20:31.659 17a68 Table #99: 5 entries OK
+2025/02/28-00:20:31.668 17a68 Archiving C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-equipment/MANIFEST-000112: OK
+2025/02/28-00:20:31.676 17a68 **** Repaired leveldb C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-equipment; recovered 2 files; 3129 bytes. Some data may have been lost. ****
