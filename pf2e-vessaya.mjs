@@ -41,4 +41,9 @@ Hooks.once("ready", async () => {
 	let savedLangs = game.settings.get("pf2e", "homebrew.languageRarities")
 
 	await updateSource(savedLangs, LANGUAGES_BY_RARITY)
+
+	/**
+	 * We are going to try to override the ammunition system within PF2e so that
+	 * melee weapons with a certain type or trait will be able to have ammo.
+	 */
 })
