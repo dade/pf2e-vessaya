@@ -1,5 +1,3 @@
-2025/02/28-00:20:31.381 18530 Log #105: 0 ops saved to Table #106 OK
-2025/02/28-00:20:31.383 18530 Archiving C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-classes/000105.log: OK
-2025/02/28-00:20:31.392 18530 Table #91: 2 entries OK
-2025/02/28-00:20:31.403 18530 Archiving C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-classes/MANIFEST-000104: OK
-2025/02/28-00:20:31.414 18530 **** Repaired leveldb C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-classes; recovered 1 files; 1228 bytes. Some data may have been lost. ****
+2025/03/09-15:26:32.239 acf4 Recovering log #131
+2025/03/09-15:26:32.255 acf4 Delete type=0 #131
+2025/03/09-15:26:32.255 acf4 Delete type=3 #130

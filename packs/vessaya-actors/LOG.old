@@ -1,4 +1,3 @@
-2025/02/28-00:20:31.752 14edc Log #103: 0 ops saved to Table #104 OK
-2025/02/28-00:20:31.754 14edc Archiving C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-actors/000103.log: OK
-2025/02/28-00:20:31.763 14edc Archiving C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-actors/MANIFEST-000102: OK
-2025/02/28-00:20:31.771 14edc **** Repaired leveldb C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-actors; recovered 0 files; 0 bytes. Some data may have been lost. ****
+2025/03/09-15:26:32.473 198dc Recovering log #128
+2025/03/09-15:26:32.487 198dc Delete type=0 #128
+2025/03/09-15:26:32.488 198dc Delete type=3 #127

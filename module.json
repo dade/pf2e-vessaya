@@ -111,17 +111,41 @@
 			"flags": {}
 		},
 		{
-			"name": "vessaya-equipment-gm",
-			"label": "Equipment - GM",
-			"path": "packs/vessaya-equipment-gm",
+			"name": "vessaya-actions",
+			"label": "Actions",
+			"path": "packs/vessaya-actions",
 			"type": "Item",
 			"ownership": {
-				"PLAYER": "NONE",
+				"PLAYER": "OBSERVER",
 				"ASSISTANT": "OWNER"
 			},
 			"system": "pf2e",
 			"flags": {}
 		},
+		{
+			"name": "vessaya-effects",
+			"label": "Effects",
+			"path": "packs/vessaya-effects",
+			"type": "Item",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"system": "pf2e",
+			"flags": {}
+		},
+		{
+		"name": "vessaya-equipment-gm",
+		"label": "Equipment - GM",
+		"path": "packs/vessaya-equipment-gm",
+		"type": "Item",
+		"ownership": {
+		"PLAYER": "NONE",
+		"ASSISTANT": "OWNER"
+	},
+		"system": "pf2e",
+		"flags": {}
+	},
 		{
 			"name": "vessaya-actors",
 			"label": "Actors - GM",
@@ -141,8 +165,10 @@
 			"color": "#ua14a9",
 			"sorting": "m",
 			"packs": [
+				"vessaya-actions",
 				"vessaya-classes",
 				"vessaya-deities",
+				"vessaya-effects",
 				"vessaya-equipment",
 				"vessaya-feats",
 				"vessaya-origins",

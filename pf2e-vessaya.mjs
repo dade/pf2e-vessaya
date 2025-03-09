@@ -13,10 +13,10 @@ async function updateSource(source, langs) {
 		}
 	}
 
-	origLangs.commonLanguage = langs.commonLanguage
-	origLangs.rare = langs.rare
-	origLangs.uncommon = langs.uncommon
-	origLangs.secret = langs.secret
+	Object.keys(langs).forEach((l) => {
+		if (l !== "common")
+			origLangs[l] = langs[l]
+	})
 
 	await game.settings.set("pf2e", "homebrew.languageRarities", source)
 }
