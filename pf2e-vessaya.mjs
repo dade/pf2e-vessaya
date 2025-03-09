@@ -40,5 +40,5 @@ Hooks.once("ready", async () => {
 
 	let savedLangs = game.settings.get("pf2e", "homebrew.languageRarities")
 
-	updateSource(savedLangs, LANGUAGES_BY_RARITY)
+	await updateSource(savedLangs, LANGUAGES_BY_RARITY)
 })
