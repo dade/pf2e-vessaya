@@ -16,7 +16,7 @@
 		"verified": "12"
 	},
 	"esmodules": [
-		"pf2e-vessaya.mjs"
+		"scripts/pf2e-vessaya.mjs"
 	],
 	"styles": [],
 	"languages": [
@@ -190,17 +190,20 @@
 		"pf2e-vessaya": {
 			"pf2e-homebrew": {
 				"languages": {
-					"vessi": "VESSAYA.LANG.VESSI",
-					"dakhari": "VESSAYA.LANG.DAKHARI",
-					"oldtor": "VESSAYA.LANG.OLDTOR",
-					"ruulkan": "VESSAYA.LANG.RUULKAN",
-					"selduin": "VESSAYA.LANG.SELDUIN"
+					"vessi": "pf2e-vessaya.langs.vessi",
+					"dakhari": "pf2e-vessaya.langs.dakhari",
+					"oldtor": "pf2e-vessaya.langs.oldtor",
+					"ruulkan": "pf2e-vessaya.langs.ruulkan",
+					"selduin": "pf2e-vessaya.langs.selduin"
 				},
 				"weaponGroups": {
 					"gunblade": "Gunblade"
 				},
 				"baseWeapons": {
 					"gunblade": "Gunblade"
+				},
+				"weaponTraits": {
+					"chamber": "Chamber"
 				}
 			}
 		}

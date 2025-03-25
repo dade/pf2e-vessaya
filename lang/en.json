@@ -1,12 +1,164 @@
 {
-	"VESSAYA": {
-		"LANG": {
-			"COMMON": "Common (Vessi)",
-			"DAKHARI": "Dakhari",
-			"SELDUIN": "Sel'Duin",
-			"RUULKAN": "Ruulkan",
-			"OLDTOR": "Old Tor",
-			"VESSI": "Vessi"
+	"pf2e-vessaya": {
+		"settings": {
+			"schemaVersion": {
+				"name": "Schema Version",
+				"hint": "The current version of the data related to this module."
+			},
+			"enableAmmoSystem": {
+				"name": "Enable Ammunition System",
+				"hint": "Choose whther to enable the custom ammunition system."
+			},
+			"postToChat": {
+				"none": "None",
+				"simple": "Simple",
+				"full": "Full"
+			},
+			"postActionToChat": {
+				"name": "Post Actions to Chat",
+				"hint": "When running macros that simulate taking actions, post either a simple message or the full action to chat."
+			},
+			"postAmmoToChat": {
+				"name": "Post Ammunition to Chat",
+				"hint": "When firing a weapon that requires ammunition, post either a simple message or the whole ammunition item."
+			},
+			"preventFiringUnloaded": {
+				"name": "Prevent Firing Unloaded Weapons",
+				"hint": "For weapons with a reload of at least 1, prevent attack rolls using that weapon unless you have the loaded effect."
+			},
+			"advancedAmmoSystemPlayer": {
+				"name": "Advanced Ammo System",
+				"hint": "PCs: Track loaded ammunition for reloadable and repeating weapons. Overrides \"Prevent Firing Unloaded Weapons\"."
+			},
+			"advancedThrownWeaponSystem": {
+				"name": "Advanced Thrown Weapon System",
+				"hint": "PCs: Handle thrown weapons being dropped after us, and require another weapon to be drawn before another attack."
+			},
+			"requiredPermissionToShowMessage": {
+				"name": "Minimum Permission to See Messages",
+				"hint": "Seeral functions of this module send messages to chat. Set the minimum permission that sees the messages."
+			},
+			"hideTokenIcons": {
+				"name": "Hide Token Effect Icons",
+				"hint": "Hide the token icons for effects created by this module."
+			}
+		},
+		"ammoSystem": {
+			"fireWeapon": "{actor} fires {ammunition}",
+			"fireWeaponRepeating": "{actor} uses {ammunition} ({remaining}/{capacity} remaining).",
+			"fireConjuredRound": "{actor} fires their conjured round.",
+			"utils": {
+				"warningFullyLoaded": "{weapon} is alrady full loaded.",
+				"warningLoaded": "{weapon} is already loaded."
+			},
+			"ammoSelect": {
+				"title": "Ammunition Select",
+				"action": {
+					"switch": "Select which ammunition to switch to",
+					"unload": "Select which ammunition to unload",
+					"fire": "Select which ammunition to fire"
+				},
+				"header": {
+					"loadedAmmunition": "Loaded Ammunition",
+					"current": "Current",
+					"equipped": "Equipped"
+				},
+				"option": {
+					"setAsAmmunition": "Set as ammunition"
+				}
+			},
+			"itemSelect": {
+				"options": "Options"
+			},
+			"check": {
+				"weaponNotLoaded": "{weapon} is not loaded",
+				"magazineNotLoaded": "{weapon} has no magazine loaded",
+				"magazineEmpty": "{weapon}'s magazine is empty",
+				"chamberNotLoaded": "{weapon}'s current chamber is not loaded",
+				"noAmmoSelected": "{weapon} has no ammunition selected",
+				"noAmmoRemaining": "{weapon} has no ammunition remaining"
+			},
+			"effect": {
+				"settings": {
+					"enable": {
+						"name": "Enable Ammunition Effect",
+						"hint": "Override the system's ammunition effects with one that uses the previously-fired ammunition effect."
+					},
+					"warningLevel": {
+						"name": "Ammunition Effect Warning Level",
+						"hint": "The level of warning to show when ammunition effects may not apply as expected."
+					}
+				},
+				"warning": {
+					"notMatched": {
+						"verbose": "Your weapon's current ammunition does not match the ammunition whose effect is applied to the roll. The ammunition may have change since the attack roll you are trying to roll damage from was generated.",
+						"simple": "Weapon ammunition does not match ammunition effect."
+					},
+					"damageWithoutEffect": {
+						"verbose": "Your weapon's current ammunition has an effect, but it was not applied to this damage roll. The ammunition may have changed since the attack roll you are trying to roll from was generated, or you are trying to roll damage without a prior attack roll.",
+						"simple": "Weapon damage rolled without ammunition effect."
+					},
+					"button": {
+						"ok": "OK",
+						"showSimple": "OK (Show Simple Message)",
+						"doNotShow": "OK (Do Not Show Messages)"
+					}
+				}
+			},
+			"actions": {
+				"names": {
+					"reload": "Reload",
+					"unload": "Unload",
+					"reloadeMagazine": "Reload Magazine",
+					"nextChamber": "Next Chamber"
+				},
+				"consolidateAmmo": {
+					"chatMessage": "{token} consolidates their ammunition.",
+					"infoAlreadyConsolidated": "Your repeating ammunition is already consolidated."
+				},
+				"nextChamber": {
+					"noCapacityWeapons": "You have no weapons with the capacity trait",
+					"warningNotLoaded": "{weapon} is not laoded.",
+					"warningAlreadyLoaded": "{weapon} already has a chamber loaded with {ammuntion} selected.",
+					"chatMessageSelectChamber": "{token} selects a chamber loaded with {ammunition} on their {weapon}.",
+					"warningAlreadySelected": "{weapon} already has a chamber selected.",
+					"chatMessageSelectNextChamber": "{token} selects the next loaded chamber on their {weapon}."
+				}
+			}
+		},
+		"utils": {
+			"singleCharacterSelected": "You must have a single character selected.",
+			"warningDialog1": "You cannot perform this action because:",
+			"warningDialog2": "This is a creature of the PF2e Vessaya module.",
+			"warningDialog3": "You can learning how to use the module... etc.",
+			"button": {
+				"ok": "OK",
+				"doNotShowAgain": "OK (Don't show again)"
+			}
+		},
+		"feat": {
+			"fakeOut": {
+				"settings": {
+					"dc": "Fake Out DC",
+					"hint": "When using Fake Out action, the DC to roll against.",
+					"enembyDC": "Enemy DC"
+				}
+			},
+			"name": "Fake Out",
+			"noWeapon": "{actor} is not wielding a loaded firearm or crossbow.",
+			"noTarget": "You must have a target selected.",
+			"result": {
+				"success": "You grant your ally a +{bonus} circumstance bonus to their attack.",
+				"failure": "You fail to aid your ally.",
+				"ciricitalFailure": "Your ally takes a -1 circumstance penalty to their check."
+			}
+		},
+		"langs": {
+			"dakhari": "Dakhari",
+			"selduin": "Sel'Duin",
+			"ruulkan": "Ruulkan",
+			"ol-tor": "Old Tor",
+			"vessi": "Vessi"
 		}
 	}
 }
