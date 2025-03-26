@@ -1,3 +1,5 @@
-2025/03/26-01:44:11.496 20760 Recovering log #48
-2025/03/26-01:44:11.510 20760 Delete type=0 #48
-2025/03/26-01:44:11.510 20760 Delete type=3 #47
+2025/03/26-21:09:33.022 1c518 Log #52: 0 ops saved to Table #53 OK
+2025/03/26-21:09:33.022 1c518 Archiving C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-actions/000052.log: OK
+2025/03/26-21:09:33.023 1c518 Table #32: 2 entries OK
+2025/03/26-21:09:33.031 1c518 Archiving C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-actions/MANIFEST-000051: OK
+2025/03/26-21:09:33.041 1c518 **** Repaired leveldb C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-actions; recovered 1 files; 979 bytes. Some data may have been lost. ****

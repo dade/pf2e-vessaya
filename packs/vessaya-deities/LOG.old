@@ -1,3 +1,5 @@
-2025/03/26-01:44:11.393 7674 Recovering log #106
-2025/03/26-01:44:11.408 7674 Delete type=0 #106
-2025/03/26-01:44:11.408 7674 Delete type=3 #105
+2025/03/26-21:09:32.796 217e4 Log #110: 0 ops saved to Table #111 OK
+2025/03/26-21:09:32.797 217e4 Archiving C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-deities/000110.log: OK
+2025/03/26-21:09:32.797 217e4 Table #90: 16 entries OK
+2025/03/26-21:09:32.804 217e4 Archiving C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-deities/MANIFEST-000109: OK
+2025/03/26-21:09:32.814 217e4 **** Repaired leveldb C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-deities; recovered 1 files; 7881 bytes. Some data may have been lost. ****

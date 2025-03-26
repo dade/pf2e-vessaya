@@ -1,3 +1,4 @@
-2025/03/26-01:44:11.535 1d2e0 Recovering log #174
-2025/03/26-01:44:11.550 1d2e0 Delete type=0 #174
-2025/03/26-01:44:11.550 1d2e0 Delete type=3 #173
+2025/03/26-21:09:33.111 1c35c Log #178: 0 ops saved to Table #179 OK
+2025/03/26-21:09:33.112 1c35c Archiving C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-equipment-gm/000178.log: OK
+2025/03/26-21:09:33.120 1c35c Archiving C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-equipment-gm/MANIFEST-000177: OK
+2025/03/26-21:09:33.128 1c35c **** Repaired leveldb C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-equipment-gm; recovered 0 files; 0 bytes. Some data may have been lost. ****

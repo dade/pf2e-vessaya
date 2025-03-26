@@ -1,7 +1,7 @@
 import { LANGUAGES_BY_RARITY } from "./consts.mjs"
 import { initConfigSettings } from "./config/config.mjs"
 import { meleeAmmo, initMeleeAmmo } from "./systems/ammo-system.mjs"
-import { MyNewApp } from "./systems/item-sheet-override.mjs"
+import { AmmoUI } from "./systems/item-sheet-override.mjs"
 
 async function updateSource(source, langs) {
 	let origLangs = source._source
@@ -41,7 +41,7 @@ Hooks.once("ready", async () => {
 	const lastVersion = game.modules.get("pf2e-vessaya", "lastVersion")
 
 	if (foundry.utils.isNewerVersion(currentVersion, lastVersion)) {
-		// Do some logic here
+		// NOTE: Some logic here. Not sure what we want to do yet. Show patch notes...?
 	}
 
 	let savedLangs = game.settings.get("pf2e", "homebrew.languageRarities")
@@ -103,9 +103,15 @@ Hooks.on("renderCharacterSheetPF2e", (data, html) => {
 		}
 	}
 
-	$('a[data-action="manage-ammo"]').click(() => {
+	$('a[data-action="manage-ammo"]').click((data) => {
 		// NOTE:
 		// This opens the item's ammo selector, which we should first exclude non-ammo items
 		// from here, we can handle the rest of the logic
+		console.log(data)
+		const ds = data.currentTarget.dataset
+		const ammoUi = new AmmoUI()
+		ammoUi.itemId = ds.itemId
+		ammoUi.actorItemUUID = ds.actorItemUUID
+		ammoUi.render(true)
 	})
 })

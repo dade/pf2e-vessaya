@@ -1,25 +1,21 @@
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api
 
-export class ItemSheetVessaya extends ItemSheet {
+export class AmmoUI extends HandlebarsApplicationMixin(ApplicationV2) {
 
-	static PARTS = {
-		main: {
-			template: "./modules/pf2e-vessaya/templates/test.hbs"
-		}
+	constructor() {
+		super()
+		this.itemId = ""
+		this.actorItemID = ""
 	}
 
-}
-
-export class MyNewApp extends HandlebarsApplicationMixin(ApplicationV2) {
-
 	static DEFAULT_OPTIONS = {
-		id: "test-form",
+		id: "ammo-manager",
 		form: {
-			handler: MyNewApp.#onSubmit,
+			handler: AmmoUI.#onSubmit,
 			closeOnSubmit: false
 		},
 		position: {
-			width: 640,
+			width: 480,
 			height: "auto"
 		},
 		tag: "form",
@@ -29,7 +25,7 @@ export class MyNewApp extends HandlebarsApplicationMixin(ApplicationV2) {
 			contentClasses: ["standard-form"]
 		},
 		actions: {
-			reset: MyNewApp.reset
+			reset: AmmoUI.reset
 		}
 	}
 
@@ -47,13 +43,17 @@ export class MyNewApp extends HandlebarsApplicationMixin(ApplicationV2) {
 	}
 
 	get title() {
-		return `My Module!!!`
+		return `Ammo Management${this.itemId !== null ? ": " + this.itemId : ""}`
 	}
 
 	_prepareContext(options) {
 		const settings = game.settings.get("pf2e-vessaya", "enableAmmoSystem")
 		const buttons = [
-			{ type: "submit", icon: "fa-solid fa-save", label: "Save" }
+			{
+				type: "submit",
+				icon: "fa-solid fa-save",
+				label: "Save"
+			}
 		]
 		console.log(settings)
 		return {
