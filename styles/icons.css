@@ -1,0 +1,9 @@
+.ammo-icon {
+	background: url("../assets/icons/ammo-box.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: inline-block;
+	height: 1em;
+	width: 1em;
+	filter: invert(34%) sepia(5%) saturate(13%) hue-rotate(317deg) brightness(96%) contrast(80%);
+}

@@ -49,12 +49,15 @@ Hooks.once("ready", async () => {
 	await updateSource(savedLangs, LANGUAGES_BY_RARITY)
 
 	const ammo = meleeAmmo(await game.actors.find(a => a.name === "test").items.find(b => b.name === "Gunblade"))
-	console.log(ammo)
 
 	initMeleeAmmo()
 })
 
 Hooks.on("renderWeaponSheetPF2e", (data, html) => {
+
+	const item = data.item
+	const actor = data.item.actor
+
 	// const item = data.item
 	// const actor = data.item.actor
 	//
@@ -78,4 +81,31 @@ Hooks.on("renderWeaponSheetPF2e", (data, html) => {
 	// 		`
 	// 	)
 	// }
+})
+
+Hooks.on("renderCharacterSheetPF2e", (data, html) => {
+	const actor = data.actor
+	const el = html.find('li.strike section h4.name a')
+
+	for (let i = 0; i < el.length; i++) {
+		const item = game.actors.find(ac => ac._id === actor._id).items.find(it => it.name === el[i].innerText)
+		if (item) {
+			let editButton = document.createElement("div")
+			editButton.innerHTML =
+				`<a data-action="edit-item" data-uuid="Actor.${actor._id}.Item.${item.id}" data-item-id="${item.id}">
+					<i class="fa-solid fa-fw fa-edit"></i>
+				</a>
+				<a data-action="manage-ammo" data-uuid="Actor.${actor._id}.Item.${item.id}" data-item-id="${item.id}">
+					<i class="fa-solid fa-fw fa-spinner"></i>
+				</a>`
+
+			el[i]?.after(editButton)
+		}
+	}
+
+	$('a[data-action="manage-ammo"]').click(() => {
+		// NOTE:
+		// This opens the item's ammo selector, which we should first exclude non-ammo items
+		// from here, we can handle the rest of the logic
+	})
 })

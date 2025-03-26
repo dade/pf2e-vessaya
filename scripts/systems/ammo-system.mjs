@@ -43,11 +43,11 @@ export async function initMeleeAmmo() {
 	const chamberItems = game.items.filter(item => item.traits.some(t => t.includes("chamber")))
 	const chamberMelee = chamberItems.filter(c => c.system.range < 10)
 
-	console.log(chamberMelee)
+	// console.log(chamberMelee)
 
 	for (let i in chamberMelee) {
 		await chamberMelee[i].setFlag("pf2e-vessaya", "isMeleeAmmo", true)
 	}
 
-	console.log(chamberMelee[0].flags)
+	// console.log(chamberMelee[0].flags)
 }
