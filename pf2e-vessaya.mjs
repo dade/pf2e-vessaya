@@ -1,4 +1,8 @@
 import { LANGUAGES_BY_RARITY } from "./scripts/consts.mjs"
+// import { default as VessayaJournalSheet } from "./scripts/journal/journal-sheet.mjs"
+// import { VessayaJournalSheet } from "./scripts/journal/journal-sheet.mjs"
+
+const MODULE = "pf2e-vessaya"
 
 async function updateSource(source, langs) {
 	let origLangs = source._source
@@ -25,14 +29,20 @@ async function updateSource(source, langs) {
  * Hooks
  */
 Hooks.once("init", () => {
-	const module = game.modules.get("pf2e-vessaya")
-	module.opts = {}
-	module.dataModels = {}
+	globalThis.vessaya = game.modules.get(MODULE)
+	vessaya.opts = {}
+	vessaya.dataModels = {}
+	vessaya.CSS_CLASS = "vessaya"
+
+	// DocumentSheetConfig.registerSheet(JournalEntry, MODULE, VessayaJournalSheet, {
+	// 	label: "Vessaya Journal Sheet",
+	// 	makeDefault: false,
+	// })
 })
 
 Hooks.once("ready", async () => {
-	const currentVersion = game.modules.get("pf2e-vessaya").version
-	const lastVersion = game.modules.get("pf2e-vessaya", "lastVersion")
+	const currentVersion = game.modules.get(MODULE).version
+	const lastVersion = game.modules.get(MODULE, "lastVersion")
 
 	if (foundry.utils.isNewerVersion(currentVersion, lastVersion)) {
 		// Do some logic here

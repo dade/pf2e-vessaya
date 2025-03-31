@@ -2,3 +2,4 @@ eslint.config.mjs
 /packs/*/_source
 .idea/
 types/
+*.less

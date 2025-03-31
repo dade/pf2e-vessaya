@@ -1,0 +1,446 @@
+@layer modules.vessaya {
+  .vessaya.window-app {
+    background: none;
+  }
+  .vessaya.window-app .window-content {
+    padding: 1rem;
+    background: none;
+    color: var(--color-light-2);
+  }
+  #pause #vessaya-logo-frame {
+    background: url() no-repeat center;
+    background-size: 100px;
+  }
+  #pause figcaptiuon {
+    color: #aaa395;
+    font-family: var(--font-serif);
+  }
+  .vessaya-fullcreen {
+    --max-width: 1600px;
+  }
+  .flexcol > * {
+    flex: none;
+  }
+  .flexrow {
+    align-items: center;
+  }
+  input,
+  select {
+    --input-backgroud-color: rgba(75, 75, 75, 0.5);
+    --input-border-color: transparent;
+    --input-text-color: var(--color-light-2);
+    --input-placeholder-color: var(--color-cool-4);
+  }
+  input:focus,
+  select:focus {
+    --input-text-color: var(--color-light-1);
+  }
+  a.button,
+  button {
+    --button-background-color: transparent;
+    --button-border-color: transparent;
+    --button-text-color: var(--color-light-2);
+    --button-focus-outline-color: var(--color-warm-2);
+    --button-hover-background-color: var(--color-warm-2);
+    --button-hover-text-color: var(--color-light-1);
+  }
+  a.button:disabled,
+  button:disabled {
+    --button-background-color: transparent;
+    --button-border-color: transparent;
+    --button-text-color: var(--color-light-4);
+  }
+  @media (min-width: 2000px) {
+    .vessaya-fullscreen {
+      --ui-scale: 1.1;
+    }
+  }
+  @media (max-width: 1660px) {
+    .vessaya-fullscreen {
+      --max-width: 1400px;
+    }
+  }
+  @media (max-width: 1480px) {
+    .vessaya-fullscreen {
+      --ui-scale: 0.9;
+    }
+  }
+  @media (max-width: 1340px) {
+    .vessaya-fullscreen {
+      --ui-scale: 0.9;
+    }
+  }
+  @media (max-width: 1200px) {
+    .vessaya-fullscreen {
+      --ui-scale: 0.9;
+      --max-width: 1100px;
+    }
+  }
+  @media (max-height: 1040px) {
+    .vessaya-fullscreen {
+      --ui-scale: 0.9;
+    }
+  }
+  @media (max-height: 900px) {
+    .vessaya-fullscreen {
+      --ui-scale: 0.8;
+    }
+  }
+  /* ----------------------------------------- */
+  /* Journal Entry                             */
+  /* ----------------------------------------- */
+  .journal-entry.vessaya {
+    background: url("../assets/ui/codex-bg-dark.webp") repeat center;
+    border: none;
+  }
+  .journal-entry.vessaya:not(.collapsing) {
+    min-width: calc(1080px - var(--sidebar-width-expanded) + var(--sidebar-width-collapsec));
+  }
+  .journal-entry.vessaya.expanded {
+    min-width: 1080px;
+  }
+  .journal-entry.vessaya.minimized {
+    min-width: unset;
+  }
+  .journal-entry.vessaya::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1000;
+    background: linear-gradient(to bottom, transparent 90%, rgba(178, 50, 53, 0.15) 100%);
+  }
+  .journal-entry.vessaya::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1000;
+    background: url("../assets/ui/codex-bg.jpg") no-repeat;
+    background-size: 100% auto;
+    mask-image: linear-gradient(0deg, transparent 66%, black 100%);
+  }
+  .journal-entry.vessaya .journal-sidebar {
+    min-width: var(--sidebar-width-expanded);
+  }
+  .journal-entry.vessaya .journal-sidebar:not(.expanded) {
+    min-width: 0;
+  }
+  .journal-entry.vessaya .window-content {
+    backdrop-filter: none;
+    -webkit-background-filter: none;
+  }
+  .journal-entry.vessaya .window-content::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1000;
+    background: url("../assets/ui/cosmos-design-weathered.webp") no-repeat center;
+    background-size: auto 100%;
+    opacity: 0.1;
+  }
+  .journal-entry.vessaya .window-content .journal-entry-content {
+    background: none;
+  }
+  .journal-entry.vessaya input[name=search] {
+    --input-placeholder-color: var(--color-light-5);
+    --input-background-color: rbg(0 0 0 / 20%);
+  }
+  .journal-entry.vessaya .edit-container button {
+    background: none;
+    border: none;
+  }
+  .journal-entry.vessaya .toc {
+    --line-height: 28px;
+  }
+  .journal-entry.vessaya .toc li[data-page-id] {
+    border: none;
+    font-family: var(--font-seirf);
+  }
+  .journal-entry.vessaya .toc li[data-page-id].active {
+    color: var(--color-text-accent);
+  }
+  .journal-entry.vessaya .toc li[data-page-id] .page-index {
+    color: var(--color-light-5);
+    font-family: var(--font-sans);
+  }
+  .journal-entry.vessaya .toc li[data-page-id] .tags {
+    margin-right: 0.5rem;
+    font-family: var(--font-sans);
+  }
+  .journal-entry.vessaya .toc li[data-page-id] .tags .tag {
+    font-size: var(--var-size-10);
+  }
+  .journal-entry.vessaya .toc li.category {
+    background: var(--color-warm-2);
+    padding: 0.25rem 1rem;
+    margin: 1rem 1rem 0.25rem 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .journal-entry.vessaya .toc li.category h3,
+  .journal-entry.vessaya .toc li.category strong {
+    margin: 0;
+    line-height: var(--line-height);
+    font-family: var(--font-serif);
+    font-size: var(--font-size-14);
+    font-weight: normal;
+    letter-spacing: 0.1rem;
+    color: #FFF;
+    text-transform: none;
+    text-align: left;
+  }
+  .journal-entry.vessaya:not(.expanded) .toc li.category {
+    margin: 1rem 0 0.25rem 0;
+  }
+  .journal-entry.vessaya:not(.expanded) .toc .tags {
+    display: none;
+  }
+  .journal-entry.vessaya footer.action-buttons button {
+    --button-background-color: rgba(0, 0, 0, 0.2) --button-border-color: transparent;
+  }
+  .journal-entry.vessaya input.title {
+    display: none;
+  }
+  /* ----------------------------------------- */
+  /* Single Page View                          */
+  /* ----------------------------------------- */
+  .vessaya.journal-entry .journal-entry-page .journal-page-header {
+    gap: 1rem;
+    align-items: center;
+  }
+  .vessaya.journal-entry .journal-entry-page .journal-page-header h1 {
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    font-size: 40px;
+    text-shadow: 1px 1px 2px #000;
+  }
+  .vessaya.journal-entry .journal-entry-page .journal-page-header h2.subtitle {
+    justify-content: center;
+    color: var(--color-light-3);
+    border: none;
+  }
+  .vessaya.journal-entry .journal-entry-page .journal-page-header .tags {
+    justify-content: center;
+    align-items: center;
+  }
+  .vessaya.journal-entry .journal-entry-page .journal-page-header .pronuniciation {
+    margin: -0.5rem 0 0;
+    font-family: var(--font-serif);
+    font-size: var(--font-size-16);
+    font-style: italic;
+    color: var(--color-light-4);
+    text-align: center;
+  }
+  .vessaya.journal-entry .journal-entry-page .journal-page-header .action-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+  .vessaya.journal-entry .journal-entry-page .journal-page-header .action-buttons button {
+    flex: none;
+    max-width: 50%;
+  }
+  .vessaya.journal-entry .journal-entry-page .journal-page-content {
+    padding: 1rem 2rem;
+    --color-text-primary: var(--color-light-3);
+    font-family: var(--font-serif);
+    font-size: var(--font-size-15);
+    line-height: 1.3em;
+    color: var(--color-text-primary);
+  }
+  .vessaya.journal-entry .journal-entry-page .journal-page-content p {
+    text-align: justify;
+  }
+  .vessaya.journal-entry .journal-entry-page .journal-page-content h1,
+  .vessaya.journal-entry .journal-entry-page .journal-page-content h2,
+  .vessaya.journal-entry .journal-entry-page .journal-page-content h3 {
+    font-family: var(--font-header);
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    color: var(--color-light-2);
+    border: none;
+    margin: 2rem 0 1rem 0;
+  }
+  .vessaya.journal-entry .journal-entry-page .journal-page-content .tableau img {
+    max-height: 480px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: none;
+  }
+  .vessaya.journal-entry .journal-entry-page .journal-page-content .documents-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
+  .vessaya.journal-entry .journal-entry-page .journal-page-content .documents-list .list-item {
+    gap: 1rem;
+    align-items: center;
+  }
+  .vessaya.journal-entry .journal-entry-page .journal-page-content .documents-list .list-item img {
+    flex: 0 0 64px;
+    height: 64px;
+    width: 64px;
+    object-fit: contain;
+    border: none;
+  }
+  .vessaya.journal-entry .journal-entry-page .journal-page-content .documents-list .list-item img.icon {
+    flex: 0 0 32px;
+    height: 32px;
+    width: 32px;
+  }
+  .vessaya.journal-entry .journal-entry-page .journal-page-content .documents-list .list-item a.vessaya-content-link {
+    flex: none;
+  }
+  .vessaya.journal-entry .journal-entry-page .journal-page-content .biome-list,
+  .vessaya.journal-entry .journal-entry-page .journal-page-content .locatio-list {
+    list-style: none;
+  }
+  .vessaya.journal-entry .journal-entry-page .journal-page-content .biome-list li,
+  .vessaya.journal-entry .journal-entry-page .journal-page-content .locatio-list li {
+    margin: 0 0 1rem 0;
+  }
+  /* ----------------------------------------- */
+  /* Single Page Edit Mode                     */
+  /* ----------------------------------------- */
+  .vessaya.journal-entry-page nav.sheet-tabs {
+    gap: 0;
+    font-size: var(--font-size-12);
+  }
+  .vessaya.journal-entry-page .tab {
+    flex: 1;
+  }
+  .vessaya.journal-entry-page .tab.standard-form {
+    padding: 1rem 1.5rem;
+  }
+  .vessaya.journal-entry-page .tab > prosemirror {
+    height: 100%;
+  }
+  .vessaya.journal-entry-page h2.divider,
+  .vessaya.journal-entry-page h3.divider {
+    border-bottom: none;
+  }
+  .vessaya.journal-entry-page form.choices {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .vessaya.journal-entry-page form.choices > fieldset {
+    background: url("../ui/logo-shadow.webp") no-repeat 12px center;
+    background-size: 80px;
+    margin: 0;
+    padding: 1rem 1rem 1rem 100px;
+    border: 1px dashed var(--color-light-5);
+    border-radius: 8px;
+  }
+  .vessaya.journal-entry-page form.choices fieldset.choice {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .vessaya.journal-entry-page form.choices .outcome {
+    margin: 0;
+  }
+  .vessaya.journal-entry-page form.choices .outcome label {
+    color: var(--color-light-2);
+    font-size: var(--font-size-16);
+    font-weight: bold;
+  }
+  .vessaya.journal-entry-page form.choices .outcome label > input {
+    --checkbox-size: 24px;
+  }
+  .vessaya.journal-entry-page form.choices .outcome .notes {
+    margin: 0;
+    color: var(--color-light-4);
+  }
+  .vessaya.journal-entry-page hex-tags,
+  .vessaya.journal-entry-page coefficient-tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .vessaya.journal-entry-page hex-tags > input,
+  .vessaya.journal-entry-page coefficient-tags > input {
+    flex: 1;
+  }
+  .vessaya.journal-entry-page hex-tags > button,
+  .vessaya.journal-entry-page coefficient-tags > button {
+    flex: 0 0 36px;
+  }
+  /* ---------------------------------------- */
+  /*  Font Declarations                       */
+  /* ---------------------------------------- */
+  @font-face {
+    font-family: "Volkorn";
+    src: url("../assets/fonts/Volkorn/Volkorn.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 300 800;
+  }
+  @font-face {
+    font-family: "Pirate Scrool";
+    src: url("../assets/fonts/PraiteScroll.otf") format('opentype');
+    font-style: normal;
+    font-weight: 400;
+  }
+  .vessaya {
+    /* ------------------------------------------ */
+    /* Colors                                     */
+    /* ------------------------------------------ */
+    --color-warm-1: #e04e4e;
+    --color-warm-2: #c93f4b;
+    --color-warm-3: #5e1722;
+    --color-active: #ff6b6b;
+    --color-text-accent: #ff6b6b;
+    --color-cool-1: #efecf6;
+    --color-cool-2: #9c7ee5;
+    --color-cool-3: #584a75;
+    --color-cool-4: #302831;
+    --color-cool-5: #0b0a13;
+    --color-cool-5-25: rgba(11, 10, 19, 0.25);
+    --color-cool-5-50: rgba(11, 10, 19, 0.5);
+    --color-cool-5-75: rgba(11, 10, 19, 0.75);
+    --color-cool-5-90: rgba(11, 10, 19, 0.9);
+    --color-light-1: #fffbf0;
+    --color-light-2: #f5eadf;
+    --color-light-3: #f0dab9;
+    --color-light-4: #d0b8a3;
+    --color-light-5: #9f8475;
+    --color-light-6: #816b66;
+    --color-blockquote-ink: #2b0c06;
+    --color-exploration-bg: #1c211c;
+    --color-exploration-border: #2f4d2f;
+    --color-exploration-skill: #7ff67f;
+    --color-hazard-bg: #211818;
+    --color-hazard-border: #5d1818;
+    --color-hazard-save: #ff6464;
+    --color-social-bg: #1b2126;
+    --color-social-border: #6783a5;
+    --color-social-check: #a9cfff;
+    --color-date-bg: #2a2f34;
+    --color-date-text: #cbecf3;
+    --color-scrollbar: rgba(201, 89, 62, 0.1);
+    --color-scrollbar-track: transparent;
+    --color-scrollbar-border: transparent;
+    --font-header: "Pirate Scroll", serif;
+    --font-body: "Vollkorn", serif;
+    --font-serif: "Vollkorn", serif;
+    --font-sans: "Signika", sans-serif;
+    /* ---------------------------------------- */
+    /*  Typography                              */
+    /* ---------------------------------------- */
+    --font-h1: var(--font-header);
+    --font-h2: var(--font-header);
+    --font-h3: var(--font-header);
+    --font-h4: var(--font-sans);
+    --font-h5: var(--font-serif);
+    --font-h6: var(--font-serif);
+  }
+}

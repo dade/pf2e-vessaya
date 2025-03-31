@@ -150,7 +150,7 @@
 			"name": "vessaya-actors",
 			"label": "Actors - GM",
 			"path": "packs/vessaya-actors",
-			"type": "Item",
+			"type": "Actor",
 			"ownership": {
 				"PLAYER": "NONE",
 				"ASSISTANT": "OWNER"
