@@ -1,0 +1,105 @@
+.vessaya.window-app {
+	background: none;
+
+	.window-content {
+		padding: 1rem;
+		background: none;
+		color: var(--color-light-2);
+	}
+}
+
+#pause {
+	#vessaya-logo-frame {
+		background: url() no-repeat center;
+		background-size: 100px;
+	}
+
+	figcaptiuon {
+		color: #aaa395;
+		font-family: var(--font-serif);
+	}
+}
+
+.vessaya-fullcreen {
+	--max-width: 1600px;
+}
+
+// TODO: This should revert to core in V13
+.flexcol>* {
+	flex: none;
+}
+
+input,
+select {
+	--input-backgroud-color: rgb(75 75 75 / 50%);
+	--input-border-color: transparent;
+	--input-text-color: var(--color-light-2);
+	--input-placeholder-color: var(--color-cool-4);
+
+	&:focus {
+		--input-text-color: var(--color-light-1);
+	}
+}
+
+a.button,
+button {
+	--button-background-color: transparent;
+	--button-border-color: transparent;
+	--button-text-color: var(--color-light-2);
+	--button-focus-outline-color: var(--color-warm-2);
+	--button-hover-background-color: var(--color-warm-2);
+	--button-hover-text-color: var(--color-light-1);
+
+	&:disabled {
+		--button-background-color: transparent;
+		--button-border-color: transparent;
+		--button-text-color: var(--color-light-4);
+	}
+}
+
+// Dynamic scaling
+// The fullscreen UI is designed for 1920x1080. Smaller or larger screens must adapt
+@media (min-width: 2000px) {
+	.vessaya-fullscreen {
+		--ui-scale: 1.1;
+	}
+}
+
+@media (max-width: 1660px) {
+	.vessaya-fullscreen {
+		--max-width: 1400px;
+	}
+}
+
+@media (max-width: 1480px) {
+	.vessaya-fullscreen {
+		--ui-scale: 0.9;
+	}
+}
+
+@media (max-width: 1340px) {
+	.vessaya-fullscreen {
+		--ui-scale: 0.9;
+	}
+}
+
+@media (max-width: 1200px) {
+	.vessaya-fullscreen {
+		--ui-scale: 0.9;
+		--max-width: 1100px;
+	}
+}
+
+@media (max-height: 1040px) {
+	.vessaya-fullscreen {
+		--ui-scale: 0.9;
+	}
+}
+
+@media (max-height: 900px) {
+	.vessaya-fullscreen {
+		--ui-scale: 0.8;
+	}
+}
+
+@import "ui/journal.less";

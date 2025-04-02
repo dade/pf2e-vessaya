@@ -1,10 +1,12 @@
 import { LANGUAGES_BY_RARITY } from "./scripts/consts.mjs"
 // import { default as VessayaJournalSheet } from "./scripts/journal/journal-sheet.mjs"
-// import { VessayaJournalSheet } from "./scripts/journal/journal-sheet.mjs"
+import { VessayaJournalSheet } from "./scripts/journal/journal-sheet.mjs"
 
 const MODULE = "pf2e-vessaya"
 
 async function updateSource(source, langs) {
+	// NOTE: might be worth revisiting this to see if we can refactor with
+	// `foundry.utils.mergeObject` instead.
 	let origLangs = source._source
 	let i, s
 
@@ -25,19 +27,16 @@ async function updateSource(source, langs) {
 	await game.settings.set("pf2e", "homebrew.languageRarities", source)
 }
 
-/**
- * Hooks
- */
 Hooks.once("init", () => {
 	globalThis.vessaya = game.modules.get(MODULE)
 	vessaya.opts = {}
 	vessaya.dataModels = {}
 	vessaya.CSS_CLASS = "vessaya"
 
-	// DocumentSheetConfig.registerSheet(JournalEntry, MODULE, VessayaJournalSheet, {
-	// 	label: "Vessaya Journal Sheet",
-	// 	makeDefault: false,
-	// })
+	DocumentSheetConfig.registerSheet(JournalEntry, MODULE, VessayaJournalSheet, {
+		label: "Vessaya Journal Sheet",
+		makeDefault: false,
+	})
 })
 
 Hooks.once("ready", async () => {

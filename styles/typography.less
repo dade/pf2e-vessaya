@@ -1,0 +1,117 @@
+.vessaya {
+
+	.journal-page-header {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		margin: 0;
+		font-family: var(--font-header);
+		font-weight: normal;
+		letter-spacing: 0.2em;
+		border: none;
+		color: var(--color-light-2);
+		border: none !important;
+		width: 100%;
+
+		// FIX:
+		// - Remove !important from h1 and h2 in V13
+		h1,
+		h2,
+		h3 {
+			border: none !important;
+		}
+
+		h1 {
+			font-size: 3em !important;
+		}
+
+		h2 {
+			text-shadow: 1px 1px 2px #000 !important;
+		}
+	}
+
+	h1,
+	h2,
+	h3 {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		margin: 2rem 0 1rem 0;
+		font-family: var(--font-header);
+		font-weight: normal;
+		letter-spacing: 0.2em;
+		color: var(--color-light-2);
+		border: none !important;
+
+		&.divider {
+			justify-content: space-between;
+			white-space: nowrap;
+
+			&::after {
+				content: "";
+				width: 50%;
+				margin-left: 0.5rem;
+				border-top: 2px ridge var(--color-warm-1);
+				mask-image: linear-gradient(270deg, transparent 0%, black 100%);
+			}
+
+			&::before {
+				content: "";
+				width: 50%;
+				margin-right: 0.5rem;
+				border-top: 2px ridge var(--color-warm-1);
+				mask-image: linear-gradient(90deg, transparent 0%, black 100%);
+			}
+		}
+	}
+
+	// FIX:
+	// - Remove !important from background in V13
+	.content-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.25rem;
+		padding: 3px 0.5rem;
+		margin: -3px 0;
+		line-height: 1rem;
+		background: var(--color-cool-4) !important;
+		color: var(--color-cool-1);
+		border: none;
+
+		i {
+			font-size: 0.75rem;
+			color: var(--color-cool-1);
+		}
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem 0.25rem;
+		justify-content: flex-end;
+		align-items: center;
+
+		.tag {
+			cursor: default;
+			flex: none;
+			height: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 0.5em;
+			padding: 0 4px;
+			background: var(--color-cool-5-75);
+			border: 1px solid #111;
+			border-radius: 3px;
+			font-size: var(--font-size-12);
+			max-width: 100%;
+			color: var(--color-light-2);
+			opacity: 1.0;
+		}
+
+		&:empty {
+			display: none;
+		}
+	}
+}

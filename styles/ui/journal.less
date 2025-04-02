@@ -1,0 +1,379 @@
+/* ----------------------------------------- */
+/* Journal Entry                             */
+/* ----------------------------------------- */
+
+// FIX:
+// - Remove important from background for V13
+.sheet.journal-entry.vessaya {
+	background: url("../assets/ui/codex-bg-dark.webp") repeat center !important;
+	border: none;
+
+	.window-header {
+		color: var(--color-text-light-1) !important;
+		text-shadow: 1px 1px 1px black !important;
+
+		a:hover {
+			text-shadow: 0 0 8px purple !important;
+		}
+	}
+
+	&:not(.collapsing) {
+		min-width: calc(1080px - var(--sidebar-width-expanded) + var(--sidebar-width-collapsec));
+	}
+
+	&.expanded {
+		min-width: 1080px;
+	}
+
+	&.minimized {
+		min-width: unset;
+	}
+
+	&::before {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		z-index: -1000;
+		background: linear-gradient(to bottom, transparent 90%, rgb(89 50 178 / 15%) 100%);
+	}
+
+	// FIX::
+	// - Remove !important from background image for V13
+	&::after {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		z-index: -1000;
+		background: url("../assets/ui/codex-bg.webp") no-repeat !important;
+		opacity: 0.5;
+		background-size: 100% auto;
+		mask-image: linear-gradient(0deg, transparent 66%, black 100%);
+	}
+
+	.journal-sidebar {
+		min-width: var(--sidebar-width-expanded);
+
+		&:not(.expanded) {
+			min-width: 0;
+		}
+	}
+
+	.window-content {
+		backdrop-filter: none;
+		-webkit-background-filter: none;
+
+		&::after {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			z-index: -1000;
+			background: url("../assets/ui/arcane-circle.webp") no-repeat center;
+			background-size: auto 100%;
+			opacity: 0.20;
+		}
+	}
+
+	input[name=search] {
+		--input-placeholder-color: var(--color-light-5);
+		--input-background-color: rbg(0 0 0 / 20%)
+	}
+
+	// FIX:
+	// - Remove !imortant from background and border in v13
+	.journal-sheet-container {
+		.journal-entry-content {
+			background: none !important;
+			border: none !important;
+		}
+	}
+
+	// Edit Button
+	// .edit-container button {
+	// 	background: none;
+	// 	border: none;
+	// }
+	.edit-container {
+		margin-right: 3px;
+	}
+
+	.toc {
+		--line-height: 28px;
+
+		li[data-page-id] {
+			border: none;
+			font-family: var(--font-seirf);
+
+			&.active {
+				color: var(--color-text-accent)
+			}
+
+			.page-index {
+				color: var(--color-light-5);
+				font-family: var(--font-sans);
+			}
+
+			.tags {
+				margin-right: 0.5rem;
+				font-family: var(--font-sans);
+
+				.tag {
+					font-size: var(--var-size-10);
+				}
+			}
+		}
+
+		li.category {
+			background: var(--color-warm-2);
+			padding: 0.25rem 1rem;
+			margin: 1rem 1rem 0.25rem 0;
+			border-radius: 0 8px 8px 0;
+
+			h3,
+			strong {
+				margin: 0;
+				line-height: var(--line-height);
+				font-family: var(--font-serif);
+				font-size: var(--font-size-14);
+				font-weight: normal;
+				letter-spacing: 0.1rem;
+				color: #FFF;
+				text-transform: none;
+				text-align: left;
+			}
+		}
+	}
+
+	&:not(.expanded) .toc {
+		li.category {
+			margin: 1rem 0 0.25rem 0;
+		}
+
+		.tags {
+			display: none;
+		}
+	}
+
+	footer.action-buttons {
+		button {
+			--button-background-color: rgb(0 0 0 / 20%) --button-border-color: transparent;
+		}
+	}
+
+	input.title {
+		display: none;
+	}
+}
+
+/* ----------------------------------------- */
+/* Single Page View                          */
+/* ----------------------------------------- */
+
+.vessaya.journal-entry .journal-entry-page {
+	.journal-page-header {
+		gap: 1rem;
+		align-items: center;
+
+		h1 {
+			position: relative;
+			justify-content: center;
+			text-align: center;
+			font-size: 40px;
+			text-shadow: 1px 1px 2px #000;
+		}
+
+		h2.subtitle {
+			justify-content: center;
+			color: var(--color-light-3);
+			border: none;
+		}
+
+		.tags {
+			justify-content: center;
+			align-items: center;
+		}
+
+		.pronuniciation {
+			margin: -0.5rem 0 0;
+			font-family: var(--font-serif);
+			font-size: var(--font-size-16);
+			font-style: italic;
+			color: var(--color-light-4);
+			text-align: center;
+		}
+
+		.action-buttons {
+			width: 100%;
+			justify-content: center;
+
+			button {
+				flex: none;
+				max-width: 50%;
+			}
+		}
+	}
+
+	.journal-page-content {
+		padding: 1rem 2rem;
+
+		// Typography
+		--color-text-primary: var(--color-light-3);
+		font-family: var(--font-serif);
+		font-size: var(--font-size-15);
+		line-height: 1.3em;
+		color: var(--color-text-primary);
+
+		p {
+			text-align: justify;
+		}
+
+		h1,
+		h2,
+		h3 {
+			font-family: var(--font-header);
+			font-weight: normal;
+			letter-spacing: 0.2em;
+			color: var(--color-light-2);
+			border: none;
+			margin: 2rem 0 1rem 0;
+		}
+
+		.tableau img {
+			max-height: 480px;
+			border: none;
+			border-radius: 8px;
+			box-shadow: none;
+		}
+
+		.documents-list {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 1rem;
+
+			.list-item {
+				gap: 1rem;
+				align-items: center;
+
+				img {
+					flex: 0 0 64px;
+					height: 64px;
+					width: 64px;
+					object-fit: contain;
+					border: none;
+
+					&.icon {
+						flex: 0 0 32px;
+						height: 32px;
+						width: 32px;
+					}
+				}
+
+				a.vessaya-content-link {
+					flex: none;
+				}
+			}
+		}
+
+		.biome-list,
+		.locatio-list {
+			list-style: none;
+
+			li {
+				margin: 0 0 1rem 0;
+			}
+		}
+	}
+}
+
+/* ----------------------------------------- */
+/* Single Page Edit Mode                     */
+/* ----------------------------------------- */
+
+.vessaya.journal-entry-page {
+	nav.sheet-tabs {
+		gap: 0;
+		font-size: var(--font-size-12);
+	}
+
+	.tab {
+		flex: 1
+	}
+
+	.tab.standard-form {
+		padding: 1rem 1.5rem;
+	}
+
+	.tab>prose-mirror {
+		height: 100%;
+	}
+
+	h2.divider,
+	h3.divider {
+		border-bottom: none;
+	}
+
+	form.choices {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+
+		>fieldset {
+			background: url("../ui/logo-shadow.webp") no-repeat 12px center;
+			background-size: 80px;
+			margin: 0;
+			padding: 1rem 1rem 1rem 100px;
+			border: 1px dashed var(--color-light-5);
+			border-radius: 8px;
+		}
+
+		fieldset.choice {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+
+		.outcome {
+			margin: 0;
+
+			label {
+				color: var(--color-light-2);
+				font-size: var(--font-size-16);
+				font-weight: bold;
+
+				>input {
+					--checkbox-size: 24px;
+				}
+			}
+
+			.notes {
+				margin: 0;
+				color: var(--color-light-4);
+			}
+		}
+	}
+
+	hex-tags,
+	coefficient-tags {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.25rem;
+
+		>input {
+			flex: 1;
+		}
+
+		>button {
+			flex: 0 0 36px;
+		}
+	}
+}

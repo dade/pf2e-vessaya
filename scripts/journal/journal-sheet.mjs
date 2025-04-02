@@ -1,8 +1,15 @@
+// TODO: Convert this to AppV2 when we migrate to FoundryVTT V13
 export class VessayaJournalSheet extends JournalSheet {
 
 	constructor(doc, options) {
 		super(doc, options)
 		this.options.classes.push(vessaya.CSS_CLASS)
+	}
+
+	static get defaultOptions() {
+		return foundry.utils.mergeObject(super.defaultOptions, {
+			width: 1080,
+		})
 	}
 
 }

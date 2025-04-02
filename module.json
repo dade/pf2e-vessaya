@@ -18,7 +18,9 @@
 	"esmodules": [
 		"pf2e-vessaya.mjs"
 	],
-	"styles": [],
+	"styles": [
+		"styles/main.css"
+	],
 	"languages": [
 		{
 			"lang": "en",

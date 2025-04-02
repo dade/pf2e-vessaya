@@ -21,9 +21,6 @@
   .flexcol > * {
     flex: none;
   }
-  .flexrow {
-    align-items: center;
-  }
   input,
   select {
     --input-backgroud-color: rgba(75, 75, 75, 0.5);
@@ -89,20 +86,27 @@
   /* ----------------------------------------- */
   /* Journal Entry                             */
   /* ----------------------------------------- */
-  .journal-entry.vessaya {
-    background: url("../assets/ui/codex-bg-dark.webp") repeat center;
+  .sheet.journal-entry.vessaya {
+    background: url("../assets/ui/codex-bg-dark.webp") repeat center !important;
     border: none;
   }
-  .journal-entry.vessaya:not(.collapsing) {
+  .sheet.journal-entry.vessaya .window-header {
+    color: var(--color-text-light-1) !important;
+    text-shadow: 1px 1px 1px black !important;
+  }
+  .sheet.journal-entry.vessaya .window-header a:hover {
+    text-shadow: 0 0 8px purple !important;
+  }
+  .sheet.journal-entry.vessaya:not(.collapsing) {
     min-width: calc(1080px - var(--sidebar-width-expanded) + var(--sidebar-width-collapsec));
   }
-  .journal-entry.vessaya.expanded {
+  .sheet.journal-entry.vessaya.expanded {
     min-width: 1080px;
   }
-  .journal-entry.vessaya.minimized {
+  .sheet.journal-entry.vessaya.minimized {
     min-width: unset;
   }
-  .journal-entry.vessaya::before {
+  .sheet.journal-entry.vessaya::before {
     content: "";
     display: block;
     width: 100%;
@@ -110,9 +114,9 @@
     position: absolute;
     top: 0;
     z-index: -1000;
-    background: linear-gradient(to bottom, transparent 90%, rgba(178, 50, 53, 0.15) 100%);
+    background: linear-gradient(to bottom, transparent 90%, rgba(89, 50, 178, 0.15) 100%);
   }
-  .journal-entry.vessaya::after {
+  .sheet.journal-entry.vessaya::after {
     content: "";
     display: block;
     width: 100%;
@@ -120,21 +124,22 @@
     position: absolute;
     top: 0;
     z-index: -1000;
-    background: url("../assets/ui/codex-bg.jpg") no-repeat;
+    background: url("../assets/ui/codex-bg.webp") no-repeat !important;
+    opacity: 0.5;
     background-size: 100% auto;
     mask-image: linear-gradient(0deg, transparent 66%, black 100%);
   }
-  .journal-entry.vessaya .journal-sidebar {
+  .sheet.journal-entry.vessaya .journal-sidebar {
     min-width: var(--sidebar-width-expanded);
   }
-  .journal-entry.vessaya .journal-sidebar:not(.expanded) {
+  .sheet.journal-entry.vessaya .journal-sidebar:not(.expanded) {
     min-width: 0;
   }
-  .journal-entry.vessaya .window-content {
+  .sheet.journal-entry.vessaya .window-content {
     backdrop-filter: none;
     -webkit-background-filter: none;
   }
-  .journal-entry.vessaya .window-content::after {
+  .sheet.journal-entry.vessaya .window-content::after {
     content: "";
     display: block;
     width: 100%;
@@ -142,50 +147,50 @@
     position: absolute;
     top: 0;
     z-index: -1000;
-    background: url("../assets/ui/cosmos-design-weathered.webp") no-repeat center;
+    background: url("../assets/ui/arcane-circle.webp") no-repeat center;
     background-size: auto 100%;
-    opacity: 0.1;
+    opacity: 0.2;
   }
-  .journal-entry.vessaya .window-content .journal-entry-content {
-    background: none;
-  }
-  .journal-entry.vessaya input[name=search] {
+  .sheet.journal-entry.vessaya input[name=search] {
     --input-placeholder-color: var(--color-light-5);
     --input-background-color: rbg(0 0 0 / 20%);
   }
-  .journal-entry.vessaya .edit-container button {
-    background: none;
-    border: none;
+  .sheet.journal-entry.vessaya .journal-sheet-container .journal-entry-content {
+    background: none !important;
+    border: none !important;
   }
-  .journal-entry.vessaya .toc {
+  .sheet.journal-entry.vessaya .edit-container {
+    margin-right: 3px;
+  }
+  .sheet.journal-entry.vessaya .toc {
     --line-height: 28px;
   }
-  .journal-entry.vessaya .toc li[data-page-id] {
+  .sheet.journal-entry.vessaya .toc li[data-page-id] {
     border: none;
     font-family: var(--font-seirf);
   }
-  .journal-entry.vessaya .toc li[data-page-id].active {
+  .sheet.journal-entry.vessaya .toc li[data-page-id].active {
     color: var(--color-text-accent);
   }
-  .journal-entry.vessaya .toc li[data-page-id] .page-index {
+  .sheet.journal-entry.vessaya .toc li[data-page-id] .page-index {
     color: var(--color-light-5);
     font-family: var(--font-sans);
   }
-  .journal-entry.vessaya .toc li[data-page-id] .tags {
+  .sheet.journal-entry.vessaya .toc li[data-page-id] .tags {
     margin-right: 0.5rem;
     font-family: var(--font-sans);
   }
-  .journal-entry.vessaya .toc li[data-page-id] .tags .tag {
+  .sheet.journal-entry.vessaya .toc li[data-page-id] .tags .tag {
     font-size: var(--var-size-10);
   }
-  .journal-entry.vessaya .toc li.category {
+  .sheet.journal-entry.vessaya .toc li.category {
     background: var(--color-warm-2);
     padding: 0.25rem 1rem;
     margin: 1rem 1rem 0.25rem 0;
     border-radius: 0 8px 8px 0;
   }
-  .journal-entry.vessaya .toc li.category h3,
-  .journal-entry.vessaya .toc li.category strong {
+  .sheet.journal-entry.vessaya .toc li.category h3,
+  .sheet.journal-entry.vessaya .toc li.category strong {
     margin: 0;
     line-height: var(--line-height);
     font-family: var(--font-serif);
@@ -196,16 +201,16 @@
     text-transform: none;
     text-align: left;
   }
-  .journal-entry.vessaya:not(.expanded) .toc li.category {
+  .sheet.journal-entry.vessaya:not(.expanded) .toc li.category {
     margin: 1rem 0 0.25rem 0;
   }
-  .journal-entry.vessaya:not(.expanded) .toc .tags {
+  .sheet.journal-entry.vessaya:not(.expanded) .toc .tags {
     display: none;
   }
-  .journal-entry.vessaya footer.action-buttons button {
+  .sheet.journal-entry.vessaya footer.action-buttons button {
     --button-background-color: rgba(0, 0, 0, 0.2) --button-border-color: transparent;
   }
-  .journal-entry.vessaya input.title {
+  .sheet.journal-entry.vessaya input.title {
     display: none;
   }
   /* ----------------------------------------- */
@@ -221,6 +226,7 @@
     text-align: center;
     font-size: 40px;
     text-shadow: 1px 1px 2px #000;
+    white-space: wrap;
   }
   .vessaya.journal-entry .journal-entry-page .journal-page-header h2.subtitle {
     justify-content: center;
@@ -319,7 +325,7 @@
   .vessaya.journal-entry-page .tab.standard-form {
     padding: 1rem 1.5rem;
   }
-  .vessaya.journal-entry-page .tab > prosemirror {
+  .vessaya.journal-entry-page .tab > prose-mirror {
     height: 100%;
   }
   .vessaya.journal-entry-page h2.divider,
@@ -375,18 +381,122 @@
   .vessaya.journal-entry-page coefficient-tags > button {
     flex: 0 0 36px;
   }
+  .vessaya .journal-page-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-family: var(--font-header);
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    border: none;
+    color: var(--color-light-2);
+    border: none !important;
+    width: 100%;
+  }
+  .vessaya .journal-page-header h1,
+  .vessaya .journal-page-header h2,
+  .vessaya .journal-page-header h3 {
+    border: none !important;
+  }
+  .vessaya .journal-page-header h1 {
+    font-size: 3em !important;
+  }
+  .vessaya .journal-page-header h2 {
+    text-shadow: 1px 1px 2px #000 !important;
+  }
+  .vessaya h1,
+  .vessaya h2,
+  .vessaya h3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 2rem 0 1rem 0;
+    font-family: var(--font-header);
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    color: var(--color-light-2);
+    border: none !important;
+  }
+  .vessaya h1.divider,
+  .vessaya h2.divider,
+  .vessaya h3.divider {
+    justify-content: space-between;
+    white-space: nowrap;
+  }
+  .vessaya h1.divider::after,
+  .vessaya h2.divider::after,
+  .vessaya h3.divider::after {
+    content: "";
+    width: 50%;
+    margin-left: 0.5rem;
+    border-top: 2px ridge var(--color-warm-1);
+    mask-image: linear-gradient(270deg, transparent 0%, black 100%);
+  }
+  .vessaya h1.divider::before,
+  .vessaya h2.divider::before,
+  .vessaya h3.divider::before {
+    content: "";
+    width: 50%;
+    margin-right: 0.5rem;
+    border-top: 2px ridge var(--color-warm-1);
+    mask-image: linear-gradient(90deg, transparent 0%, black 100%);
+  }
+  .vessaya .content-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 3px 0.5rem;
+    margin: -3px 0;
+    line-height: 1rem;
+    background: var(--color-cool-4) !important;
+    color: var(--color-cool-1);
+    border: none;
+  }
+  .vessaya .content-link i {
+    font-size: 0.75rem;
+    color: var(--color-cool-1);
+  }
+  .vessaya .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.25rem;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .vessaya .tags .tag {
+    cursor: default;
+    flex: none;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0 4px;
+    background: var(--color-cool-5-75);
+    border: 1px solid #111;
+    border-radius: 3px;
+    font-size: var(--font-size-12);
+    max-width: 100%;
+    color: var(--color-light-2);
+    opacity: 1;
+  }
+  .vessaya .tags:empty {
+    display: none;
+  }
   /* ---------------------------------------- */
   /*  Font Declarations                       */
   /* ---------------------------------------- */
   @font-face {
     font-family: "Volkorn";
-    src: url("../assets/fonts/Volkorn/Volkorn.ttf") format("truetype");
+    src: url("../assets/fonts/Vollkorn/Vollkorn.ttf") format("truetype");
     font-style: normal;
     font-weight: 300 800;
   }
   @font-face {
-    font-family: "Pirate Scrool";
-    src: url("../assets/fonts/PraiteScroll.otf") format('opentype');
+    font-family: "Pirate Scroll";
+    src: url("../assets/fonts/PirateScroll/PirateScroll.otf") format('opentype');
     font-style: normal;
     font-weight: 400;
   }
