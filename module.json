@@ -10,7 +10,7 @@
 			"flags": {}
 		}
 	],
-	"version": "1.0.2",
+	"version": "1.1.0",
 	"compatibility": {
 		"minimum": "12",
 		"verified": "12"
@@ -137,22 +137,34 @@
 			"flags": {}
 		},
 		{
-		"name": "vessaya-equipment-gm",
-		"label": "Equipment - GM",
-		"path": "packs/vessaya-equipment-gm",
-		"type": "Item",
-		"ownership": {
-		"PLAYER": "NONE",
-		"ASSISTANT": "OWNER"
-	},
-		"system": "pf2e",
-		"flags": {}
-	},
+			"name": "vessaya-equipment-gm",
+			"label": "Equipment - GM",
+			"path": "packs/vessaya-equipment-gm",
+			"type": "Item",
+			"ownership": {
+				"PLAYER": "NONE",
+				"ASSISTANT": "OWNER"
+			},
+			"system": "pf2e",
+			"flags": {}
+		},
 		{
 			"name": "vessaya-actors",
 			"label": "Actors - GM",
 			"path": "packs/vessaya-actors",
 			"type": "Actor",
+			"ownership": {
+				"PLAYER": "NONE",
+				"ASSISTANT": "OWNER"
+			},
+			"system": "pf2e",
+			"flags": {}
+		},
+		{
+			"name": "vessaya-adventure",
+			"label": "Adventure",
+			"path": "packs/vessaya-adventure",
+			"type": "Adventure",
 			"ownership": {
 				"PLAYER": "NONE",
 				"ASSISTANT": "OWNER"
@@ -183,7 +195,8 @@
 			"sorting": "m",
 			"packs": [
 				"vessaya-actors",
-				"vessaya-equipment-gm"
+				"vessaya-equipment-gm",
+				"vessaya-adventure"
 			]
 		}
 	],
@@ -208,5 +221,5 @@
 		}
 	},
 	"manifest": "https://github.com/dade/pf2e-vessaya/releases/latest/download/module.json",
-	"download": "https://github.com/dade/pf2e-vessaya/archive/1.0.2.zip"
+	"download": "https://github.com/dade/pf2e-vessaya/archive/1.1.0.zip"
 }

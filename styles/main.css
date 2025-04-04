@@ -94,7 +94,7 @@
     color: var(--color-text-light-1) !important;
     text-shadow: 1px 1px 1px black !important;
   }
-  .sheet.journal-entry.vessaya .window-header a:hover {
+  .sheet.journal-entry.vessaya a:hover {
     text-shadow: 0 0 8px purple !important;
   }
   .sheet.journal-entry.vessaya:not(.collapsing) {
@@ -159,9 +159,6 @@
     background: none !important;
     border: none !important;
   }
-  .sheet.journal-entry.vessaya .edit-container {
-    margin-right: 3px;
-  }
   .sheet.journal-entry.vessaya .toc {
     --line-height: 28px;
   }
@@ -212,6 +209,11 @@
   }
   .sheet.journal-entry.vessaya input.title {
     display: none;
+    background-color: var(--color-cool-4) !important;
+    color: var(--color-light-2) !important;
+  }
+  .display {
+    display: block !important;
   }
   /* ----------------------------------------- */
   /* Single Page View                          */
@@ -226,7 +228,6 @@
     text-align: center;
     font-size: 40px;
     text-shadow: 1px 1px 2px #000;
-    white-space: wrap;
   }
   .vessaya.journal-entry .journal-entry-page .journal-page-header h2.subtitle {
     justify-content: center;
@@ -252,6 +253,18 @@
   .vessaya.journal-entry .journal-entry-page .journal-page-header .action-buttons button {
     flex: none;
     max-width: 50%;
+  }
+  .vessaya.journal-entry .journal-entry-page .edit-container {
+    right: 28px;
+    margin: 0;
+  }
+  .vessaya.journal-entry .journal-entry-page .edit-container .editor-edit {
+    display: block !important;
+    background: none !important;
+    border: none !important;
+  }
+  .vessaya.journal-entry .journal-entry-page .edit-container i {
+    color: var(--color-light-2);
   }
   .vessaya.journal-entry .journal-entry-page .journal-page-content {
     padding: 1rem 2rem;
@@ -300,9 +313,6 @@
     flex: 0 0 32px;
     height: 32px;
     width: 32px;
-  }
-  .vessaya.journal-entry .journal-entry-page .journal-page-content .documents-list .list-item a.vessaya-content-link {
-    flex: none;
   }
   .vessaya.journal-entry .journal-entry-page .journal-page-content .biome-list,
   .vessaya.journal-entry .journal-entry-page .journal-page-content .locatio-list {
@@ -424,6 +434,7 @@
   .vessaya h3.divider {
     justify-content: space-between;
     white-space: nowrap;
+    margin-top: 2rem !important;
   }
   .vessaya h1.divider::after,
   .vessaya h2.divider::after,
@@ -444,19 +455,21 @@
     mask-image: linear-gradient(90deg, transparent 0%, black 100%);
   }
   .vessaya .content-link {
-    display: inline-flex;
-    align-items: center;
     gap: 0.25rem;
     padding: 3px 0.5rem;
     margin: -3px 0;
     line-height: 1rem;
-    background: var(--color-cool-4) !important;
-    color: var(--color-cool-1);
-    border: none;
+    background-color: var(--color-cool-4) !important;
+    color: var(--color-light-2) !important;
   }
   .vessaya .content-link i {
     font-size: 0.75rem;
     color: var(--color-cool-1);
+  }
+  .vessaya blockquote {
+    margin: 0.5em 0 2em 1em !important;
+    padding: 5px 10px 5px 25px !important;
+    background-color: var(--color-cool-4);
   }
   .vessaya .tags {
     display: flex;

@@ -11,10 +11,10 @@
 	.window-header {
 		color: var(--color-text-light-1) !important;
 		text-shadow: 1px 1px 1px black !important;
+	}
 
-		a:hover {
-			text-shadow: 0 0 8px purple !important;
-		}
+	a:hover {
+		text-shadow: 0 0 8px purple !important;
 	}
 
 	&:not(.collapsing) {
@@ -96,15 +96,6 @@
 		}
 	}
 
-	// Edit Button
-	// .edit-container button {
-	// 	background: none;
-	// 	border: none;
-	// }
-	.edit-container {
-		margin-right: 3px;
-	}
-
 	.toc {
 		--line-height: 28px;
 
@@ -170,7 +161,13 @@
 
 	input.title {
 		display: none;
+		background-color: var(--color-cool-4) !important;
+		color: var(--color-light-2) !important;
 	}
+}
+
+.display {
+	display: block !important;
 }
 
 /* ----------------------------------------- */
@@ -218,6 +215,23 @@
 				flex: none;
 				max-width: 50%;
 			}
+		}
+	}
+
+	.edit-container {
+		right: 28px;
+		margin: 0;
+
+		// FIX:
+		// - Remove !important for Foundry V13
+		.editor-edit {
+			display: block !important;
+			background: none !important;
+			border: none !important;
+		}
+
+		i {
+			color: var(--color-light-2);
 		}
 	}
 
@@ -274,10 +288,6 @@
 						height: 32px;
 						width: 32px;
 					}
-				}
-
-				a.vessaya-content-link {
-					flex: none;
 				}
 			}
 		}

@@ -51,3 +51,22 @@ Hooks.once("ready", async () => {
 
 	await updateSource(savedLangs, LANGUAGES_BY_RARITY)
 })
+
+Hooks.on("renderJournalSheet", () => {
+	// horribly hacky jquery code... don't look at it. i'm ashamed... :(
+	const el = $(".sheet.journal-sheet.vessaya .document-title-edit")
+	if (el.length > 0) {
+		el.delete()
+		$('.sheet.journal-sheet.vessaya .window-header .document-id-link').after(
+			`<a class="document-title-edit" data-tooltip="Edit Document Title" data-tooltip-direction="UP"><i class="fa-solid fa-edit"></i></a>`
+		)
+	} else {
+		$('.sheet.journal-sheet.vessaya .window-header .document-id-link').after(
+			`<a class="document-title-edit" data-tooltip="Edit Document Title" data-tooltip-direction="UP"><i class="fa-solid fa-edit"></i></a>`
+		)
+	}
+
+	$('.sheet.journal-sheet.vessaya .document-title-edit').click(() => {
+		$(".sheet.journal-sheet.vessaya input.title").toggleClass("display")
+	})
+})

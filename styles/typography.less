@@ -47,6 +47,7 @@
 		&.divider {
 			justify-content: space-between;
 			white-space: nowrap;
+			margin-top: 2rem !important;
 
 			&::after {
 				content: "";
@@ -69,20 +70,25 @@
 	// FIX:
 	// - Remove !important from background in V13
 	.content-link {
-		display: inline-flex;
-		align-items: center;
 		gap: 0.25rem;
 		padding: 3px 0.5rem;
 		margin: -3px 0;
 		line-height: 1rem;
-		background: var(--color-cool-4) !important;
-		color: var(--color-cool-1);
-		border: none;
+		background-color: var(--color-cool-4) !important;
+		color: var(--color-light-2) !important;
 
 		i {
 			font-size: 0.75rem;
 			color: var(--color-cool-1);
 		}
+	}
+
+	// FIX:
+	// - Remove !important in V13
+	blockquote {
+		margin: 0.5em 0 2em 1em !important;
+		padding: 5px 10px 5px 25px !important;
+		background-color: var(--color-cool-4);
 	}
 
 	.tags {
