@@ -1,3 +1,5 @@
-2025/04/04-19:38:53.039 bcf8 Recovering log #7
-2025/04/04-19:38:53.057 bcf8 Delete type=0 #7
-2025/04/04-19:38:53.060 bcf8 Delete type=3 #6
+2025/04/05-01:24:04.743 b02c Recovering log #9
+2025/04/05-01:24:04.744 b02c Level-0 table #11: started
+2025/04/05-01:24:04.747 b02c Level-0 table #11: 31104 bytes OK
+2025/04/05-01:24:04.766 b02c Delete type=0 #9
+2025/04/05-01:24:04.770 b02c Delete type=3 #8
