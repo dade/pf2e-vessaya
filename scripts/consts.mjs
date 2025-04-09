@@ -64,8 +64,21 @@ const LANGUAGES_BY_RARITY = {
 const LANGUAGES = ["common", ...COMMON_LANGUAGES, ...UNCOMMON_LANGUAGES, ...RARE_LANGUAGES, "wildsong"]
 LANGUAGES.sort()
 
+export const REPUTATION = {
+	"npcs": [
+		{
+			"name": "Test 1",
+			"value": 10
+		},
+		{
+			"name": "Test 2",
+			"value": 15
+		}
+	]
+}
+
 export {
 	LANGUAGES,
 	LANGUAGE_RARITIES,
-	LANGUAGES_BY_RARITY
+	LANGUAGES_BY_RARITY,
 }

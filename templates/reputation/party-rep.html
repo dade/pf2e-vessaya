@@ -1,0 +1,20 @@
+<section class="content reputation">
+	{{#if @root.options.editable}}
+	<header class="content-header">
+		<h3 style="margin: 0.5em">Reputation</h3>
+		<a data-action="addReputation"><i class="fa-solid fa-plus"></i> Add</a>
+	</header>
+	{{/if}}
+	{{setVar "reputation" actor.flags.pf2e-vessaya.reputation}}
+	{{#if reputation.npcs}}
+	{{#each reputation.npcs as |npc|}}
+	<section class="rep-entry sheet-header">
+		<h3>{{npc.name}}</h3>
+		<p>{{npc.value}}</p>
+	</section>
+	{{/each}}
+	{{/if}}
+</section>
+<section class="dev" style="position: absolute; bottom: 0; left: 0;">
+	<a data-action="reset"><i class="fa-solid fa-trashcan"></i> Reset Data</a>
+</section>

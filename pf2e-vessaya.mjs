@@ -1,8 +1,14 @@
-import { LANGUAGES_BY_RARITY } from "./scripts/consts.mjs"
+import { LANGUAGES_BY_RARITY, REPUTATION } from "./scripts/consts.mjs"
 // import { default as VessayaJournalSheet } from "./scripts/journal/journal-sheet.mjs"
 import { VessayaJournalSheet } from "./scripts/journal/journal-sheet.mjs"
+import { initConfigs } from "./scripts/configs.mjs"
+import { ReputationSystem } from "./scripts/reputation/reputation-system.mjs"
 
 const MODULE = "pf2e-vessaya"
+
+const vessaya = {
+	rep: REPUTATION
+}
 
 async function updateSource(source, langs) {
 	// NOTE: might be worth revisiting this to see if we can refactor with
@@ -37,6 +43,9 @@ Hooks.once("init", () => {
 		label: "Vessaya Journal Sheet",
 		makeDefault: false,
 	})
+
+	initConfigs()
+	ReputationSystem.init()
 })
 
 Hooks.once("ready", async () => {
@@ -68,5 +77,27 @@ Hooks.on("renderJournalSheet", () => {
 
 	$('.sheet.journal-sheet.vessaya .document-title-edit').click(() => {
 		$(".sheet.journal-sheet.vessaya input.title").toggleClass("display")
+	})
+})
+
+Hooks.on("renderPartySheetPF2e", function(sheet, html, data) {
+	if (!game.user.isGM)
+		return
+
+	$('a[data-action="addReputation"]').on("click", () => {
+		// TODO: asynchronously(??) create a new flag and populate it with dummy data for now
+		// then create a proper schema for it later, with a reset function to clear all data
+	})
+
+	$('a[data-action="reset"]').on("click", async () => {
+		await ReputationSystem.repopulateData(
+			game.actors.party,
+			vessaya.rep,
+			true
+		).then(() => {
+			setTimeout(async () => {
+				await sheet.render(true)
+			}, 500)
+		})
 	})
 })
