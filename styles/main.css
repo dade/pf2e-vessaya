@@ -393,7 +393,7 @@
   }
   div.tab .content.reputation {
     margin: 0;
-    overflow: hidden !important;
+    overflow: hidden scroll !important;
   }
   div.tab .content.reputation header {
     display: flex;
@@ -401,9 +401,9 @@
     justify-content: space-between;
     align-items: center;
   }
-  div.tab .content.reputation h3 {
+  div.tab .content.reputation header h3 {
     font-family: "Vollkorn";
-    margin: 0 0.5em;
+    margin: 0.5em;
   }
   div.tab .content.reputation a {
     margin-right: 0.5em;
@@ -415,15 +415,59 @@
     border-image-slice: 11;
     border-image-width: 14px;
     border-style: double;
-    display: flex;
-    align-items: center;
-    height: 3rem;
     margin: 0.5em;
+    transition: all 0.5s ease;
+  }
+  div.tab .content.reputation .rep-entry .party-rep {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  div.tab .content.reputation .rep-entry .party-rep h3 {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+  div.tab .content.reputation .rep-entry .party-rep div {
+    margin: 10px;
+  }
+  div.tab .content.reputation .rep-entry .party-rep .rep-details {
+    width: 100%;
+    cursor: pointer;
   }
   div.tab .content.reputation .rep-entry h3,
-  div.tab .content.reputation .rep-entry p {
-    margin: 0.5em 1em !important;
+  div.tab .content.reputation .rep-entry p,
+  div.tab .content.reputation .rep-entry span {
+    margin: 0 !important;
     padding: 5px !important;
+  }
+  div.tab .content.reputation .rep-entry input.rep-input {
+    border: none !important;
+  }
+  div.tab .content.reputation .member-rep {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out forwards !important;
+    margin: 0 0.5rem;
+    padding: 0.3rem 0.6rem;
+    border-top: solid 1px var(--color-dark-1);
+  }
+  div.tab .content.reputation .member-rep .form-group {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+  }
+  div.tab .hidden {
+    display: none;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   .vessaya .journal-page-header {
     display: flex;

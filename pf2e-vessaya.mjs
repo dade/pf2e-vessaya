@@ -84,9 +84,16 @@ Hooks.on("renderPartySheetPF2e", function(sheet, html, data) {
 	if (!game.user.isGM)
 		return
 
-	$('a[data-action="addReputation"]').on("click", () => {
-		// TODO: asynchronously(??) create a new flag and populate it with dummy data for now
-		// then create a proper schema for it later, with a reset function to clear all data
+	$('a[data-action="addNPC"]').on("click", async () => {
+		await ReputationSystem.addNPC().then(() => {
+			setTimeout(async () => {
+				await sheet.render(true)
+			}, 1000)
+		})
+	})
+
+	$('a[data-action="addFaction"]').on("click", async () => {
+		await ReputationSystem.addFaction(sheet)
 	})
 
 	$('a[data-action="reset"]').on("click", async () => {
@@ -98,6 +105,21 @@ Hooks.on("renderPartySheetPF2e", function(sheet, html, data) {
 			setTimeout(async () => {
 				await sheet.render(true)
 			}, 500)
+		})
+	})
+
+	$(".rep-details").on("click", (event) => {
+		const group = event.currentTarget.closest(".rep-entry").querySelector(".member-rep")
+		if (group) {
+			group.style.display = group.style.display === "block" ? "none" : "block"
+		}
+	})
+
+	$('a[data-action="edit-rep"]').on("click", (event) => {
+		const ct = event.currentTarget
+		const ch = $(ct).closest(".party-rep").find(".rep-details").children()
+		ch.each((c) => {
+			$(ch[c]).toggleClass("hidden")
 		})
 	})
 })

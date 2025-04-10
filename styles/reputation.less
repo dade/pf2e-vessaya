@@ -3,18 +3,18 @@ div.tab {
 	.content.reputation {
 
 		margin: 0;
-		overflow: hidden !important;
+		overflow: hidden scroll !important;
 
 		header {
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
 			align-items: center;
-		}
 
-		h3 {
-			font-family: "Vollkorn";
-			margin: 0 0.5em;
+			h3 {
+				font-family: "Vollkorn";
+				margin: 0.5em;
+			}
 		}
 
 		a {
@@ -28,18 +28,72 @@ div.tab {
 			border-image-slice: 11;
 			border-image-width: 14px;
 			border-style: double;
-			display: flex;
-			align-items: center;
-			height: 3rem;
 			margin: 0.5em;
+			transition: all 0.5s ease;
+
+			.party-rep {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				h3 {
+					margin: 0;
+					font-size: 1.25rem;
+				}
+
+				div {
+					margin: 10px;
+				}
+
+				.rep-details {
+					width: 100%;
+					cursor: pointer;
+				}
+			}
 
 			h3,
-			p {
-				margin: 0.5em 1em !important;
+			p,
+			span {
+				margin: 0 !important;
 				padding: 5px !important;
+			}
+
+			input.rep-input {
+				border: none !important;
+			}
+		}
+
+		.member-rep {
+			display: none;
+			animation: fadeIn 0.5s ease-in-out forwards !important;
+			margin: 0 0.5rem;
+			padding: 0.3rem 0.6rem;
+			border-top: solid 1px var(--color-dark-1);
+
+			.form-group {
+				display: flex;
+				justify-content: space-between;
+				padding: 0.5rem 0;
+				border-bottom: 1px solid #eee;
 			}
 		}
 
 	}
 
+	.hidden {
+		display: none;
+	}
+
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }

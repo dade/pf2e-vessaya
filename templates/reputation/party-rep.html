@@ -1,16 +1,56 @@
 <section class="content reputation">
-	{{#if @root.options.editable}}
-	<header class="content-header">
-		<h3 style="margin: 0.5em">Reputation</h3>
-		<a data-action="addReputation"><i class="fa-solid fa-plus"></i> Add</a>
-	</header>
-	{{/if}}
 	{{setVar "reputation" actor.flags.pf2e-vessaya.reputation}}
+	<header class="content-header">
+		<h3>Factions</h3>
+		<a data-action="addFaction"><i class="fa-solid fa-plus"></i> Add</a>
+	</header>
+	{{#if reputation.factions}}
+	{{#each reputation.factions as |faction|}}
+	<section class="rep-entry">
+		<section class="party-rep">
+			<div class="rep-details">
+				<h3 class="group-name">{{faction.name}}</h3>
+				<input class="group-name hidden" type="text" value="{{faction.name}}" />
+				<span class="party-value">Party Reputation: {{faction.value}}</span>
+				<input class="party-value hidden" type="number" value="{{faction.value}}" />
+			</div>
+			<div>
+				<a data-action="edit-rep"><i class="fas fa-edit"></i></a>
+			</div>
+		</section>
+		<section class="member-rep">
+			<div>
+				<p class="member-name">Test user</p>
+				<span class="member-value">test value</span>
+			</div>
+		</section>
+	</section>
+	{{/each}}
+	{{/if}}
+	<header class="content-header">
+		<h3>NPC</h3>
+		<a data-action="addNPC"><i class="fa-solid fa-plus"></i> Add</a>
+	</header>
 	{{#if reputation.npcs}}
 	{{#each reputation.npcs as |npc|}}
-	<section class="rep-entry sheet-header">
-		<h3>{{npc.name}}</h3>
-		<p>{{npc.value}}</p>
+	<section class="rep-entry">
+		<section class="party-rep">
+			<div>
+				<h3 class="group-name">{{npc.name}}</h3>
+				<input class="group-name hidden" type="text" value="{{npc.name}}" />
+				<span class="party-value">Party Reputation: {{npc.value}}</span>
+				<input class="party-value hidden" type="number" value="{{npc.value}}" />
+			</div>
+			<div>
+				<i class="fas fa-edit"></i>
+			</div>
+		</section>
+		<section class="member-rep">
+			<div>
+				<p class="member-name">Test user</p>
+				<span class="member-value">test value</span>
+			</div>
+		</section>
 	</section>
 	{{/each}}
 	{{/if}}

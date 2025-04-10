@@ -38,7 +38,6 @@ export class ReputationSystem {
 	}
 
 	static async applyReputationTemplate(inner, data) {
-		console.log(data)
 		let template = await renderTemplate("modules/pf2e-vessaya/templates/reputation/party-rep.html", data)
 		let repTab = $("<div>").attr("data-tab", "reputation").addClass("tab").append(template)
 
@@ -46,8 +45,20 @@ export class ReputationSystem {
 		$("> section.container", inner).append(repTab)
 	}
 
-	static async addreputation() {
-		// NOTE: add a new entry to the flag for the party sheet to track
+	static async addNPC() {
+		let party = game.actors.party
+		let flags = party.getFlag(MODULE, "reputation")
+
+		flags.npcs.push({ name: `New NPC ${flags.npcs.length + 1}`, value: 0 })
+		party.setFlag(MODULE, "reputation", flags)
+	}
+
+	static async addFaction() {
+		let party = game.actors.party
+		let flags = party.getFlag(MODULE, "reputation")
+
+		flags.factions.push({ name: `New Faction ${flags.factions.length + 1}`, value: 0 })
+		party.setFlag(MODULE, "reputation", flags)
 	}
 
 	static async repopulateData(party, schema, rebuildData = false) {

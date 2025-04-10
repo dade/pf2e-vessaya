@@ -65,6 +65,12 @@ const LANGUAGES = ["common", ...COMMON_LANGUAGES, ...UNCOMMON_LANGUAGES, ...RARE
 LANGUAGES.sort()
 
 export const REPUTATION = {
+	"factions": [
+		{
+			"name": "Faction 1",
+			"value": 12
+		}
+	],
 	"npcs": [
 		{
 			"name": "Test 1",
