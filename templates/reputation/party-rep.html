@@ -7,15 +7,20 @@
 	{{#if reputation.factions}}
 	{{#each reputation.factions as |faction|}}
 	<section class="rep-entry">
-		<section class="party-rep">
+		<section class="party-rep faction" data-id="{{faction.id}}">
 			<div class="rep-details">
 				<h3 class="group-name">{{faction.name}}</h3>
-				<input class="group-name hidden" type="text" value="{{faction.name}}" />
+				<div class="form-group hidden">
+					<input class="group-name" name="rep-name" type="text" value="{{faction.name}}" />
+				</div>
 				<span class="party-value">Party Reputation: {{faction.value}}</span>
-				<input class="party-value hidden" type="number" value="{{faction.value}}" />
+				<div class="form-group hidden">
+					<input class="party-value" name="value" type="number" value="{{faction.value}}" />
+				</div>
 			</div>
-			<div>
+			<div class="edit-save">
 				<a data-action="edit-rep"><i class="fas fa-edit"></i></a>
+				<a data-action="save-rep" class="hidden"><i class="fas fa-save"></i></a>
 			</div>
 		</section>
 		<section class="member-rep">
@@ -26,6 +31,10 @@
 		</section>
 	</section>
 	{{/each}}
+	{{else}}
+	<div class="no-data">
+		<p>No Data To Show. Add a new faction</p>
+	</div>
 	{{/if}}
 	<header class="content-header">
 		<h3>NPC</h3>
@@ -34,15 +43,20 @@
 	{{#if reputation.npcs}}
 	{{#each reputation.npcs as |npc|}}
 	<section class="rep-entry">
-		<section class="party-rep">
-			<div>
+		<section class="party-rep npc" data-id="{{npc.id}}">
+			<div class="rep-details">
 				<h3 class="group-name">{{npc.name}}</h3>
-				<input class="group-name hidden" type="text" value="{{npc.name}}" />
+				<div class="form-group hidden">
+					<input class="group-name" name="rep-name" type="text" value="{{npc.name}}" />
+				</div>
 				<span class="party-value">Party Reputation: {{npc.value}}</span>
-				<input class="party-value hidden" type="number" value="{{npc.value}}" />
+				<div class="form-group hidden">
+					<input class="party-value" type="number" name="value" value="{{npc.value}}" />
+				</div>
 			</div>
-			<div>
-				<i class="fas fa-edit"></i>
+			<div class="edit-save">
+				<a data-action="edit-rep"><i class="fas fa-edit"></i></a>
+				<a data-action="save-rep" class="hidden"><i class="fas fa-save"></i></a>
 			</div>
 		</section>
 		<section class="member-rep">
@@ -53,6 +67,10 @@
 		</section>
 	</section>
 	{{/each}}
+	{{else}}
+	<div class="no-data">
+		<p>No Data To Show. Add a new faction</p>
+	</div>
 	{{/if}}
 </section>
 <section class="dev" style="position: absolute; bottom: 0; left: 0;">

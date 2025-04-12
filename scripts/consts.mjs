@@ -66,20 +66,8 @@ LANGUAGES.sort()
 
 export const REPUTATION = {
 	"factions": [
-		{
-			"name": "Faction 1",
-			"value": 12
-		}
 	],
 	"npcs": [
-		{
-			"name": "Test 1",
-			"value": 10
-		},
-		{
-			"name": "Test 2",
-			"value": 15
-		}
 	]
 }
 

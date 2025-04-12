@@ -431,8 +431,26 @@
     margin: 10px;
   }
   div.tab .content.reputation .rep-entry .party-rep .rep-details {
-    width: 100%;
+    width: 90%;
+  }
+  div.tab .content.reputation .rep-entry .party-rep .rep-details .form-group {
+    border: 1px solid #eee;
+  }
+  div.tab .content.reputation .rep-entry .party-rep .rep-details .form-group label {
+    flex: 0.6 !important;
+  }
+  div.tab .content.reputation .rep-entry .party-rep .rep-details .form-group input {
+    border: none !important;
+    background-color: rgba(10, 10, 10, 0.2);
+  }
+  div.tab .content.reputation .rep-entry .party-rep .rep-details h3 {
     cursor: pointer;
+  }
+  div.tab .content.reputation .rep-entry .party-rep .rep-details h3:hover {
+    text-shadow: 1px 1px 5px red;
+  }
+  div.tab .content.reputation .rep-entry .party-rep .edit-save {
+    width: 2rem;
   }
   div.tab .content.reputation .rep-entry h3,
   div.tab .content.reputation .rep-entry p,
@@ -442,6 +460,11 @@
   }
   div.tab .content.reputation .rep-entry input.rep-input {
     border: none !important;
+  }
+  div.tab .content.reputation .no-data {
+    margin: 2em;
+    padding: 0;
+    font-style: italic;
   }
   div.tab .content.reputation .member-rep {
     display: none;

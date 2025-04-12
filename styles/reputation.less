@@ -46,8 +46,33 @@ div.tab {
 				}
 
 				.rep-details {
-					width: 100%;
-					cursor: pointer;
+					width: 90%;
+
+					.form-group {
+						border: 1px solid #eee;
+
+						label {
+							flex: 0.6 !important;
+						}
+
+						input {
+							border: none !important;
+							background-color: rgb(10 10 10 / 20%)
+						}
+					}
+
+					h3 {
+						cursor: pointer;
+
+						&:hover {
+							text-shadow: 1px 1px 5px red;
+						}
+					}
+
+				}
+
+				.edit-save {
+					width: 2rem;
 				}
 			}
 
@@ -61,6 +86,12 @@ div.tab {
 			input.rep-input {
 				border: none !important;
 			}
+		}
+
+		.no-data {
+			margin: 2em;
+			padding: 0;
+			font-style: italic;
 		}
 
 		.member-rep {

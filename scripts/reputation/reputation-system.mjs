@@ -49,7 +49,9 @@ export class ReputationSystem {
 		let party = game.actors.party
 		let flags = party.getFlag(MODULE, "reputation")
 
-		flags.npcs.push({ name: `New NPC ${flags.npcs.length + 1}`, value: 0 })
+		const uuid = foundry.utils.randomID(5)
+
+		flags.npcs.push({ id: uuid, name: `New NPC ${flags.npcs.length + 1}`, value: 0 })
 		party.setFlag(MODULE, "reputation", flags)
 	}
 
@@ -57,7 +59,9 @@ export class ReputationSystem {
 		let party = game.actors.party
 		let flags = party.getFlag(MODULE, "reputation")
 
-		flags.factions.push({ name: `New Faction ${flags.factions.length + 1}`, value: 0 })
+		const uuid = foundry.utils.randomID(5)
+
+		flags.factions.push({ id: uuid, name: `New Faction ${flags.factions.length + 1}`, value: 0 })
 		party.setFlag(MODULE, "reputation", flags)
 	}
 
@@ -70,6 +74,17 @@ export class ReputationSystem {
 
 		if (!data)
 			await party.setFlag(MODULE, "reputation", schema)
+	}
+
+	static switchRepEdit(event) {
+		const target = event.currentTarget
+		const details = $(target).closest(`.party-rep`).find(".rep-details").children()
+
+		$(target).parent().children().toggleClass("hidden")
+
+		details.each((c) => {
+			$(details[c]).toggleClass("hidden")
+		})
 	}
 
 }
