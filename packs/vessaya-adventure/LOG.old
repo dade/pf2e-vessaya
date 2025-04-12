@@ -1,3 +1,5 @@
-2025/04/11-16:52:52.628 12e80 Recovering log #40
-2025/04/11-16:52:52.644 12e80 Delete type=0 #40
-2025/04/11-16:52:52.644 12e80 Delete type=3 #39
+2025/04/12-18:15:07.915 1138c Log #44: 0 ops saved to Table #45 OK
+2025/04/12-18:15:07.917 1138c Archiving C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-adventure/000044.log: OK
+2025/04/12-18:15:07.918 1138c Table #18: 1 entries OK
+2025/04/12-18:15:07.926 1138c Archiving C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-adventure/MANIFEST-000043: OK
+2025/04/12-18:15:07.933 1138c **** Repaired leveldb C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-adventure; recovered 1 files; 31104 bytes. Some data may have been lost. ****

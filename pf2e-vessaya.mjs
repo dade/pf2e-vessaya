@@ -146,20 +146,36 @@ Hooks.on("renderPartySheetPF2e", function(sheet, html, data) {
 		await party.setFlag(MODULE, "reputation", flags)
 
 		ReputationSystem.switchRepEdit(event, id);
+	})
 
-		// const flagName = flags.find(a => a.name === origName)
-		// const flagValue = flags.find(a => a.name === origValue)
-		//
-		// if (flagName && origName !== nameInput)
-		// 	flagName = nameInput
-		//
-		// if (flagValue && origValue !== valueInput)
-		// 	flagValue = valueInput
-		//
-		// await party.setFlag(MODULE, "reputation", flags).then(() => {
-		// 	setTimeout(() => {
-		// 		console.log(flags)
-		// 	}, 500)
-		// })
+	$('a[data-action="delete-rep"]').on("click", async (event) => {
+		const repDiv = $(event.currentTarget).closest(".party-rep")[0]
+		const id = repDiv.dataset.id
+
+		const party = game.actors.party
+		const flags = await party.getFlag(MODULE, "reputation")
+		let entry
+
+		if ($(repDiv).has(".faction")) {
+			entry = flags.factions.find(f => f.id === id)
+			if (entry) {
+				const fi = flags.factions.indexOf(entry)
+				flags.factions.splice(fi, 1)
+			}
+		}
+
+		if ($(repDiv).has(".npc")) {
+			entry = flags.npcs.find(n => n.id === id)
+			if (entry) {
+				const ni = flags.npcs.indexOf(entry)
+				flags.npcs.splice(ni, 1)
+			}
+		}
+
+		await party.setFlag(MODULE, "reputation", flags).then(() => {
+			setTimeout(() => {
+				sheet.render(true)
+			}, 500)
+		})
 	})
 })

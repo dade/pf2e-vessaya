@@ -1,3 +1,5 @@
-2025/04/11-16:52:52.536 13fd8 Recovering log #110
-2025/04/11-16:52:52.551 13fd8 Delete type=0 #110
-2025/04/11-16:52:52.552 13fd8 Delete type=3 #109
+2025/04/12-18:15:07.767 1138c Log #114: 0 ops saved to Table #115 OK
+2025/04/12-18:15:07.769 1138c Archiving C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-effects/000114.log: OK
+2025/04/12-18:15:07.769 1138c Table #88: 1 entries OK
+2025/04/12-18:15:07.778 1138c Archiving C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-effects/MANIFEST-000113: OK
+2025/04/12-18:15:07.785 1138c **** Repaired leveldb C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-effects; recovered 1 files; 1567 bytes. Some data may have been lost. ****

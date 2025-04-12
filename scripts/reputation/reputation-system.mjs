@@ -16,6 +16,7 @@ export class ReputationSystem {
 					let [data] = args
 
 					// NOTE: We may need to rebuild some data here. If so, repop the flag schema in this step
+					console.log(data)
 					await ReputationSystem.applyReputationTemplate(inner, data)
 				}
 

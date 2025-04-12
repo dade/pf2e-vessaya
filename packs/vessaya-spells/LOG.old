@@ -1,3 +1,5 @@
-2025/04/11-16:52:52.462 159c8 Recovering log #241
-2025/04/11-16:52:52.476 159c8 Delete type=0 #241
-2025/04/11-16:52:52.478 159c8 Delete type=3 #240
+2025/04/12-18:15:07.634 1138c Log #245: 0 ops saved to Table #246 OK
+2025/04/12-18:15:07.636 1138c Archiving C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-spells/000245.log: OK
+2025/04/12-18:15:07.637 1138c Table #219: 12 entries OK
+2025/04/12-18:15:07.645 1138c Archiving C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-spells/MANIFEST-000244: OK
+2025/04/12-18:15:07.653 1138c **** Repaired leveldb C:\Users\demas\AppData\Local\FoundryV12\Data\modules\pf2e-vessaya\packs\vessaya-spells; recovered 1 files; 1427 bytes. Some data may have been lost. ****

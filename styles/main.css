@@ -451,6 +451,8 @@
   }
   div.tab .content.reputation .rep-entry .party-rep .edit-save {
     width: 2rem;
+    display: flex;
+    flex-direction: row;
   }
   div.tab .content.reputation .rep-entry h3,
   div.tab .content.reputation .rep-entry p,

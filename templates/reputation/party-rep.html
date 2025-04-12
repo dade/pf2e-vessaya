@@ -1,5 +1,5 @@
 <section class="content reputation">
-	{{setVar "reputation" actor.flags.pf2e-vessaya.reputation}}
+	{{setVar "reputation" actor.flags.pf2e-vessaya.reputation}}j
 	<header class="content-header">
 		<h3>Factions</h3>
 		<a data-action="addFaction"><i class="fa-solid fa-plus"></i> Add</a>
@@ -21,6 +21,7 @@
 			<div class="edit-save">
 				<a data-action="edit-rep"><i class="fas fa-edit"></i></a>
 				<a data-action="save-rep" class="hidden"><i class="fas fa-save"></i></a>
+				<a data-action="delete-rep"><i class="fas fa-trash"></i></a>
 			</div>
 		</section>
 		<section class="member-rep">
@@ -57,14 +58,19 @@
 			<div class="edit-save">
 				<a data-action="edit-rep"><i class="fas fa-edit"></i></a>
 				<a data-action="save-rep" class="hidden"><i class="fas fa-save"></i></a>
+				<a data-action="delete-rep"><i class="fas fa-trash"></i></a>
 			</div>
 		</section>
+		{{#if @root.members}}
 		<section class="member-rep">
+			{{#each @root.members as |member|}}
 			<div>
-				<p class="member-name">Test user</p>
-				<span class="member-value">test value</span>
+				<p class="member-name">{{member.actor.name}}</p>
+				<span class="member-value">value</span>
 			</div>
+			{{/each}}
 		</section>
+		{{/if}}
 	</section>
 	{{/each}}
 	{{else}}
