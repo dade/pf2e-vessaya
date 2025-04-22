@@ -418,6 +418,11 @@
     margin: 0.5em;
     transition: all 0.5s ease;
   }
+  div.tab .content.reputation .rep-entry input.number-input {
+    border: none !important;
+    width: 30px !important;
+    text-align: center !important;
+  }
   div.tab .content.reputation .rep-entry .party-rep {
     display: flex;
     justify-content: space-between;
@@ -434,25 +439,38 @@
     width: 90%;
   }
   div.tab .content.reputation .rep-entry .party-rep .rep-details .form-group {
-    border: 1px solid #eee;
+    display: block !important;
   }
   div.tab .content.reputation .rep-entry .party-rep .rep-details .form-group label {
     flex: 0.6 !important;
   }
-  div.tab .content.reputation .rep-entry .party-rep .rep-details .form-group input {
+  div.tab .content.reputation .rep-entry .party-rep .rep-details .form-group input.group-name {
     border: none !important;
-    background-color: rgba(10, 10, 10, 0.2);
+    font-size: 1.25em !important;
+    height: 1.7em !important;
+    font-weight: 700;
+    padding: 0.3rem !important;
+    background-color: rgba(0, 0, 0, 0.05) !important;
+  }
+  div.tab .content.reputation .rep-entry .party-rep .rep-details .form-group input.group-name:focus {
+    box-shadow: none !important;
   }
   div.tab .content.reputation .rep-entry .party-rep .rep-details h3 {
     cursor: pointer;
   }
   div.tab .content.reputation .rep-entry .party-rep .rep-details h3:hover {
-    text-shadow: 1px 1px 5px red;
+    text-shadow: 1px 1px 5px rgba(150, 20, 150, 0.8);
   }
   div.tab .content.reputation .rep-entry .party-rep .edit-save {
     width: 2rem;
     display: flex;
     flex-direction: row;
+  }
+  div.tab .content.reputation .rep-entry .rep-expand {
+    font-size: 22px;
+    margin: auto 0 auto 1rem !important;
+    padding: 0;
+    text-align: center;
   }
   div.tab .content.reputation .rep-entry h3,
   div.tab .content.reputation .rep-entry p,
@@ -468,12 +486,27 @@
     padding: 0;
     font-style: italic;
   }
+  div.tab .content.reputation .expanded-true {
+    display: block !important;
+  }
+  div.tab .content.reputation .expanded-false {
+    display: none !important;
+  }
   div.tab .content.reputation .member-rep {
-    display: none;
-    animation: fadeIn 0.5s ease-in-out forwards !important;
     margin: 0 0.5rem;
     padding: 0.3rem 0.6rem;
     border-top: solid 1px var(--color-dark-1);
+  }
+  div.tab .content.reputation .member-rep .member-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5em;
+  }
+  div.tab .content.reputation .member-rep .member-row img {
+    border: none !important;
+    width: 28px;
+    height: 28px;
   }
   div.tab .content.reputation .member-rep .form-group {
     display: flex;

@@ -1,5 +1,5 @@
 <section class="content reputation">
-	{{setVar "reputation" actor.flags.pf2e-vessaya.reputation}}j
+	{{setVar "reputation" actor.flags.pf2e-vessaya.reputation}}
 	<header class="content-header">
 		<h3>Factions</h3>
 		<a data-action="addFaction"><i class="fa-solid fa-plus"></i> Add</a>
@@ -8,27 +8,33 @@
 	{{#each reputation.factions as |faction|}}
 	<section class="rep-entry">
 		<section class="party-rep faction" data-id="{{faction.id}}">
+			<div class="rep-expand">
+				<a class="expand">
+					<i class="fa-solid fa-caret-{{#if faction.expanded}}down{{else}}right{{/if}}"></i>
+				</a>
+			</div>
 			<div class="rep-details">
-				<h3 class="group-name">{{faction.name}}</h3>
-				<div class="form-group hidden">
+				<div class="form-group">
 					<input class="group-name" name="rep-name" type="text" value="{{faction.name}}" />
 				</div>
-				<span class="party-value">Party Reputation: {{faction.value}}</span>
-				<div class="form-group hidden">
-					<input class="party-value" name="value" type="number" value="{{faction.value}}" />
-				</div>
+				<span class="party-value">
+					<strong>Party Reputation:</strong>
+					<input type="number" class="number-input" value="{{faction.value}}" />
+					<em>({{getRepText faction.value}})</em>
+				</span>
 			</div>
 			<div class="edit-save">
-				<a data-action="edit-rep"><i class="fas fa-edit"></i></a>
-				<a data-action="save-rep" class="hidden"><i class="fas fa-save"></i></a>
 				<a data-action="delete-rep"><i class="fas fa-trash"></i></a>
 			</div>
 		</section>
-		<section class="member-rep">
-			<div>
-				<p class="member-name">Test user</p>
-				<span class="member-value">test value</span>
+		<section class="member-rep expanded-{{faction.expanded}}">
+			{{#each faction.pcs as |pc|}}
+			<div class="member-row" data-id="{{pc.uuid}}">
+				<img src="{{getImgFromUUID pc.uuid}}" />
+				<p class="member-name">{{pc.name}}</p>
+				<input name="rep-val" type="number" class="number-input" value="{{pc.reputation}}" />
 			</div>
+			{{/each}}
 		</section>
 	</section>
 	{{/each}}
@@ -45,32 +51,34 @@
 	{{#each reputation.npcs as |npc|}}
 	<section class="rep-entry">
 		<section class="party-rep npc" data-id="{{npc.id}}">
+			<div class="rep-expand">
+				<a class="expand">
+					<i class="fa-solid fa-caret-{{#if npc.expanded}}down{{else}}right{{/if}}"></i>
+				</a>
+			</div>
 			<div class="rep-details">
-				<h3 class="group-name">{{npc.name}}</h3>
-				<div class="form-group hidden">
+				<div class="form-group">
 					<input class="group-name" name="rep-name" type="text" value="{{npc.name}}" />
 				</div>
-				<span class="party-value">Party Reputation: {{npc.value}}</span>
-				<div class="form-group hidden">
-					<input class="party-value" type="number" name="value" value="{{npc.value}}" />
-				</div>
+				<span class="party-value">
+					<strong>Party Reputation:</strong>
+					<input type="number" class="number-input" value="{{npc.value}}" />
+					<em>({{getRepText npc.value}})</em>
+				</span>
 			</div>
 			<div class="edit-save">
-				<a data-action="edit-rep"><i class="fas fa-edit"></i></a>
-				<a data-action="save-rep" class="hidden"><i class="fas fa-save"></i></a>
 				<a data-action="delete-rep"><i class="fas fa-trash"></i></a>
 			</div>
 		</section>
-		{{#if @root.members}}
-		<section class="member-rep">
-			{{#each @root.members as |member|}}
-			<div>
-				<p class="member-name">{{member.actor.name}}</p>
-				<span class="member-value">value</span>
+		<section class="member-rep expanded-{{npc.expanded}}">
+			{{#each npc.pcs as |pc|}}
+			<div class="member-row" data-id="{{pc.uuid}}">
+				<img src="{{getImgFromUUID pc.uuid}}" />
+				<p class="member-name">{{pc.name}}</p>
+				<input name="rep-val" type="number" class="number-input" value="{{pc.reputation}}" />
 			</div>
 			{{/each}}
 		</section>
-		{{/if}}
 	</section>
 	{{/each}}
 	{{else}}

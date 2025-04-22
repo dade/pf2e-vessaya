@@ -104,48 +104,138 @@ Hooks.on("renderPartySheetPF2e", function(sheet, html, data) {
 		})
 	})
 
-	$(".rep-details h3").on("click", (event) => {
-		const group = event.currentTarget.closest(".rep-entry").querySelector(".member-rep")
-		if (group) {
-			group.style.display = group.style.display === "block" ? "none" : "block"
-		}
-	})
-
-	$('a[data-action="edit-rep"]').on("click", (event) => {
-		ReputationSystem.switchRepEdit(event)
-	})
-
-	$('a[data-action="save-rep"]').on("click", async (event) => {
+	$(".party-rep .rep-expand a.expand").on("click", async (event) => {
 		const target = event.currentTarget
-		const repDiv = $(target).closest(".party-rep")[0]
-		const id = repDiv.dataset.id
+		const flags = game.actors.party.getFlag(MODULE, "reputation")
+		const partyRep = target.closest(".party-rep")
+		let repType
 
-		const nameInput = $(repDiv).find("input.group-name")[0].value
-		const valueInput = $(repDiv).find("input.party-value")[0].value
+		if ($(partyRep).hasClass("faction")) {
+			repType = "factions"
+		} else if ($(partyRep).hasClass("npc")) {
+			repType = "npcs"
+		}
 
+		const f = flags[repType].find(a => a.id === partyRep.dataset.id)
+
+		if (f)
+			f.expanded = !f.expanded
+
+		await game.actors.party.setFlag(MODULE, "reputation", flags)
+	})
+
+	// $('a[data-action="save-rep"]').on("click", async (event) => {
+	// 	const target = event.currentTarget
+	// 	const repDiv = $(target).closest(".party-rep")[0]
+	// 	const id = repDiv.dataset.id
+	//
+	// 	const nameInput = $(repDiv).find("input.group-name")[0].value
+	// 	const valueInput = $(repDiv).find("input.party-value")[0].value
+	//
+	// 	const party = game.actors.party
+	// 	const flags = await party.getFlag(MODULE, "reputation")
+	// 	let entry
+	//
+	// 	if ($(repDiv).has(".faction")) {
+	// 		entry = flags.factions.find(a => a.id === id)
+	// 		if (entry) {
+	// 			entry.name = nameInput
+	// 			entry.value = valueInput
+	// 		}
+	// 	}
+	//
+	// 	if ($(repDiv).has(".npc")) {
+	// 		entry = flags.npcs.find(b => b.id === id)
+	// 		if (entry) {
+	// 			entry.name = nameInput
+	// 			entry.value = valueInput
+	// 		}
+	// 	}
+	//
+	// 	await party.setFlag(MODULE, "reputation", flags)
+	//
+	// 	ReputationSystem.switchRepEdit(event, id);
+	// })
+
+	$(".rep-details .form-group .group-name").on("change", async (event) => {
+		const target = event.currentTarget
+		const partyRep = target.closest(".party-rep")
+		const id = partyRep.dataset.id
 		const party = game.actors.party
-		const flags = await party.getFlag(MODULE, "reputation")
+		const flags = party.getFlag(MODULE, "reputation")
+
+		let repType
 		let entry
 
-		if ($(repDiv).has(".faction")) {
-			entry = flags.factions.find(a => a.id === id)
+		if ($(partyRep).hasClass("faction")) {
+			repType = "factions"
+		} else {
+			repType = "npcs"
+		}
+
+		if (repType !== null) {
+			entry = flags[repType].find(a => a.id === id)
+			entry.name = target.value
+		}
+
+		await party.setFlag(MODULE, "reputation", flags)
+	})
+
+	$(".rep-details .number-input").on("change", async (event) => {
+		const target = event.currentTarget
+		const partyRep = target.closest(".party-rep")
+		const id = partyRep.dataset.id
+		const party = game.actors.party
+		const flags = party.getFlag(MODULE, "reputation")
+
+		let repType
+		let entry
+
+		if ($(partyRep).hasClass("faction")) {
+			repType = "factions"
+		} else {
+			repType = "npcs"
+		}
+
+		if (repType !== null) {
+			entry = flags[repType].find(a => a.id === id)
+			entry.value = target.value
+		}
+
+		await party.setFlag(MODULE, "reputation", flags)
+	})
+
+	$('.member-row input').on("change", async (event) => {
+		const target = event.currentTarget
+		const repEntry = $(target).closest(".rep-entry")[0]
+		const repDiv = $(repEntry).find(".party-rep")[0]
+
+		const repId = repDiv.dataset.id
+		const inputValue = target.value
+		const party = game.actors.party
+		const flags = await party.getFlag(MODULE, "reputation")
+		const uuid = $(target).closest(".member-row")[0].dataset.id
+
+		let entry
+
+		if ($(repDiv).hasClass("faction")) {
+			entry = flags.factions.find(c => c.id === repId)
+			const pc = entry.pcs.find(d => d.uuid === uuid)
 			if (entry) {
-				entry.name = nameInput
-				entry.value = valueInput
+				pc.reputation = inputValue
 			}
 		}
 
-		if ($(repDiv).has(".npc")) {
-			entry = flags.npcs.find(b => b.id === id)
+		if ($(repDiv).hasClass("npc")) {
+			entry = flags.npcs.find(a => a.id === repId)
+			const uuid = $(target).closest(".member-row")[0].dataset.id
+			const pc = entry.pcs.find(b => b.uuid === uuid)
 			if (entry) {
-				entry.name = nameInput
-				entry.value = valueInput
+				pc.reputation = inputValue
 			}
 		}
 
 		await party.setFlag(MODULE, "reputation", flags)
-
-		ReputationSystem.switchRepEdit(event, id);
 	})
 
 	$('a[data-action="delete-rep"]').on("click", async (event) => {

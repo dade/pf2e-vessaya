@@ -31,6 +31,12 @@ div.tab {
 			margin: 0.5em;
 			transition: all 0.5s ease;
 
+			input.number-input {
+				border: none !important;
+				width: 30px !important;
+				text-align: center !important;
+			}
+
 			.party-rep {
 				display: flex;
 				justify-content: space-between;
@@ -49,15 +55,23 @@ div.tab {
 					width: 90%;
 
 					.form-group {
-						border: 1px solid #eee;
+						display: block !important;
 
 						label {
 							flex: 0.6 !important;
 						}
 
-						input {
+						input.group-name {
 							border: none !important;
-							background-color: rgb(10 10 10 / 20%)
+							font-size: 1.25em !important;
+							height: 1.7em !important;
+							font-weight: 700;
+							padding: 0.3rem !important;
+							background-color: rgb(0 0 0 / 5%) !important;
+
+							&:focus {
+								box-shadow: none !important;
+							}
 						}
 					}
 
@@ -65,7 +79,7 @@ div.tab {
 						cursor: pointer;
 
 						&:hover {
-							text-shadow: 1px 1px 5px red;
+							text-shadow: 1px 1px 5px rgb(150 20 150 / 80%);
 						}
 					}
 
@@ -76,6 +90,13 @@ div.tab {
 					display: flex;
 					flex-direction: row;
 				}
+			}
+
+			.rep-expand {
+				font-size: 22px;
+				margin: auto 0 auto 1rem !important;
+				padding: 0;
+				text-align: center;
 			}
 
 			h3,
@@ -96,12 +117,32 @@ div.tab {
 			font-style: italic;
 		}
 
+		.expanded-true {
+			display: block !important;
+		}
+
+		.expanded-false {
+			display: none !important;
+		}
+
 		.member-rep {
-			display: none;
-			animation: fadeIn 0.5s ease-in-out forwards !important;
+			// animation: fadeIn 0.5s ease-in-out forwards !important;
 			margin: 0 0.5rem;
 			padding: 0.3rem 0.6rem;
 			border-top: solid 1px var(--color-dark-1);
+
+			.member-row {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				gap: 0.5em;
+
+				img {
+					border: none !important;
+					width: 28px;
+					height: 28px;
+				}
+			}
 
 			.form-group {
 				display: flex;

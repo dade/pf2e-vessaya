@@ -16,7 +16,6 @@ export class ReputationSystem {
 					let [data] = args
 
 					// NOTE: We may need to rebuild some data here. If so, repop the flag schema in this step
-					console.log(data)
 					await ReputationSystem.applyReputationTemplate(inner, data)
 				}
 
@@ -47,22 +46,62 @@ export class ReputationSystem {
 	}
 
 	static async addNPC() {
-		let party = game.actors.party
-		let flags = party.getFlag(MODULE, "reputation")
+		const party = game.actors.party
+		const flags = party.getFlag(MODULE, "reputation")
 
 		const uuid = foundry.utils.randomID(5)
 
-		flags.npcs.push({ id: uuid, name: `New NPC ${flags.npcs.length + 1}`, value: 0 })
+		const members = party.members
+		let pcs = []
+
+		for (let member of members) {
+			let pc = {
+				name: member.name,
+				uuid: member.uuid,
+				reputation: 0
+			}
+			pcs.push(pc)
+		}
+
+		const npcStruct = {
+			id: uuid,
+			name: `New NPC ${flags.npcs.length + 1}`,
+			value: 0,
+			pcs,
+			expanded: false
+		}
+
+		flags.npcs.push(npcStruct)
 		party.setFlag(MODULE, "reputation", flags)
 	}
 
 	static async addFaction() {
-		let party = game.actors.party
-		let flags = party.getFlag(MODULE, "reputation")
+		const party = game.actors.party
+		const flags = party.getFlag(MODULE, "reputation")
 
 		const uuid = foundry.utils.randomID(5)
 
-		flags.factions.push({ id: uuid, name: `New Faction ${flags.factions.length + 1}`, value: 0 })
+		const members = party.members
+		let pcs = []
+
+		for (let member of members) {
+			let pc = {
+				name: member.name,
+				uuid: member.uuid,
+				reputation: 0
+			}
+			pcs.push(pc)
+		}
+
+		const factionStruct = {
+			id: uuid,
+			name: `New Faction ${flags.factions.length + 1}`,
+			value: 0,
+			pcs,
+			expanded: false
+		}
+
+		flags.factions.push(factionStruct)
 		party.setFlag(MODULE, "reputation", flags)
 	}
 
