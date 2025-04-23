@@ -59,6 +59,9 @@ Hooks.once("ready", async () => {
 	let savedLangs = game.settings.get("pf2e", "homebrew.languageRarities")
 
 	await updateSource(savedLangs, LANGUAGES_BY_RARITY)
+
+	if (!game.actors.party.getFlag(MODULE, "reputation"))
+		ReputationSystem.repopulateData(game.actors.party, vessaya.rep, true)
 })
 
 Hooks.on("renderJournalSheet", () => {
@@ -123,39 +126,6 @@ Hooks.on("renderPartySheetPF2e", function(sheet, html, data) {
 
 		await game.actors.party.setFlag(MODULE, "reputation", flags)
 	})
-
-	// $('a[data-action="save-rep"]').on("click", async (event) => {
-	// 	const target = event.currentTarget
-	// 	const repDiv = $(target).closest(".party-rep")[0]
-	// 	const id = repDiv.dataset.id
-	//
-	// 	const nameInput = $(repDiv).find("input.group-name")[0].value
-	// 	const valueInput = $(repDiv).find("input.party-value")[0].value
-	//
-	// 	const party = game.actors.party
-	// 	const flags = await party.getFlag(MODULE, "reputation")
-	// 	let entry
-	//
-	// 	if ($(repDiv).has(".faction")) {
-	// 		entry = flags.factions.find(a => a.id === id)
-	// 		if (entry) {
-	// 			entry.name = nameInput
-	// 			entry.value = valueInput
-	// 		}
-	// 	}
-	//
-	// 	if ($(repDiv).has(".npc")) {
-	// 		entry = flags.npcs.find(b => b.id === id)
-	// 		if (entry) {
-	// 			entry.name = nameInput
-	// 			entry.value = valueInput
-	// 		}
-	// 	}
-	//
-	// 	await party.setFlag(MODULE, "reputation", flags)
-	//
-	// 	ReputationSystem.switchRepEdit(event, id);
-	// })
 
 	$(".rep-details .form-group .group-name").on("change", async (event) => {
 		const target = event.currentTarget
