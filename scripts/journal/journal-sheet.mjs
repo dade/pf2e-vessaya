@@ -1,9 +1,10 @@
-// TODO: Convert this to AppV2 when we migrate to FoundryVTT V13
 export class VessayaJournalSheet extends JournalSheet {
+
+	// TODO: Convert this to AppV2 when we migrate to FoundryVTT V13
 
 	constructor(doc, options) {
 		super(doc, options)
-		this.options.classes.push(vessaya.CSS_CLASS)
+		this.options.classes.push("vessaya")
 	}
 
 	static get defaultOptions() {

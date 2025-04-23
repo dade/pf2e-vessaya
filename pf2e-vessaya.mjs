@@ -6,10 +6,6 @@ import { ReputationSystem } from "./scripts/reputation/reputation-system.mjs"
 
 const MODULE = "pf2e-vessaya"
 
-const vessaya = {
-	rep: REPUTATION
-}
-
 async function updateSource(source, langs) {
 	// NOTE: might be worth revisiting this to see if we can refactor with
 	// `foundry.utils.mergeObject` instead.
@@ -38,6 +34,7 @@ Hooks.once("init", () => {
 	vessaya.opts = {}
 	vessaya.dataModels = {}
 	vessaya.CSS_CLASS = "vessaya"
+	vessaya.rep = REPUTATION
 
 	DocumentSheetConfig.registerSheet(JournalEntry, MODULE, VessayaJournalSheet, {
 		label: "Vessaya Journal Sheet",
