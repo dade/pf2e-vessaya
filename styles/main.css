@@ -1,4 +1,4 @@
-@layer modules.vessaya {
+@layer vessaya {
   .vessaya.window-app {
     background: none;
   }
@@ -19,7 +19,7 @@
     --max-width: 1600px;
   }
   .flexcol > * {
-    flex: none;
+    flex: center;
   }
   input,
   select {
@@ -87,15 +87,15 @@
   /* Journal Entry                             */
   /* ----------------------------------------- */
   .sheet.journal-entry.vessaya {
-    background: url("../assets/ui/codex-bg-dark.webp") repeat center !important;
+    background: url("../assets/ui/codex-bg-dark.webp") repeat center;
     border: none;
   }
   .sheet.journal-entry.vessaya .window-header {
-    color: var(--color-text-light-1) !important;
-    text-shadow: 1px 1px 1px black !important;
+    color: var(--color-text-light-1);
+    text-shadow: 1px 1px 1px black;
   }
   .sheet.journal-entry.vessaya a:hover {
-    text-shadow: 0 0 8px purple !important;
+    text-shadow: 0 0 8px purple;
   }
   .sheet.journal-entry.vessaya:not(.collapsing) {
     min-width: calc(1080px - var(--sidebar-width-expanded) + var(--sidebar-width-collapsec));
@@ -124,7 +124,7 @@
     position: absolute;
     top: 0;
     z-index: -1000;
-    background: url("../assets/ui/codex-bg.webp") no-repeat !important;
+    background: url("../assets/ui/codex-bg.webp") no-repeat;
     opacity: 0.5;
     background-size: 100% auto;
     mask-image: linear-gradient(0deg, transparent 66%, black 100%);
@@ -155,9 +155,9 @@
     --input-placeholder-color: var(--color-light-5);
     --input-background-color: rbg(0 0 0 / 20%);
   }
-  .sheet.journal-entry.vessaya .journal-sheet-container .journal-entry-content {
-    background: none !important;
-    border: none !important;
+  .sheet.journal-entry.vessaya .journal-entry-content {
+    background: none;
+    border: none;
   }
   .sheet.journal-entry.vessaya .toc {
     --line-height: 28px;
@@ -209,10 +209,10 @@
   }
   .sheet.journal-entry.vessaya input.title {
     display: none;
-    background-color: var(--color-cool-4) !important;
-    color: var(--color-light-2) !important;
+    background-color: var(--color-cool-4);
+    color: var(--color-light-2);
   }
-  .display {
+  .sheet.journal-entry.vessaya .display {
     display: block !important;
   }
   /* ----------------------------------------- */
@@ -259,9 +259,9 @@
     margin: 0;
   }
   .vessaya.journal-entry .journal-entry-page .edit-container .editor-edit {
-    display: block !important;
-    background: none !important;
-    border: none !important;
+    display: block;
+    background: none;
+    border: none;
   }
   .vessaya.journal-entry .journal-entry-page .edit-container i {
     color: var(--color-light-2);
@@ -536,21 +536,26 @@
     font-family: var(--font-header);
     font-weight: normal;
     letter-spacing: 0.2em;
-    border: none;
     color: var(--color-light-2);
-    border: none !important;
+    border: none;
     width: 100%;
   }
   .vessaya .journal-page-header h1,
   .vessaya .journal-page-header h2,
   .vessaya .journal-page-header h3 {
-    border: none !important;
+    border: none;
   }
   .vessaya .journal-page-header h1 {
-    font-size: 3em !important;
+    font-size: 3em;
   }
   .vessaya .journal-page-header h2 {
-    text-shadow: 1px 1px 2px #000 !important;
+    text-shadow: 1px 1px 2px #000;
+  }
+  .vessaya .journal-page-content section.description {
+    background: var(--color-light-2);
+    padding: 0.5rem 1rem;
+    border-left: 8px solid rgba(110, 0, 200, 0.6);
+    color: var(--color-text-dark-2);
   }
   .vessaya h1,
   .vessaya h2,
@@ -563,14 +568,14 @@
     font-weight: normal;
     letter-spacing: 0.2em;
     color: var(--color-light-2);
-    border: none !important;
+    border: none;
   }
   .vessaya h1.divider,
   .vessaya h2.divider,
   .vessaya h3.divider {
     justify-content: space-between;
     white-space: nowrap;
-    margin-top: 2rem !important;
+    margin-top: 2rem;
   }
   .vessaya h1.divider::after,
   .vessaya h2.divider::after,
@@ -595,16 +600,16 @@
     padding: 3px 0.5rem;
     margin: -3px 0;
     line-height: 1rem;
-    background-color: var(--color-cool-4) !important;
-    color: var(--color-light-2) !important;
+    background-color: var(--color-cool-4);
+    color: var(--color-light-2);
   }
   .vessaya .content-link i {
     font-size: 0.75rem;
     color: var(--color-cool-1);
   }
   .vessaya blockquote {
-    margin: 0.5em 0 2em 1em !important;
-    padding: 5px 10px 5px 25px !important;
+    margin: 0.5em 0 2em 1em;
+    padding: 5px 10px 5px 25px;
     background-color: var(--color-cool-4);
   }
   .vessaya .tags {

@@ -11,24 +11,33 @@
 		letter-spacing: 0.2em;
 		border: none;
 		color: var(--color-light-2);
-		border: none !important;
+		border: none;
 		width: 100%;
 
-		// FIX:
-		// - Remove !important from h1 and h2 in V13
 		h1,
 		h2,
 		h3 {
-			border: none !important;
+			border: none;
 		}
 
 		h1 {
-			font-size: 3em !important;
+			font-size: 3em;
 		}
 
 		h2 {
-			text-shadow: 1px 1px 2px #000 !important;
+			text-shadow: 1px 1px 2px #000;
 		}
+	}
+
+	.journal-page-content {
+
+		section.description {
+			background: var(--color-light-2);
+			padding: 0.5rem 1rem;
+			border-left: 8px solid rgb(110 0 200 / 60%);
+			color: var(--color-text-dark-2);
+		}
+
 	}
 
 	h1,
@@ -42,12 +51,12 @@
 		font-weight: normal;
 		letter-spacing: 0.2em;
 		color: var(--color-light-2);
-		border: none !important;
+		border: none;
 
 		&.divider {
 			justify-content: space-between;
 			white-space: nowrap;
-			margin-top: 2rem !important;
+			margin-top: 2rem;
 
 			&::after {
 				content: "";
@@ -67,15 +76,13 @@
 		}
 	}
 
-	// FIX:
-	// - Remove !important from background in V13
 	.content-link {
 		gap: 0.25rem;
 		padding: 3px 0.5rem;
 		margin: -3px 0;
 		line-height: 1rem;
-		background-color: var(--color-cool-4) !important;
-		color: var(--color-light-2) !important;
+		background-color: var(--color-cool-4);
+		color: var(--color-light-2);
 
 		i {
 			font-size: 0.75rem;
@@ -83,11 +90,9 @@
 		}
 	}
 
-	// FIX:
-	// - Remove !important in V13
 	blockquote {
-		margin: 0.5em 0 2em 1em !important;
-		padding: 5px 10px 5px 25px !important;
+		margin: 0.5em 0 2em 1em;
+		padding: 5px 10px 5px 25px;
 		background-color: var(--color-cool-4);
 	}
 
