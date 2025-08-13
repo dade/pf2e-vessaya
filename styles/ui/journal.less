@@ -2,19 +2,17 @@
 /* Journal Entry                             */
 /* ----------------------------------------- */
 
-// FIX:
-// - Remove important from background for V13
 .sheet.journal-entry.vessaya {
-	background: url("../assets/ui/codex-bg-dark.webp") repeat center !important;
+	background: url("../assets/ui/codex-bg-dark.webp") repeat center;
 	border: none;
 
 	.window-header {
-		color: var(--color-text-light-1) !important;
-		text-shadow: 1px 1px 1px black !important;
+		color: var(--color-text-light-1);
+		text-shadow: 1px 1px 1px black;
 	}
 
 	a:hover {
-		text-shadow: 0 0 8px purple !important;
+		text-shadow: 0 0 8px purple;
 	}
 
 	&:not(.collapsing) {
@@ -40,8 +38,6 @@
 		background: linear-gradient(to bottom, transparent 90%, rgb(89 50 178 / 15%) 100%);
 	}
 
-	// FIX::
-	// - Remove !important from background image for V13
 	&::after {
 		content: "";
 		display: block;
@@ -50,7 +46,7 @@
 		position: absolute;
 		top: 0;
 		z-index: -1000;
-		background: url("../assets/ui/codex-bg.webp") no-repeat !important;
+		background: url("../assets/ui/codex-bg.webp") no-repeat;
 		opacity: 0.5;
 		background-size: 100% auto;
 		mask-image: linear-gradient(0deg, transparent 66%, black 100%);
@@ -87,13 +83,9 @@
 		--input-background-color: rbg(0 0 0 / 20%)
 	}
 
-	// FIX:
-	// - Remove !imortant from background and border in v13
-	.journal-sheet-container {
-		.journal-entry-content {
-			background: none !important;
-			border: none !important;
-		}
+	.journal-entry-content {
+		background: none;
+		border: none;
 	}
 
 	.toc {
@@ -161,13 +153,14 @@
 
 	input.title {
 		display: none;
-		background-color: var(--color-cool-4) !important;
-		color: var(--color-light-2) !important;
+		background-color: var(--color-cool-4);
+		color: var(--color-light-2);
 	}
-}
 
-.display {
-	display: block !important;
+	.display {
+		display: block !important;
+	}
+
 }
 
 /* ----------------------------------------- */
@@ -222,12 +215,10 @@
 		right: 28px;
 		margin: 0;
 
-		// FIX:
-		// - Remove !important for Foundry V13
 		.editor-edit {
-			display: block !important;
-			background: none !important;
-			border: none !important;
+			display: block;
+			background: none;
+			border: none;
 		}
 
 		i {

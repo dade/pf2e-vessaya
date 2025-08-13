@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2.0.0-alpha
 > [!WARNING]
 > This is not a project developed with the intention of being easily understood or utilzied. It is not meant for distribution! It is on github for the sole puprose of me being able to quickly transfer it via manfiests to hosted Foundry instances.
 
