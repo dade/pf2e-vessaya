@@ -35,7 +35,7 @@ Hooks.once("init", async () => {
 
 	DocumentSheetConfig.registerSheet(JournalEntry, MODULE, VessayaJournalSheet, {
 		label: "Vessaya Journal Sheet",
-		makeDefault: false,
+		makeDefault: true,
 	})
 
 	initConfigs()
