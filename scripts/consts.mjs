@@ -1,3 +1,5 @@
+const moduleId = "pf2e-vessaya"
+
 const COMMON_LANGUAGES = [
 	"draconic",
 	"dwarven",
@@ -26,6 +28,8 @@ const UNCOMMON_LANGUAGES = [
 	"nagaji",
 	"necril",
 	"pyric",
+	"shadowtongue",
+	"tanuki",
 	"tengu",
 	"thalassic",
 	"vanara",
@@ -64,6 +68,29 @@ const LANGUAGES_BY_RARITY = {
 const LANGUAGES = ["common", ...COMMON_LANGUAGES, ...UNCOMMON_LANGUAGES, ...RARE_LANGUAGES, "wildsong"]
 LANGUAGES.sort()
 
+const IMPORTED_RESOURCES = {
+	PLOT_DICE_BLANK_BUMP: `modules/${moduleId}/assets/dice/opp/plot_blank_bump.png`,
+	PLOT_DICE_BLANK: `modules/${moduleId}/assets/dice/opp/plot_blank.png`,
+	PLOT_DICE_C2_BUMP: `modules/${moduleId}/assets/dice/opp/plot_c2_bump.png`,
+	PLOT_DICE_C2: `modules/${moduleId}/assets/dice/opp/plot_c2.png`,
+	PLOT_DICE_C4_BUMP: `modules/${moduleId}/assets/dice/opp/plot_c4_bump.png`,
+	PLOT_DICE_C4: `modules/${moduleId}/assets/dice/opp/plot_c4.png`,
+	PLOT_DICE_OP_BUMP: `modules/${moduleId}/assets/dice/opp/plot_op_bump.png`,
+	PLOT_DICE_OP: `modules/${moduleId}/assets/dice/opp/plot_op.png`,
+	PLOT_DICE_C2_IN_CHAT: `modules/${moduleId}/assets/icons/svg/dice/dp_c2.svg`,
+	PLOT_DICE_C4_IN_CHAT: `modules/${moduleId}/assets/icons/svg/dice/dp_c4.svg`,
+	PLOT_DICE_OP_IN_CHAT: `modules/${moduleId}/assets/icons/svg/dice/dp_op.svg`
+}
+
+const PLOT_DIE_SIDES = {
+	1: `<img src="${IMPORTED_RESOURCES.PLOT_DICE_C2_IN_CHAT}"`,
+	2: `<img src="${IMPORTED_RESOURCES.PLOT_DICE_C4_IN_CHAT}"`,
+	3: `&nbsp;`,
+	4: `&nbsp;`,
+	5: `<img src="${IMPORTED_RESOURCES.PLOT_DICE_OP_IN_CHAT}"`,
+	6: `<img src="${IMPORTED_RESOURCES.PLOT_DICE_OP_IN_CHAT}"`,
+}
+
 export const REPUTATION = {
 	"factions": [
 	],
@@ -75,4 +102,6 @@ export {
 	LANGUAGES,
 	LANGUAGE_RARITIES,
 	LANGUAGES_BY_RARITY,
+	IMPORTED_RESOURCES,
+	PLOT_DIE_SIDES
 }

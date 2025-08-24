@@ -1,4 +1,76 @@
 @layer vessaya {
+  /* ---------------------------------------- */
+  /*	Font Declarations												*/
+  /* ---------------------------------------- */
+  @font-face {
+    font-family: "Volkorn";
+    src: url("../assets/fonts/Vollkorn/Vollkorn.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 300 800;
+  }
+  @font-face {
+    font-family: "Pirate Scroll";
+    src: url("../assets/fonts/PirateScroll/PirateScroll.otf") format('opentype');
+    font-style: normal;
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "Good OT Cond Bold";
+    src: url(fonts/goodot-condbold.otf) fomrat("opentype");
+  }
+  .vessaya {
+    /* ------------------------------------------ */
+    /* Colors																			*/
+    /* ------------------------------------------ */
+    --color-warm-1: #e04e4e;
+    --color-warm-2: #c93f4b;
+    --color-warm-3: #5e1722;
+    --color-active: #ff6b6b;
+    --color-text-accent: #ff6b6b;
+    --color-cool-1: #efecf6;
+    --color-cool-2: #9c7ee5;
+    --color-cool-3: #584a75;
+    --color-cool-4: #302831;
+    --color-cool-5: #0b0a13;
+    --color-cool-5-25: rgba(11, 10, 19, 0.25);
+    --color-cool-5-50: rgba(11, 10, 19, 0.5);
+    --color-cool-5-75: rgba(11, 10, 19, 0.75);
+    --color-cool-5-90: rgba(11, 10, 19, 0.9);
+    --color-light-1: #fffbf0;
+    --color-light-2: #f5eadf;
+    --color-light-3: #f0dab9;
+    --color-light-4: #d0b8a3;
+    --color-light-5: #9f8475;
+    --color-light-6: #816b66;
+    --color-blockquote-ink: #2b0c06;
+    --color-exploration-bg: #1c211c;
+    --color-exploration-border: #2f4d2f;
+    --color-exploration-skill: #7ff67f;
+    --color-hazard-bg: #211818;
+    --color-hazard-border: #5d1818;
+    --color-hazard-save: #ff6464;
+    --color-social-bg: #1b2126;
+    --color-social-border: #6783a5;
+    --color-social-check: #a9cfff;
+    --color-date-bg: #2a2f34;
+    --color-date-text: #cbecf3;
+    --color-scrollbar: rgba(201, 89, 62, 0.1);
+    --color-scrollbar-track: transparent;
+    --color-scrollbar-border: transparent;
+    --font-header: "Pirate Scroll", serif;
+    --font-body: "Vollkorn", serif;
+    --font-serif: "Vollkorn", serif;
+    --font-sans: "Signika", sans-serif;
+    /* ---------------------------------------- */
+    /*	Typography															*/
+    /* ---------------------------------------- */
+    --font-h1: var(--font-header);
+    --font-h2: var(--font-header);
+    --font-h3: var(--font-header);
+    --font-h4: var(--font-sans);
+    --font-h5: var(--font-serif);
+    --font-h6: var(--font-serif);
+  }
   .vessaya.window-app {
     background: none;
   }
@@ -20,68 +92,6 @@
   }
   .flexcol > * {
     flex: center;
-  }
-  input,
-  select {
-    --input-backgroud-color: rgba(75, 75, 75, 0.5);
-    --input-border-color: transparent;
-    --input-text-color: var(--color-light-2);
-    --input-placeholder-color: var(--color-cool-4);
-  }
-  input:focus,
-  select:focus {
-    --input-text-color: var(--color-light-1);
-  }
-  a.button,
-  button {
-    --button-background-color: transparent;
-    --button-border-color: transparent;
-    --button-text-color: var(--color-light-2);
-    --button-focus-outline-color: var(--color-warm-2);
-    --button-hover-background-color: var(--color-warm-2);
-    --button-hover-text-color: var(--color-light-1);
-  }
-  a.button:disabled,
-  button:disabled {
-    --button-background-color: transparent;
-    --button-border-color: transparent;
-    --button-text-color: var(--color-light-4);
-  }
-  @media (min-width: 2000px) {
-    .vessaya-fullscreen {
-      --ui-scale: 1.1;
-    }
-  }
-  @media (max-width: 1660px) {
-    .vessaya-fullscreen {
-      --max-width: 1400px;
-    }
-  }
-  @media (max-width: 1480px) {
-    .vessaya-fullscreen {
-      --ui-scale: 0.9;
-    }
-  }
-  @media (max-width: 1340px) {
-    .vessaya-fullscreen {
-      --ui-scale: 0.9;
-    }
-  }
-  @media (max-width: 1200px) {
-    .vessaya-fullscreen {
-      --ui-scale: 0.9;
-      --max-width: 1100px;
-    }
-  }
-  @media (max-height: 1040px) {
-    .vessaya-fullscreen {
-      --ui-scale: 0.9;
-    }
-  }
-  @media (max-height: 900px) {
-    .vessaya-fullscreen {
-      --ui-scale: 0.8;
-    }
   }
   /* ----------------------------------------- */
   /* Journal Entry                             */
@@ -266,6 +276,9 @@
   .vessaya.journal-entry .journal-entry-page .edit-container i {
     color: var(--color-light-2);
   }
+  .vessaya.journal-entry .journal-entry-page .edit-container h2.divider {
+    border: none;
+  }
   .vessaya.journal-entry .journal-entry-page .journal-page-content {
     padding: 1rem 2rem;
     --color-text-primary: var(--color-light-3);
@@ -391,142 +404,6 @@
   .vessaya.journal-entry-page coefficient-tags > button {
     flex: 0 0 36px;
   }
-  div.tab .content.reputation {
-    margin: 0;
-    overflow: hidden scroll !important;
-  }
-  div.tab .content.reputation header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  div.tab .content.reputation header h3 {
-    font-family: "Vollkorn";
-    margin: 0.5em;
-  }
-  div.tab .content.reputation a {
-    margin-right: 0.5em;
-  }
-  div.tab .content.reputation .rep-entry {
-    color: var(--color-text-dark-2);
-    border-image-source: url(../../../systems/pf2e/assets/sheet/frame-elegant.svg);
-    border-image-repeat: repeat;
-    border-image-slice: 11;
-    border-image-width: 14px;
-    border-style: double;
-    margin: 0.5em;
-    transition: all 0.5s ease;
-  }
-  div.tab .content.reputation .rep-entry input.number-input {
-    border: none !important;
-    width: 30px !important;
-    text-align: center !important;
-  }
-  div.tab .content.reputation .rep-entry .party-rep {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  div.tab .content.reputation .rep-entry .party-rep h3 {
-    margin: 0;
-    font-size: 1.25rem;
-  }
-  div.tab .content.reputation .rep-entry .party-rep div {
-    margin: 10px;
-  }
-  div.tab .content.reputation .rep-entry .party-rep .rep-details {
-    width: 90%;
-  }
-  div.tab .content.reputation .rep-entry .party-rep .rep-details .form-group {
-    display: block !important;
-  }
-  div.tab .content.reputation .rep-entry .party-rep .rep-details .form-group label {
-    flex: 0.6 !important;
-  }
-  div.tab .content.reputation .rep-entry .party-rep .rep-details .form-group input.group-name {
-    border: none !important;
-    font-size: 1.25em !important;
-    height: 1.7em !important;
-    font-weight: 700;
-    padding: 0.3rem !important;
-    background-color: rgba(0, 0, 0, 0.05) !important;
-  }
-  div.tab .content.reputation .rep-entry .party-rep .rep-details .form-group input.group-name:focus {
-    box-shadow: none !important;
-  }
-  div.tab .content.reputation .rep-entry .party-rep .rep-details h3 {
-    cursor: pointer;
-  }
-  div.tab .content.reputation .rep-entry .party-rep .rep-details h3:hover {
-    text-shadow: 1px 1px 5px rgba(150, 20, 150, 0.8);
-  }
-  div.tab .content.reputation .rep-entry .party-rep .edit-save {
-    width: 2rem;
-    display: flex;
-    flex-direction: row;
-  }
-  div.tab .content.reputation .rep-entry .rep-expand {
-    font-size: 22px;
-    margin: auto 0 auto 1rem !important;
-    padding: 0;
-    text-align: center;
-  }
-  div.tab .content.reputation .rep-entry h3,
-  div.tab .content.reputation .rep-entry p,
-  div.tab .content.reputation .rep-entry span {
-    margin: 0 !important;
-    padding: 5px !important;
-  }
-  div.tab .content.reputation .rep-entry input.rep-input {
-    border: none !important;
-  }
-  div.tab .content.reputation .no-data {
-    margin: 2em;
-    padding: 0;
-    font-style: italic;
-  }
-  div.tab .content.reputation .expanded-true {
-    display: block !important;
-  }
-  div.tab .content.reputation .expanded-false {
-    display: none !important;
-  }
-  div.tab .content.reputation .member-rep {
-    margin: 0 0.5rem;
-    padding: 0.3rem 0.6rem;
-    border-top: solid 1px var(--color-dark-1);
-  }
-  div.tab .content.reputation .member-rep .member-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.5em;
-  }
-  div.tab .content.reputation .member-rep .member-row img {
-    border: none !important;
-    width: 28px;
-    height: 28px;
-  }
-  div.tab .content.reputation .member-rep .form-group {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #eee;
-  }
-  div.tab .hidden {
-    display: none;
-  }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
   .vessaya .journal-page-header {
     display: flex;
     flex-direction: row;
@@ -597,7 +474,7 @@
   }
   .vessaya .content-link {
     gap: 0.25rem;
-    padding: 3px 0.5rem;
+    padding: 0 0.5rem;
     margin: -3px 0;
     line-height: 1rem;
     background-color: var(--color-cool-4);
@@ -639,72 +516,136 @@
   .vessaya .tags:empty {
     display: none;
   }
-  /* ---------------------------------------- */
-  /*  Font Declarations                       */
-  /* ---------------------------------------- */
-  @font-face {
-    font-family: "Volkorn";
-    src: url("../assets/fonts/Vollkorn/Vollkorn.ttf") format("truetype");
-    font-style: normal;
-    font-weight: 300 800;
+  #vessaya-hex-hud {
+    background: rgba(0, 0, 0, 0.8);
+    color: #EEE;
+    padding: 0.5rem 1.5rem;
+    font-size: 2rem;
+    border: 2px solid #000;
+    border-radius: 1rem;
   }
-  @font-face {
-    font-family: "Pirate Scroll";
-    src: url("../assets/fonts/PirateScroll/PirateScroll.otf") format('opentype');
-    font-style: normal;
-    font-weight: 400;
+  #vessaya-hex-hud.default {
+    box-shadow: 0 0 16px inset rgba(200, 200, 255, 0.25);
   }
-  .vessaya {
-    /* ------------------------------------------ */
-    /* Colors                                     */
-    /* ------------------------------------------ */
-    --color-warm-1: #e04e4e;
-    --color-warm-2: #c93f4b;
-    --color-warm-3: #5e1722;
-    --color-active: #ff6b6b;
-    --color-text-accent: #ff6b6b;
-    --color-cool-1: #efecf6;
-    --color-cool-2: #9c7ee5;
-    --color-cool-3: #584a75;
-    --color-cool-4: #302831;
-    --color-cool-5: #0b0a13;
-    --color-cool-5-25: rgba(11, 10, 19, 0.25);
-    --color-cool-5-50: rgba(11, 10, 19, 0.5);
-    --color-cool-5-75: rgba(11, 10, 19, 0.75);
-    --color-cool-5-90: rgba(11, 10, 19, 0.9);
-    --color-light-1: #fffbf0;
-    --color-light-2: #f5eadf;
-    --color-light-3: #f0dab9;
-    --color-light-4: #d0b8a3;
-    --color-light-5: #9f8475;
-    --color-light-6: #816b66;
-    --color-blockquote-ink: #2b0c06;
-    --color-exploration-bg: #1c211c;
-    --color-exploration-border: #2f4d2f;
-    --color-exploration-skill: #7ff67f;
-    --color-hazard-bg: #211818;
-    --color-hazard-border: #5d1818;
-    --color-hazard-save: #ff6464;
-    --color-social-bg: #1b2126;
-    --color-social-border: #6783a5;
-    --color-social-check: #a9cfff;
-    --color-date-bg: #2a2f34;
-    --color-date-text: #cbecf3;
-    --color-scrollbar: rgba(201, 89, 62, 0.1);
-    --color-scrollbar-track: transparent;
-    --color-scrollbar-border: transparent;
-    --font-header: "Pirate Scroll", serif;
-    --font-body: "Vollkorn", serif;
-    --font-serif: "Vollkorn", serif;
-    --font-sans: "Signika", sans-serif;
-    /* ---------------------------------------- */
-    /*  Typography                              */
-    /* ---------------------------------------- */
-    --font-h1: var(--font-header);
-    --font-h2: var(--font-header);
-    --font-h3: var(--font-header);
-    --font-h4: var(--font-sans);
-    --font-h5: var(--font-serif);
-    --font-h6: var(--font-serif);
+  #vessaya-hex-hud.claimed {
+    box-shadow: 0 0 16px inset #ff0000;
+  }
+  #vessaya-hex-hud .resources.unknown,
+  #vessaya-hex-hud p.item.unknown {
+    background: linear-gradient(to right, transparent, #b189ff15 10%, 90%, transparent);
+  }
+  #vessaya-hex-hud .fa-eye-slash .title .unknown {
+    color: #c9aeff;
+  }
+  #vessaya-hex-hud .traits {
+    display: flex;
+    gap: 1rem;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+    font-size: 1.8rem;
+  }
+  #vessaya-hex-hud .traits li {
+    border-left: 0.5rem solid #d8c483;
+    border-right: 0.5rem solid #d8c483;
+    background: #004416;
+    color: white;
+    padding: 0.2rem 0.75rem;
+    text-transform: uppercase;
+    font-family: "Good OT Cond Bold";
+  }
+  #vessaya-hex-hud div.group {
+    border-image: linear-gradient(to right, transparent, #999 10%, 90%, transparent) 1 / 2px 0 0 0;
+  }
+  #vessaya-hex-hud div.group:empty {
+    display: none;
+  }
+  #vessaya-hex-hud div.group p.item {
+    min-height: 32px;
+    margin: 0;
+    padding: 0.4rem 0;
+  }
+  #vessaya-hex-hud div.group p.item i {
+    padding: 14px 0 0 0;
+    flex: 0 0 5rem;
+    text-align: center;
+  }
+  #vessaya-hex-hud div.group p.item:first-child {
+    padding-top: 1rem;
+  }
+  #vessaya-hex-hud div.group p.item:last-child {
+    padding-bottom: 1rem;
+  }
+  #vessaya-hex-hud .flex {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  #vessaya-hex-hud .flex div {
+    flex: 100%;
+  }
+  #vessaya-hex-hud .flex img.terrain {
+    margin: 1rem 0;
+    flex: 0 0 160px;
+    width: 160px;
+    height: 160px;
+    border-radius: 10px;
+  }
+  #vessaya-hex-hud p.item {
+    border-radius: 50px;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: nowrap;
+  }
+  #vessaya-hex-hud p.item span {
+    align-self: center;
+  }
+  #vessaya-hex-hud p.item.title {
+    font-size: 2.2rem;
+  }
+  #vessaya-hex-hud p.item.title .key .value {
+    white-space: nowrap;
+  }
+  #vessaya-hex-hud p.item.title i {
+    padding: 2px 0 0 0;
+  }
+  #vessaya-hex-hud p.item .key {
+    flex: 1;
+    text-align: left;
+  }
+  #vessaya-hex-hud p.item .value {
+    text-align: right;
+    width: 100%;
+  }
+  #vessaya-hex-hud p.item .gray {
+    color: #a0a0a0;
+  }
+  #vessaya-hex-hud p.item img {
+    height: 4rem;
+    border-radius: 24px;
+  }
+  #vessaya-hex-edit legend {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  #vessaya-hex-edit legend button {
+    font-size: var(--font-size-12);
+    line-height: 1rem;
+  }
+  #vessaya-hex-edit form.flexcol {
+    gap: 1rem;
+  }
+  #vessaya-hex-edit div.feature {
+    gap: 0.5rem;
+  }
+  #vessaya-hex-edit div.feature > select {
+    flex: 0 0 100px;
+    width: 100px;
+  }
+  #vessaya-hex-edit div.feature > button {
+    font-size: var(--font-size-12);
+    line-height: 1.5rem;
+    flex: 0 0 2rem;
   }
 }

@@ -172,7 +172,7 @@
   "packFolders": [
     {
       "name": "Vessaya Player",
-      "color": "#ba14a9",
+      "color": "#303150",
       "sorting": "m",
       "packs": [
         "vessaya-actions",
@@ -187,7 +187,7 @@
     },
     {
       "name": "Vessaya GM",
-      "color": "#ba14a9",
+      "color": "#242656",
       "sorting": "m",
       "packs": ["vessaya-actors", "vessaya-equipment-gm", "vessaya-adventure"]
     }

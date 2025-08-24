@@ -1,11 +1,22 @@
 import { LANGUAGES_BY_RARITY } from "./scripts/consts.mjs"
 import { default as VessayaJournalSheet } from "./scripts/journal/journal-sheet.mjs"
 import { initConfigs } from "./scripts/configs.mjs"
+import { PlotDie, initPlotDie } from "./scripts/variants/plot-die.mjs"
+
+// CONSTS
+import * as CONST from "./scripts/map-tools/map-consts.mjs"
+
+// Map Imports
+import VessayaHex from "./scripts/map-tools/region-hex.mjs"
+import VessayaRegion from "./scripts/map-tools/region.mjs"
+import VessayaHexHUD from "./scripts/map-tools/hex-hud.mjs"
+import VessayaState from "./scripts/map-tools/region-state.mjs"
+import VessayaKingdomLayer from "./scripts/map-tools/kingdom-layer.mjs"
 
 const MODULE = "pf2e-vessaya"
 
-async function updateSource(source, langs) {
-	// NOTE: might be worth revisiting this to see if we can refactor with
+async function updateLangSource(source, langs) {
+	// TODO: might be worth revisiting this to see if we can refactor with
 	// `foundry.utils.mergeObject` instead.
 	let origLangs = source._source
 	let i, s
@@ -15,6 +26,10 @@ async function updateSource(source, langs) {
 			for (s of origLangs[i]) {
 				if (!langs[i].includes(s))
 					origLangs.unavailable.push(s)
+
+				// to move them back, do this
+				if (origLangs.unavailable.includes(s))
+					origLangs.unavailable.splice(s, 1)
 			}
 		}
 	}
@@ -32,15 +47,57 @@ Hooks.once("init", async () => {
 	vessaya.opts = {}
 	vessaya.dataModels = {}
 	vessaya.CSS_CLASS = "vessaya"
+	vessaya.CONST = CONST
+
+	vessaya.api = {
+		VessayaHex,
+		VessayaHexHUD,
+		VessayaRegion,
+		VessayaState,
+		VessayaKingdomLayer
+	}
 
 	DocumentSheetConfig.registerSheet(JournalEntry, MODULE, VessayaJournalSheet, {
 		label: "Vessaya Journal Sheet",
 		makeDefault: true,
 	})
 
-	initConfigs()
+	game.settings.register(MODULE, "enablePlotDie", {
+		name: "Enable Cosmere's Opportunity Dice",
+		scope: "world",
+		config: true,
+		default: true,
+		type: Boolean
+	})
 
-	// NOTE: Enrichers are declared and handled further down in a second Hooks.once("init") call
+	game.settings.register(MODULE, "state", {
+		name: "Vessaya Region State",
+		scope: "world",
+		config: false,
+		requiresReload: false,
+		type: VessayaState,
+		default: {},
+		onChange: (value) => {
+			vessaya.state = value
+			vessaya.region.onUpdateState()
+		}
+	})
+
+	game.settings.register(MODULE, "fogExplorationRadius", {
+		name: "Fog of War Reveal Radius",
+		hint: "Configures how many hexes are revealed when the part token moves on the world map. Default: the party's hex and adjacent hexes are revealed. Limited: only the hex that the part hase entered is revealed.",
+		scope: "world",
+		config: true,
+		type: String,
+		choices: {
+			"default": "Default (adjacent hexes)",
+			"limited": "Limited (single hex)"
+		},
+		default: "default"
+	})
+	
+	if (game.settings.get(MODULE, "enablePlotDie"))
+		initPlotDie()
 })
 
 Hooks.once("ready", async () => {
@@ -51,9 +108,30 @@ Hooks.once("ready", async () => {
 		// Do some logic here - if we care about showing new versions...?
 	}
 
+	// TODO: Turn this into a button that we can force "reset" of languages
+	// but not do it on every ready hook.
 	let savedLangs = game.settings.get("pf2e", "homebrew.languageRarities")
+	await updateLangSource(savedLangs, LANGUAGES_BY_RARITY)
 
-	await updateSource(savedLangs, LANGUAGES_BY_RARITY)
+	if (game.settings.get(MODULE, "enablePlotDie")) {
+		// Do some initialization here
+		// Not really sure if I want these to be init'ing anything else
+		// but we shall see!
+	}
+})
+
+Hooks.on("canvasConfig", () => vessaya.region._onConfig())
+Hooks.on("canvasInit", () => vessaya.region._onInit())
+Hooks.on("canvasDraw", () => vessaya.region._onDraw())
+Hooks.on("canvasReady", () => vessaya.region._onReady())
+Hooks.on("canvasTearDown", () => vessaya.region._onTearDown())
+Hooks.on("getSceneControlButtons", (buttons) => {
+	vessaya.region._extendSceneControlButtons(buttons)
+})
+
+Hooks.once("setup", function () {
+	vessaya.state = VessayaState.load()
+	vessaya.region = new VessayaRegion()
 })
 
 Hooks.on("renderJournalSheet", (app, html) => {
@@ -70,7 +148,9 @@ Hooks.on("renderJournalPageSheet", (app, html) => {
 		html.addClass("vessaya")
 })
 
-Hooks.on("renderPartySheetPF2e", function(sheet, html, data) {
-	if (!game.user.isGM)
+Hooks.on("renderCheckModifiersDialog", (app, html) => {
+	if (!game.settings.get(MODULE, "enablePlotDie"))
 		return
+
+	const page = app.document
 })

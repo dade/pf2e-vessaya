@@ -1,0 +1,78 @@
+<form class="flexcol" autocoimplete="off">
+
+	<fieldset>
+		<legend>{{localize "VESSAYA.HEXTOOL.Visibility"}}</legend>
+		{{#if hex.page}}
+		<div class="form-group">
+			<label data-tooltip="{{localize 'VESSAYA.HEXTOOL.ShowEncounterTooltip'}}" aria-label="{{localize 'VESSAYA.HEXTOOL.ShowEncounterTooltip'}}">{{localize "VESSAYA.HEXTOOL.ShowEncounter"}}</label>
+			<input type="checkbox" name="showEncounter" {{checked hex.showEncounter}}>
+		</div>
+		{{/if}}
+		<div class="form-group">
+			<label data-tooltip="{{localize 'VESSAYA.HEXTOOL.ShowResourcesTooltip'}}" aria-label="{{localize 'VESSAYA.HEXTOOL.ShowResourcesTooltip'}}">{{localize "VESSAYA.HEXTOOL.ShowResources"}}</label>
+			<input type="checkbox" name="showResources" {{checked hex.showResources}}>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<legend>{{localize 'VESSAYA.HEXTOOL.Exploration'}}</legend>
+		<div class="form-group">
+			<label data-tooltip="{{localize 'VESSAYA.HEXTOOL.ExplorationStatusTooltip'}}" aria-label="{{localize 'VESSAYA.HEXTOOL.ExplorationStatusTooltip'}}">{{localize 'VESSAYA.HEXTOOL.ExplorationStatus'}}</label>
+			<div class="form-fields">
+				<select name="exploration">
+					{{selectOptions explorationStates selected=hex.exploration nameAttr="value" valueAttr="value" labelAttr="label" localize=true}}
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label data-tooltip="{{localize 'VESSAYA.HEXTOOL.ClearedTooltip'}}" aria-label="{{localize 'VESSAYA.HEXTOOL.ClearedTooltip'}}">{{localize 'VESSAYA.HEXTOOL.Cleared'}}</label>
+			<input type="checkbox" name="cleared" {{checked hex.cleared}}>
+		</div>
+		<div class="form-group">
+			<label data-tooltip="{{localize 'VESSAYA.HEXTOOL.ClaimedTooltip'}}" aria-label="{{localize 'VESSAYA.HEXTOOL.ClaimedTooltip'}}">{{localize 'VESSAYA.HEXTOOL.Claimed'}}</label>
+			<input type="checkbox" name="claimed" {{checked hex.claimed}}>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<legend>{{localize 'VESSAYA.HEXTOOL.Resources'}}</legend>
+		<div class="form-group">
+			<label>{{localize 'VESSAYA.HEXTOOL.Commodities'}}</label>
+			<div class="form-fields">
+				<select name="commodity">
+					{{selectOptions commodities selected=hex.commodity nameAttr="id" valueAttr="id" labelAttr="label" localize=true blank=""}}
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label>{{localize 'VESSAYA.HEXTOOL.Camp'}}</label>
+			<div class="form-fields">
+				<select name="camp">
+					{{selectOptions camps selected=hex.camp nameAttr="id" valueAttr="id" labelAttr="label" localize=true blank=""}}
+				</select>
+			</div>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<legend>
+			{{localize 'VESSAYA.HEXTOOL.Features'}}
+			<button type="button" data-action="addFeature">
+				<i class="fa-solid fa-plus"></i>
+				<span>{{localize 'VESSAYA.HEXTOOL.Add'}}</span>
+			</button>
+		</legend>
+		{{#each hex.features as |feature i|}}
+		{{> (lookup @root "featurePartial") id=i type=feature.type name=feature.name discovered=feature.discovered
+				features=@root.features}}
+		{{/each}}
+	</fieldset>
+
+	<footer>
+		<button type="submit">
+			<i class="fa-solid fa-save"></i>
+			<span>{{localize 'VESSAYA.HEXTOOL.Save'}}</span>
+		</button>
+	</footer>
+
+</form>

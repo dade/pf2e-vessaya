@@ -1,12 +1,120 @@
 {
-	"VESSAYA": {
-		"LANG": {
-			"COMMON": "Common (Vessi)",
-			"DAKHARI": "Dakhari",
-			"SELDUIN": "Sel'Duin",
-			"RUULKAN": "Ruulkan",
-			"OLDTOR": "Old Tor",
-			"VESSI": "Vessi"
-		}
-	}
+  "VESSAYA": {
+    "LANG": {
+      "COMMON": "Common (Vessi)",
+      "DAKHARI": "Dakhari",
+      "SELDUIN": "Sel'Duin",
+      "RUULKAN": "Ruulkan",
+      "OLDTOR": "Old Tor",
+      "VESSI": "Vessi"
+    },
+    "TERRAIN": {
+      "PLAINS": "Plains",
+      "FOREST": "Forest",
+      "HILLS": "Hills",
+      "MOUNTAINS": "Mountains",
+      "WETLANDS": "Wetlands",
+      "SWAMP": "Swamp",
+      "LAKE": "Lake",
+      "COAST": "Coast",
+      "OCEAN": "Ocean",
+      "ISLANDS": "Islands",
+      "GLACIER": "Glaciers",
+      "VOLCANO": "Volcano"
+    },
+    "DISCOVERY_TRAITS": {
+      "LANDMARK": "Landmark",
+      "STANDARD": "Standard",
+      "SECRET": "Secret"
+    },
+    "EXPLORATION_STATES": {
+      "NONE": "None",
+      "RECON": "Reconnoitered",
+      "MAP": "Mapped"
+    },
+    "FEATURES": {
+      "LANDMARK": "Landmark",
+      "RUIN": "Ruin",
+      "STRUCTURE": "Structure",
+      "FARMLAND": "Farmland",
+      "FORD": "Ford",
+      "WATERFALL": "Waterfall",
+      "HAZARD": "Hazard",
+      "VILLAGE": "Village",
+      "TOWN": "Town",
+      "CITY": "City",
+      "METROPOLIS": "Metropolis"
+    },
+    "COMMODITIES": {
+      "NONE": "None",
+      "FOOD": "Food",
+      "ORE": "Ore",
+      "LUMBER": "Lumber",
+      "LUXURIES": "Luxuries",
+      "STONE": "Stone"
+    },
+    "CAMPS": {
+      "QUARRY": "Quarry",
+      "MINE": "Mine",
+      "FISHING": "Fishing Site",
+      "LUMBER": "Lumber Camp"
+    },
+    "TRAVEL": {
+      "OPEN": "Open",
+      "DIFFICULT": "Difficult",
+      "GREATER": "Greater Difficulty",
+      "WATER": "Water",
+      "IMPASSABLE": "Impassable"
+    },
+    "ToggleHexTool": "Toggle Hex Controls",
+    "ToggleZoneBoundaries": "Toggle Zone Boundaries",
+    "HEXTOOL": {
+      "Visibility": "Visibility",
+      "Exploration": "Exploration",
+      "Hex": "Hex",
+      "Zone": "Zone",
+      "Terrain": "Terrain",
+      "Travel": "Travel",
+      "Explored": "Explored",
+      "Claimed": "Claimed",
+      "ClaimedTooltip": "Has the hex been Claimed by the Kingdom?",
+      "Cleared": "Cleared",
+      "ClearedTooltip": "Has the hex been Cleared by the Kingdom?",
+      "Discovered": "Show to Players",
+      "ShowEncounter": "Show Encounter to Players",
+      "ShowEncounterTooltip": "Allows players to see the name of the journal page that describes the contents of this hex.",
+      "ShowResources": "Show Camps and Commodities to Players",
+      "ShowResourcesTooltip": "Allows players to see commodities and camps present in this hex.",
+      "ExplorationStatus": "Exploration Status",
+      "ExplorationStatusTooltip": "Have the party reconnoitered or mapped this hex?",
+      "Commodity": "Commodity",
+      "Commodities": "Commodities",
+      "Camp": "Camp",
+      "Features": "Features",
+      "Resources": "Resources",
+      "Resource": "Resource",
+      "Add": "Add",
+      "Save": "Save"
+    },
+    "IMPORTER": {
+      "ResetState": "Reset Game State",
+      "ResetStateTooltip": "Resets all stored data for the Stolen Lands scene including party exploration progress, custom points of interest, or built structures.",
+      "ActivateScene": "Activate Initial Scene",
+      "ActivateSceneTooltip": "Activates the Stolen Lands scene once the import finishes",
+      "DisplayJournal": "Display Introduction",
+      "DisplayJournalTooltip": "Opens the introductory journal for the GM",
+      "CustomizeWorld": "Customize World Details",
+      "CustomizeWorldTooltip": "Changes the world's description and banner image in the Setup screen",
+      "OpenChangelog": "Open Changelog",
+      "OpenChangelogTooltip": "Opens the changelog for the module as a window within Foundry",
+      "IssueTracker": "Report an Issue",
+      "IssueTrackerTooltip": "An external link to the issue tracker for the module"
+    },
+    "ToggleZoneBoundaries": "Toggle Zone Boundaries",
+    "ToggleHexTool": "Toggle Hex Tools",
+    "ZONES": {
+      "NA": "None",
+      "CA": "Empire of Calasayn"
+    }
+  }
 }
