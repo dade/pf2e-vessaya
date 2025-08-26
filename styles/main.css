@@ -71,8 +71,9 @@
     --font-h5: var(--font-serif);
     --font-h6: var(--font-serif);
   }
-  .vessaya.window-app {
-    background: none;
+  .vessaya.window-app#vessaya-hex-edit .window-content {
+    color: #191813;
+    background: url(../../../ui/parchment.jpg);
   }
   .vessaya.window-app .window-content {
     padding: 1rem;
@@ -83,7 +84,7 @@
     background: url() no-repeat center;
     background-size: 100px;
   }
-  #pause figcaptiuon {
+  #pause figcaption {
     color: #aaa395;
     font-family: var(--font-serif);
   }

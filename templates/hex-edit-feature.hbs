@@ -1,10 +1,10 @@
 <div class="form-group feature">
-	<select name="feature.{{id}}.type">
-		{{selectOptions features selected=type labelAttr="label" black="" localize=true}}
+	<select name="features.{{id}}.type">
+		{{selectOptions features selected=type labelAttr="label" blank="" localize=true}}
 	</select>
 	<input type="text" name="features.{{id}}.name" value="{{name}}" />
 	<input
-		type="checked"
+		type="checkbox"
 		name="features.{{id}}.discovered"
 		{{checked discovered}}
 		data-tooltip="VESSAYA.HEXTOOL.Discovered"

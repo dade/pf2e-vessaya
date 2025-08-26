@@ -34,8 +34,8 @@ export default class VessayaState extends foundry.abstract.DataModel {
 		if (game.actors.party && vessaya.region.scene) {
 			const token = await game.actors.party?.getTokenDocument({
 				_id: game.actors.party.id,
-				x: 0,
-				y: 0,
+				x: 2600,
+				y: 1819,
 				texture: {
 					src: "modules/pf2e-vessaya/assets/party/party-main.webp",
 					scaleX: 1.2,

@@ -14,14 +14,14 @@ export default class VessayaHexEdit extends FormApplication {
 		})
 	}
 
-	static featurePartial = "modules/pf2e-vessaya/templates/hex-edit-features.hbs"
+	static featurePartial = "modules/pf2e-vessaya/templates/hex-edit-feature.hbs"
 	
 	get title() {
 		return `Edit Hex: ${this.object.toString()}`
 	}
 
 	async _render(force, options) {
-		await loadTemplates([ this.constructor.featurePartials ])
+		await loadTemplates([ this.constructor.featurePartial ])
 		vessaya.hexConfig = this
 		return super._render(force, options)
 	}
@@ -57,9 +57,14 @@ export default class VessayaHexEdit extends FormApplication {
 		await vessaya.state.save()
 	}
 
+	activateListeners(html) {
+		super.activateListeners(html)
+		html.on("click", "[data-action]", this.#onClickAction.bind(this))
+	}
+
 	async #onClickAction(event) {
 		event.preventDefault()
-		const button = event.currenTarget
+		const button = event.currentTarget
 		const action = button.dataset.action
 
 		switch (action) {

@@ -1,30 +1,35 @@
 <aside id="{{id}}" class="{{cssClass}}">
+	{{!== HEX ==}}
 	<div>
+		{{! Only show the encounter if there is one and the user has sufficient permission to see it}}
 		{{#if displayEncounter}}
 		<p class="title item">
+			{{! Icon & color of name depend on visibility}}
 			{{#if hex.data.showEncounter}}
 			<i class="fa-solid fa-eye"></i>
 			<span class="key">{{hex.name}}</span>
 			{{else}}
 			<i class="fa-solid fa-eye-slash"></i>
-			<span class="key unkown">{{hex.name}}</span>
+			<span class="key unknown">{{hex.name}}</span>
 			{{/if}}
 			<span class="value gray">{{localize "VESSAYA.HEXTOOL.Hex"}} #{{hex}}</span>
 		</p>
 		<ul class="traits">
 			<li>{{localize hex.discoveryTrait.label}}</li>
 			{{#if hex.data.resourceTrait}}
-			<lu>{{localize "VESSAYA.HEXTOOL.Resource"}}</li>
+			<li>{{localize "VESSAYA.HEXTOOL.Resource"}}</li>
 			{{/if}}
 		</ul>
 		{{else}}
+		{{! We always want to show the coordinates}}
 		<p class="title item">
 			<span class="value gray">{{localize "VESSAYA.HEXTOOL.Hex"}} #{{hex}}</span>
 		</p>
 		{{/if}}
 	</div>
 
-
+	{{!== TRAVEL ==}}
+	{{! Travel information is always visible}}
 	<div class="group flex">
 		<div>
 			{{#if hex.zone.label}}
@@ -41,16 +46,18 @@
 			{{/if}}
 			{{#if hex.travel.label}}
 			<p class="item">
-				<span class="gray key">{{localize "VESSAYA.HEXTOOL.Travel"}}</span>
+				<span class="gray key">{{localize "VESSAYA.HEXTOOL.Travel"}}</span> 
 				<span class="value">{{localize hex.travel.label}}</span>
 			</p>
 			{{/if}}
 		</div>
 		{{#if hex.terrain.img}}
-		<img class="terrain" src="{{hex.terrain.img}}" alt="{{hex}}" />
+		<img class="terrain" src="{{hex.terrain.img}}" alt="{{hex}}">
 		{{/if}}
 	</div>
 
+	{{!== EXPLORATION ==}}
+	{{! Exploration information is always visible}}
 	<div class="group">
 		{{~#if explored}}
 		<p class="item">
@@ -72,7 +79,9 @@
 		{{/if~}}
 	</div>
 
-	{{#if dispalayResources}}
+	{{!== RESOURCES ==}}
+	{{! Camps & Commodities are only visible if they exist, and the user is a GM or "showResources" is true}}
+	{{#if displayResources}}
 	{{#if hex.data.showResources}}
 	<div class="group resources">
 	{{else}}
@@ -80,22 +89,23 @@
 	{{/if}}
 		{{~#if commodity}}
 		<p class="item">
-			<img src="{{commodity.img}}" alt="{{feature.name}}" />
-			<span class="key">{{localize commodity.level}}</span>
+			<img src="{{commodity.img}}" alt='{{feature.name}}'>
+			<span class="key">{{localize commodity.label}}</span>
 			<span class="value gray">{{localize "VESSAYA.HEXTOOL.Commodity"}}</span>
 		</p>
-		{{/if~}}
+		{{/if}}
 		{{~#if camp}}
 		<p class="item">
-			<img src="{{camp.img}}" alt="{{feature.name}}" />
-			<span class="key">{{localize camp.level}}</span>
+			<img src="{{camp.img}}" alt='{{feature.name}}'>
+			<span class="key">{{localize camp.label}}</span>
 			<span class="value gray">{{localize "VESSAYA.HEXTOOL.Camp"}}</span>
 		</p>
 		{{/if~}}
+	</div>
 	{{/if}}
 
-	</section>
-
+	{{!== FEATURES ==}}
+	{{! Features are hidden by default but can individually be revealed}}
 	{{#if features.length}}
 	<div class="group feature">
 		{{#each features as |feature|}}
@@ -104,10 +114,18 @@
 		{{else}}
 		<p class="item unknown">
 		{{/if}}
-			<img src="{{feature.img}}" alt="{{feature.nam}}">
+			<img src="{{feature.img}}" alt="{{feature.name}}">
 			<span class="key">{{feature.name}}</span>
-			<i class="fa-solid {{ifThen feature.discovered 'fa-eye' 'fa-eye-slash'}}"</i>
+			<!-- <i class="fa-solid {{ifThen feature.discovered 'fa-eye' 'fa-eye-slash'}}"></i> -->
+			{{#if feature.discovered}}
+			<i class="fa-solid fa-eye"></i>
+			{{else}}
+			<i class="fa-solid fa-eye-slash"></i>
+			{{/if}}
+		</p>
 		{{/each}}
 	</div>
 	{{/if}}
+
 </aside>
+

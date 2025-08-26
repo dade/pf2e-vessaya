@@ -4,7 +4,7 @@ export default class VessayaHexSightPolygon extends PointSourcePolygon {
 	 * The amount of padding in pixels added to the explored hex region.
 	 * @type {number}
 	 */
-	static PADDING = 20;
+	static PADDING = 5
 
 	/**
 	 * The cached point offsets of the FOW reveal areas. 1 is the original behavior
@@ -40,17 +40,17 @@ export default class VessayaHexSightPolygon extends PointSourcePolygon {
 			[-0.5, -0.25],
 			[-0.5, 0.25],
 		],
-	};
+	}
 
 	/**
 	 * @inheritdoc
 	 */
 	initialize(origin, config) {
-		super.initialize(origin, config);
-		const cfg = this.config;
+		super.initialize(origin, config)
+		const cfg = this.config
 
 		if (cfg.type !== "sight") {
-			throw new Error("HexSightPolygon may only be used for sight polygons.");
+			throw new Error("HexSightPolygon may only be used for sight polygons.")
 		}
 	}
 
@@ -77,8 +77,8 @@ export default class VessayaHexSightPolygon extends PointSourcePolygon {
 		const polygonPoints = this.POINTS[setting]
 
 		for (const [ox, oy] of polygonPoints) {
-			const x = c.x + (ox * sizeX)
-			const y = c.y + (oy * sizeY)
+			const x = c.x + ox * sizeX
+			const y = c.y + oy * sizeY
 			const r = new Ray(c, { x, y })
 			const py = this.PADDING * Math.sin(r.angle)
 			const px = this.PADDING * Math.cos(r.angle)

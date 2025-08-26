@@ -1,7 +1,3 @@
-2025/08/24-19:06:22.074 ca8 Recovering log #197
-2025/08/24-19:06:22.080 ca8 Delete type=0 #197
-2025/08/24-19:06:22.080 ca8 Delete type=3 #196
-2025/08/24-19:06:36.480 6b48 Level-0 table #201: started
-2025/08/24-19:06:36.480 6b48 Level-0 table #201: 0 bytes OK
-2025/08/24-19:06:36.482 6b48 Delete type=0 #199
-2025/08/24-19:06:36.489 6b48 Manual compaction at level-0 from '!adventures!iOeF7esUcC88pFAP' @ 72057594037927935 : 1 .. '!adventures!iOeF7esUcC88pFAP' @ 0 : 0; will stop at (end)
+2025/08/24-19:06:45.147 ca8 Recovering log #200
+2025/08/24-19:06:45.154 ca8 Delete type=0 #200
+2025/08/24-19:06:45.154 ca8 Delete type=3 #198

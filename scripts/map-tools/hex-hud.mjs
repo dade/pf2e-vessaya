@@ -60,7 +60,7 @@ export default class VessayaHexHUD extends Application {
 				if (game.user.isGM || f.discovered)
 					arr.push({
 						name: f.name || game.i18n.localize(vessaya.CONST.FEATURES[f.type]?.label),
-						discovered: f.disocvered,
+						discovered: f.discovered,
 						img: game.i18n.localize(vessaya.CONST.FEATURES[f.type]?.img) || "modules/pf2e-vessaya/assets/maps-regions/features/default.webp"
 					})
 
