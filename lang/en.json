@@ -20,7 +20,8 @@
       "OCEAN": "Ocean",
       "ISLANDS": "Islands",
       "GLACIER": "Glaciers",
-      "VOLCANO": "Volcano"
+      "VOLCANO": "Volcano",
+      "TUNDRA": "Tundra"
     },
     "DISCOVERY_TRAITS": {
       "LANDMARK": "Landmark",
@@ -33,17 +34,19 @@
       "MAP": "Mapped"
     },
     "FEATURES": {
-      "LANDMARK": "Landmark",
-      "RUIN": "Ruin",
-      "STRUCTURE": "Structure",
+      "BRIDGE": "Bridge",
+      "CITY": "City",
       "FARMLAND": "Farmland",
       "FORD": "Ford",
-      "WATERFALL": "Waterfall",
       "HAZARD": "Hazard",
-      "VILLAGE": "Village",
+      "LANDMARK": "Landmark",
+      "METROPOLIS": "Metropolis",
+      "REFUGE": "Refuge",
+      "RUIN": "Ruin",
+      "STRUCTURE": "Structure",
       "TOWN": "Town",
-      "CITY": "City",
-      "METROPOLIS": "Metropolis"
+      "WATERFALL": "Waterfall",
+      "VILLAGE": "Village"
     },
     "COMMODITIES": {
       "NONE": "None",
@@ -64,6 +67,7 @@
       "DIFFICULT": "Difficult",
       "GREATER": "Greater Difficulty",
       "WATER": "Water",
+      "CITY": "City",
       "IMPASSABLE": "Impassable"
     },
     "ToggleHexTool": "Toggle Hex Controls",
@@ -114,7 +118,25 @@
     "ToggleHexTool": "Toggle Hex Tools",
     "ZONES": {
       "NA": "None",
-      "CA": "Empire of Calasayn"
+      "AP": "Ardent Peaks",
+      "BF": "Barrow Fields",
+      "Ca": "Calasera",
+      "DR": "Dawnrise",
+      "DH": "Dakhari Horselords",
+      "DW": "Durnwood",
+      "GI": "Gorde Isle",
+      "LA": "Lir'anor",
+      "NCA": "Northern Calasayn",
+      "NVR": "Northern Vess Range",
+      "SCA": "Southern Calasayn",
+      "SF": "Soren Forest",
+      "SH": "Sorenholm",
+      "SR": "Stillroot",
+      "SVR": "Southern Vess Range",
+      "TE": "The Empty",
+      "TN": "The Tangles",
+      "TO": "Kingdom of Tor",
+      "WE": "The White Expanse"
     }
   }
 }

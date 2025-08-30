@@ -109,7 +109,7 @@ export default class VessayaHex extends (foundry.grid?.GridHex ?? GridHex) {
 	}
 
 	get discoveryTrait() {
-		return vessaya.CONST.DISCOVER_TRAITS[this.data.discoveryTrait]
+		return vessaya.CONST.DISCOVERY_TRAITS[this.data.discoveryTrait]
 	}
 
 	get explorationState() {

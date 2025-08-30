@@ -105,12 +105,17 @@ export const TRAVEL = Object.freeze({
 	greater: {
 		id: "greater",
 		label: "VESSAYA.TRAVEL.GREATER",
-		multiplier: 1,
+		multiplier: 3,
 	},
 	water: {
 		id: "water",
 		label: "VESSAYA.TRAVEL.WATER",
 		multiplier: 1,
+	},
+	city: {
+		id: "city",
+		label: "City",
+		multiplier: 2,
 	},
 	impassable: {
 		id: "impassable",
@@ -197,6 +202,11 @@ export const FEATURES = Object.freeze({
 		label: "VESSAYA.FEATURES.METROPOLIS",
 		img: "modules/pf2e-vessaya/assets/maps-regions/vessaya/features/metropolis.webp",
 	},
+	bridge: {
+		id: "bridge",
+		label: "VESSAYA.FEATURES.BRIDGE",
+		img: "modules/pf2e-vessaya/assets/maps-regions/vessaya/features/bridge.webp",
+	}
 });
 
 /**

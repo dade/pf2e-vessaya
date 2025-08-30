@@ -1,7 +1,7 @@
 export default class VessayaZoneEffects extends AbstractBaseFilter {
 
 	static defaultUniforms = {
-		outlineColor: [ 0.6, 1, 0.6, 0.8 ],
+		outlineColor: [ 1, 0.6, 1, 0.8 ],
 		thickness: [ 5, 5 ]
 	}
 
