@@ -2150,7 +2150,24 @@ export default Object.freeze({
 	"27.49": { zone: "LA" },
 	"27.50": { zone: "LA" },
 	"27.51": { zone: "NCA" },
-	"27.52": { zone: "NCA" },
+	"27.52": {
+		zone: "NCA",
+		discoveryTrait: "landmark",
+		resourceTrait: true,
+		commodity: "lumber",
+		camp: "lumber",
+		page: "JournalEntry.pUOvjJ1q66oOWzYt.JournalEntryPage.GI3fOT57zBMXY9vQ",
+		showEncounter: true,
+		state: {
+			features: [
+				{
+					type: "structure",
+					name: "Hunting Lodge, Lumber Mill",
+					discovered: true
+				}
+			]
+		}
+	},
 	"27.53": { zone: "LA" },
 	"27.54": { zone: "NCA" },
 	"27.55": { zone: "NCA" },
@@ -2613,25 +2630,34 @@ export default Object.freeze({
 		zone: "NCA",
 		discoveryTrait: "landmark",
 		resourceTrait: true,
+		showEncounter: true,
+		page: "JournalEntry.pUOvjJ1q66oOWzYt.JournalEntryPage.p4o0QmHqCdAlqClB",
 		travel: "difficult",
-		terrain: "hill",
+		terrain: "hills",
 		camp: "mine",
 		commodity: "ore",
-		state: {
-			features: [
-				{
-					type: "structure",
-					name: "Copperfield Mine",
-					discovered: true
-				}
-			]
-		}
 	},
 	"32.55": { zone: "NCA" },
 	"32.56": { zone: "NCA" },
 	"32.57": { zone: "NCA" },
 	"32.58": { zone: "NCA" },
-	"32.59": { zone: "NCA" },
+	"32.59": {
+		zone: "NCA",
+		discoveryTrait: "landmark",
+		resourceTrait: true,
+		showEncounter: true,
+		commodity: "food",
+		page: "JournalEntry.pUOvjJ1q66oOWzYt.JournalEntryPage.VGrfIxWHLsgj8YU9",
+		state: {
+			features: [
+				{
+					type: "farmland",
+					name: "Renford Vineyard",
+					discovered: true
+				}
+			]
+		}
+	},
 	"32.60": { zone: "NCA" },
 	"32.61": { zone: "NCA" },
 	"32.62": {
@@ -2765,7 +2791,11 @@ export default Object.freeze({
 	},
 	"33.59": { zone: "NCA" },
 	"33.60": { zone: "NCA" },
-	"33.61": { zone: "NCA" },
+	"33.61": {
+		zone: "NCA",
+		terrain: "forest",
+		travel: "difficult"
+	},
 	"33.62": { zone: "DW" },
 	"33.63": { zone: "DW" },
 	"33.64": { zone: "DW" },
@@ -3395,9 +3425,21 @@ export default Object.freeze({
 		terrain: "hills",
 		travel: "difficult"
 	},
-	"37.56": { zone: "DW" },
-	"37.57": { zone: "DW" },
-	"37.58": { zone: "DW" },
+	"37.56": {
+		zone: "DW",
+		terrain: "mountains",
+		travel: "greater"
+	},
+	"37.57": {
+		zone: "DW",
+		terrain: "mountains",
+		travel: "greater"
+	},
+	"37.58": {
+		zone: "DW",
+		terrain: "mountains",
+		travel: "greater"
+	},
 	"37.59": { zone: "DW" },
 	"37.60": { zone: "DW" },
 	"37.61": { zone: "DW" },
@@ -3780,17 +3822,23 @@ export default Object.freeze({
 	"41.50": {
 		zone: "SCA",
 		resourceTrait: true,
+		discoveryTrait: "landmark",
+		showEncounter: true,
+		page: "JournalEntry.pUOvjJ1q66oOWzYt.JournalEntryPage.k7itt8EteTLBWduU",
 		state: {
 			features: [{
 				type: "bridge",
-				name: "The Locks",
 				discovered: true
 			}]
 		}
 	},
 	"41.51": { zone: "SCA" },
 	"41.52": { zone: "SCA" },
-	"41.53": { zone: "SCA" },
+	"41.53": {
+		zone: "SCA",
+		discoveryTrait: "secret",
+		page: "JournalEntry.pUOvjJ1q66oOWzYt.JournalEntryPage.73glnB7B9bxSxHbO"
+	},
 	"41.54": {
 		zone: "SCA",
 		terrain: "hills"
@@ -4155,12 +4203,36 @@ export default Object.freeze({
 	"45.41": { zone: "TO" },
 	"45.42": { zone: "TO" },
 	"45.43": { zone: "NA" },
-	"45.44": { zone: "SCA" },
-	"45.45": { zone: "SCA" },
-	"45.46": { zone: "SCA" },
-	"45.47": { zone: "SCA" },
-	"45.48": { zone: "SCA" },
-	"45.49": { zone: "SCA" },
+	"45.44": {
+		zone: "SCA",
+		terrain: "coast",
+		travel: "difficult"
+	},
+	"45.45": {
+		zone: "SCA",
+		terrain: "coast",
+		travel: "difficult"
+	},
+	"45.46": {
+		zone: "SCA",
+		terrain: "coast",
+		travel: "difficult"
+	},
+	"45.47": {
+		zone: "SCA",
+		terrain: "ocean",
+		travel: "water"
+	},
+	"45.48": {
+		zone: "SCA",
+		terrain: "coast",
+		travel: "difficult"
+	},
+	"45.49": {
+		zone: "SCA",
+		terrain: "coast",
+		travel: "difficult"
+	},
 	"45.50": { zone: "SCA" },
 	"45.51": { zone: "SCA" },
 	"45.52": { zone: "SCA" },
@@ -4229,11 +4301,31 @@ export default Object.freeze({
 	"46.41": { zone: "TO" },
 	"46.42": { zone: "NA" },
 	"46.43": { zone: "NA" },
-	"46.44": { zone: "SCA" },
-	"46.45": { zone: "SCA" },
-	"46.46": { zone: "SCA" },
-	"46.47": { zone: "SCA" },
-	"46.48": { zone: "SCA" },
+	"46.44": {
+		zone: "SCA",
+		terrain: "ocean",
+		travel: "water"
+	},
+	"46.45": {
+		zone: "SCA",
+		terrain: "ocean",
+		travel: "water"
+	},
+	"46.46": {
+		zone: "SCA",
+		terrain: "ocean",
+		travel: "water"
+	},
+	"46.47": {
+		zone: "SCA",
+		terrain: "coast",
+		travel: "difficult"
+	},
+	"46.48": {
+		zone: "SCA",
+		terrain: "coast",
+		travel: "difficult"
+	},
 	"46.49": { zone: "SCA" },
 	"46.50": { zone: "SCA" },
 	"46.51": { zone: "SCA" },
@@ -4300,17 +4392,37 @@ export default Object.freeze({
 	"47.38": { zone: "TO" },
 	"47.39": { zone: "TO" },
 	"47.40": { zone: "TO" },
-	"47.41": { zone: "TO" },
-	"47.42": { zone: "TO" },
+	"47.41": {
+		zone: "TO",
+		terrain: "coast",
+		travel: "difficult"
+	},
+	"47.42": {
+		zone: "TO",
+		terrain: "islands",
+		travel: "difficult"
+	},
 	"47.43": { zone: "NA" },
 	"47.44": {
 		zone: "SCA",
 		terrain: "islands",
 		travel: "difficult"
 	},
-	"47.45": { zone: "SCA" },
-	"47.46": { zone: "SCA" },
-	"47.47": { zone: "SCA" },
+	"47.45": {
+		zone: "SCA",
+		terrain: "ocean",
+		travel: "water"
+	},
+	"47.46": {
+		zone: "SCA",
+		terrain: "ocean",
+		travel: "water"
+	},
+	"47.47": {
+		zone: "SCA",
+		terrain: "coast",
+		travel: "difficult"
+	},
 	"47.48": { zone: "SCA" },
 	"47.49": { zone: "SCA" },
 	"47.50": { zone: "SCA" },
@@ -4377,13 +4489,41 @@ export default Object.freeze({
 	"48.37": { zone: "TO" },
 	"48.38": { zone: "TO" },
 	"48.39": { zone: "TO" },
-	"48.40": { zone: "TO" },
-	"48.41": { zone: "NA" },
-	"48.42": { zone: "NA" },
-	"48.43": { zone: "SCA" },
-	"48.44": { zone: "SCA" },
-	"48.45": { zone: "SCA" },
-	"48.46": { zone: "SCA" },
+	"48.40": {
+		zone: "TO",
+		terrain: "coast",
+		travel: "difficult"
+	},
+	"48.41": {
+		zone: "NA",
+		terrain: "ocean",
+		travel: "water"
+	},
+	"48.42": {
+		zone: "NA",
+		terrain: "ocean",
+		travel: "water"
+	},
+	"48.43": {
+		zone: "SCA",
+		terrain: "ocean",
+		travel: "water"
+	},
+	"48.44": {
+		zone: "SCA",
+		terrain: "ocean",
+		travel: "water"
+	},
+	"48.45": {
+		zone: "SCA",
+		terrain: "ocean",
+		travel: "water"
+	},
+	"48.46": {
+		zone: "SCA",
+		terrain: "coast",
+		travel: "difficult"
+	},
 	"48.47": { zone: "SCA" },
 	"48.48": { zone: "SCA" },
 	"48.49": { zone: "SCA" },
@@ -4452,13 +4592,33 @@ export default Object.freeze({
 	"49.38": { zone: "TO" },
 	"49.39": { zone: "TO" },
 	"49.40": { zone: "TO" },
-	"49.41": { zone: "TO" },
+	"49.41": {
+		zone: "TO",
+		terrain: "ocean",
+		travel: "water"
+	},
 	"49.42": { zone: "NA" },
 	"49.43": { zone: "NA" },
-	"49.44": { zone: "SCA" },
-	"49.45": { zone: "SCA" },
-	"49.46": { zone: "SCA" },
-	"49.47": { zone: "SCA" },
+	"49.44": {
+		zone: "SCA",
+		terrain: "ocean",
+		travel: "water"
+	},
+	"49.45": {
+		zone: "SCA",
+		terrain: "coast",
+		travel: "difficult"
+	},
+	"49.46": {
+		zone: "SCA",
+		terrain: "coast",
+		travel: "difficult"
+	},
+	"49.47": {
+		zone: "SCA",
+		terrain: "coast",
+		travel: "difficult"
+	},
 	"49.48": { zone: "SCA" },
 	"49.49": { zone: "SCA" },
 	"49.50": { zone: "SCA" },
@@ -4474,7 +4634,12 @@ export default Object.freeze({
 	"49.60": { zone: "SCA" },
 	"49.61": { zone: "SCA" },
 	"49.62": { zone: "SCA" },
-	"49.63": { zone: "SCA" },
+	"49.63": {
+		zone: "SCA",
+		discoveryTrait: "landmark",
+		showEncounter: true,
+		page: "JournalEntry.pUOvjJ1q66oOWzYt.JournalEntryPage.w4MtOT21RLKnso8d"
+	},
 	"49.64": { zone: "SCA" },
 	"49.65": { zone: "AP" },
 	"49.66": { zone: "AP" },
@@ -4529,7 +4694,11 @@ export default Object.freeze({
 	"50.41": { zone: "TO" },
 	"50.42": { zone: "NA" },
 	"50.43": { zone: "NA" },
-	"50.44": { zone: "SCA" },
+	"50.44": {
+		zone: "SCA",
+		terrain: "coast",
+		travel: "difficult"
+	},
 	"50.45": { zone: "SCA" },
 	"50.46": { zone: "SCA" },
 	"50.47": { zone: "SCA" },

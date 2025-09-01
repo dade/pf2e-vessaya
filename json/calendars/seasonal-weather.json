@@ -1,0 +1,52 @@
+{
+  "default": {
+    "temperature": {
+      "spring": {
+        "min": -1,
+        "max": 17
+      },
+      "summer": {
+        "min": 3,
+        "max": 22
+      },
+      "autumn": {
+        "min": 2,
+        "max": 10
+      },
+      "winter": {
+        "min": -3,
+        "max": 2
+      }
+    },
+    "weather": {
+      "spring": {
+        "clear": 5,
+        "rain": 4,
+        "cloudy": 3,
+        "mist": 2
+      },
+      "summer": {
+        "clear": 6,
+        "partlyCloudy": 4,
+        "thunderstorm": 2
+      },
+      "autumn": {
+        "overcast": 6,
+        "rain": 4,
+        "cloudy": 4,
+        "windy": 2
+      },
+      "winter": {
+        "snow": 5,
+        "blizzard": 3,
+        "fog": 2
+      },
+      "default": {
+        "rain": 3,
+        "cloudy": 3,
+        "mist": 2,
+        "drizzle": 2
+      }
+    }
+  }
+}

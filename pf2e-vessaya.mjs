@@ -58,8 +58,9 @@ Hooks.once("init", async () => {
 	}
 
 	DocumentSheetConfig.registerSheet(JournalEntry, MODULE, VessayaJournalSheet, {
+		types: [ "base" ],
 		label: "Vessaya Journal Sheet",
-		makeDefault: true,
+		makeDefault: false,
 	})
 
 	game.settings.register(MODULE, "enablePlotDie", {
@@ -114,9 +115,7 @@ Hooks.once("ready", async () => {
 	await updateLangSource(savedLangs, LANGUAGES_BY_RARITY)
 
 	if (game.settings.get(MODULE, "enablePlotDie")) {
-		// Do some initialization here
-		// Not really sure if I want these to be init'ing anything else
-		// but we shall see!
+		console.log("Write plot die code")
 	}
 })
 
@@ -136,14 +135,14 @@ Hooks.once("setup", function () {
 
 Hooks.on("renderJournalSheet", (app, html) => {
 	// console.log(app, html)
-	// horribly hacky jquery code... don't look at it. i'm ashamed... :(
+	// horribly hacky jquery code... don't look at it. i'm ashamed...
 	const el = html.find(".window-title")
-	console.log(el)
 })
 
 Hooks.on("renderJournalPageSheet", (app, html) => {
 	const doc = app.document
 	const journalFlag = doc.parent.sheet instanceof VessayaJournalSheet
+
 	if (journalFlag)
 		html.addClass("vessaya")
 })

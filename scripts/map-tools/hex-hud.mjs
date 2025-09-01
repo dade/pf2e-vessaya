@@ -3,7 +3,7 @@ export default class VessayaHexHUD extends Application {
 	static get defaultOptions() {
 		return foundry.utils.mergeObject(super.defaultOptions, {
 			id: "vessaya-hex-hud",
-			classes: [vessaya.CSS_CLASS],
+			classes: [ vessaya.CSS_CLASS ],
 			template: "modules/pf2e-vessaya/templates/hex-hud.hbs",
 			popOut: false,
 			width: 760,
@@ -41,7 +41,6 @@ export default class VessayaHexHUD extends Application {
 			this.clear()
 		}
 	}
-
 
 	getData(options = {}) {
 		const data = this.hex.data

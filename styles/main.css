@@ -265,19 +265,19 @@
     flex: none;
     max-width: 50%;
   }
-  .vessaya.journal-entry .journal-entry-page .edit-container {
+  .vessaya.journal-entry .journal-entry-page .editor-container {
     right: 28px;
     margin: 0;
   }
-  .vessaya.journal-entry .journal-entry-page .edit-container .editor-edit {
+  .vessaya.journal-entry .journal-entry-page .editor-container .editor-edit {
     display: block;
     background: none;
     border: none;
   }
-  .vessaya.journal-entry .journal-entry-page .edit-container i {
+  .vessaya.journal-entry .journal-entry-page .editor-container i {
     color: var(--color-light-2);
   }
-  .vessaya.journal-entry .journal-entry-page .edit-container h2.divider {
+  .vessaya.journal-entry .journal-entry-page .editor-container h2.divider {
     border: none;
   }
   .vessaya.journal-entry .journal-entry-page .journal-page-content {
@@ -290,6 +290,10 @@
   }
   .vessaya.journal-entry .journal-entry-page .journal-page-content p {
     text-align: justify;
+  }
+  .vessaya.journal-entry .journal-entry-page .journal-page-content p a.inline-check[data-pf2-traits*=secret] {
+    background: rgba(21 21 90 / 40%);
+    border-color: #523853;
   }
   .vessaya.journal-entry .journal-entry-page .journal-page-content h1,
   .vessaya.journal-entry .journal-entry-page .journal-page-content h2,
@@ -336,74 +340,102 @@
   .vessaya.journal-entry .journal-entry-page .journal-page-content .locatio-list li {
     margin: 0 0 1rem 0;
   }
+  .vessaya.journal-entry .journal-entry-page .journal-page-content section.readaloud {
+    padding: 0.5rem 1rem 0.2rem 1rem;
+    margin-bottom: 1rem;
+    background: rgba(80 90 100 / 70%);
+    border-top: 2px solid var(--color-text-primary);
+    border-radius: 6px;
+  }
+  .vessaya.journal-entry .journal-entry-page .journal-page-content section.rewards {
+    padding: 0.5rem 1rem 0.2rem 1rem;
+    margin-bottom: 1rem;
+    background: rgba(117 156 141 / 60%);
+    border-top: 2px solid var(--color-text-primary);
+    border-radius: 6px;
+  }
   /* ----------------------------------------- */
   /* Single Page Edit Mode                     */
   /* ----------------------------------------- */
-  .vessaya.journal-entry-page nav.sheet-tabs {
-    gap: 0;
-    font-size: var(--font-size-12);
+  .journal-sheet.journal-entry-page .editor-content.ProseMirror {
+    padding: 1rem 2rem;
+    --color-text-primary: var(--color-light-3);
+    font-size: var(--font-size-15);
+    line-height: 1.3em;
+    color: var(--color-text-primary);
   }
-  .vessaya.journal-entry-page .tab {
-    flex: 1;
+  .journal-sheet.journal-entry-page .editor-content.ProseMirror p {
+    text-align: justify;
   }
-  .vessaya.journal-entry-page .tab.standard-form {
-    padding: 1rem 1.5rem;
+  .journal-sheet.journal-entry-page .editor-content.ProseMirror p a.inline-check[data-pf2-traits*=secret] {
+    background: rgba(21 21 90 / 40%);
+    border-color: #523853;
   }
-  .vessaya.journal-entry-page .tab > prose-mirror {
-    height: 100%;
-  }
-  .vessaya.journal-entry-page h2.divider,
-  .vessaya.journal-entry-page h3.divider {
-    border-bottom: none;
-  }
-  .vessaya.journal-entry-page form.choices {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .vessaya.journal-entry-page form.choices > fieldset {
-    background: url("../ui/logo-shadow.webp") no-repeat 12px center;
-    background-size: 80px;
-    margin: 0;
-    padding: 1rem 1rem 1rem 100px;
-    border: 1px dashed var(--color-light-5);
-    border-radius: 8px;
-  }
-  .vessaya.journal-entry-page form.choices fieldset.choice {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .vessaya.journal-entry-page form.choices .outcome {
-    margin: 0;
-  }
-  .vessaya.journal-entry-page form.choices .outcome label {
+  .journal-sheet.journal-entry-page .editor-content.ProseMirror h1,
+  .journal-sheet.journal-entry-page .editor-content.ProseMirror h2,
+  .journal-sheet.journal-entry-page .editor-content.ProseMirror h3 {
+    font-family: "Pirate Scroll";
+    font-weight: normal;
+    letter-spacing: 0.2em;
     color: var(--color-light-2);
-    font-size: var(--font-size-16);
-    font-weight: bold;
+    border: none;
+    margin: 2rem 0 1rem 0;
   }
-  .vessaya.journal-entry-page form.choices .outcome label > input {
-    --checkbox-size: 24px;
+  .journal-sheet.journal-entry-page .editor-content.ProseMirror .tableau img {
+    max-height: 480px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: none;
   }
-  .vessaya.journal-entry-page form.choices .outcome .notes {
-    margin: 0;
-    color: var(--color-light-4);
+  .journal-sheet.journal-entry-page .editor-content.ProseMirror .documents-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
   }
-  .vessaya.journal-entry-page hex-tags,
-  .vessaya.journal-entry-page coefficient-tags {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  .journal-sheet.journal-entry-page .editor-content.ProseMirror .documents-list .list-item {
+    gap: 1rem;
     align-items: center;
-    gap: 0.25rem;
   }
-  .vessaya.journal-entry-page hex-tags > input,
-  .vessaya.journal-entry-page coefficient-tags > input {
-    flex: 1;
+  .journal-sheet.journal-entry-page .editor-content.ProseMirror .documents-list .list-item img {
+    flex: 0 0 64px;
+    height: 64px;
+    width: 64px;
+    object-fit: contain;
+    border: none;
   }
-  .vessaya.journal-entry-page hex-tags > button,
-  .vessaya.journal-entry-page coefficient-tags > button {
-    flex: 0 0 36px;
+  .journal-sheet.journal-entry-page .editor-content.ProseMirror .documents-list .list-item img.icon {
+    flex: 0 0 32px;
+    height: 32px;
+    width: 32px;
+  }
+  .journal-sheet.journal-entry-page .editor-content.ProseMirror .biome-list,
+  .journal-sheet.journal-entry-page .editor-content.ProseMirror .locatio-list {
+    list-style: none;
+  }
+  .journal-sheet.journal-entry-page .editor-content.ProseMirror .biome-list li,
+  .journal-sheet.journal-entry-page .editor-content.ProseMirror .locatio-list li {
+    margin: 0 0 1rem 0;
+  }
+  .journal-sheet.journal-entry-page .editor-content.ProseMirror section.readaloud {
+    padding: 0.5rem 1rem 0.2rem 1rem;
+    margin-bottom: 1rem;
+    background: rgba(80 90 100 / 70%);
+    border-top: 2px solid var(--color-text-primary);
+    border-radius: 6px;
+  }
+  .journal-sheet.journal-entry-page .editor-content.ProseMirror section.rewards {
+    padding: 0.5rem 1rem 0.2rem 1rem;
+    margin-bottom: 1rem;
+    background: rgba(117 156 141 / 60%);
+    border-top: 2px solid var(--color-text-primary);
+    border-radius: 6px;
+  }
+  .journal-sheet.journal-entry-page .editor-content.ProseMirror blockquote {
+    margin-left: 1rem;
+    padding: 5px 10px 5px 25px;
+    background-color: rgba(132 80 100 / 50%);
+    border-radius: 3px;
+    border-top: solid 2px beige;
   }
   .vessaya .journal-page-header {
     display: flex;
@@ -486,9 +518,11 @@
     color: var(--color-cool-1);
   }
   .vessaya blockquote {
-    margin: 0.5em 0 2em 1em;
+    margin-left: 1rem;
     padding: 5px 10px 5px 25px;
-    background-color: var(--color-cool-4);
+    background-color: rgba(132 80 100 / 50%);
+    border-radius: 3px;
+    border-top: solid 2px beige;
   }
   .vessaya .tags {
     display: flex;
@@ -585,6 +619,9 @@
   #vessaya-hex-hud .flex div {
     flex: 100%;
   }
+  #vessaya-hex-hud .flex div .item .value {
+    flex: 2.5;
+  }
   #vessaya-hex-hud .flex img.terrain {
     margin: 1rem 0;
     flex: 0 0 160px;
@@ -617,6 +654,7 @@
   #vessaya-hex-hud p.item .value {
     text-align: right;
     width: 100%;
+    flex: 1;
   }
   #vessaya-hex-hud p.item .gray {
     color: #a0a0a0;

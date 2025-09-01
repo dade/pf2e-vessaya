@@ -1,0 +1,241 @@
+{
+  "name": "Vessaya Standard",
+  "id": "vessaya",
+  "system": "pf2e",
+  "description": "Standard Vessaya calendar",
+  "years": {
+    "yearZero": -1294,
+    "firstWeekday": 0
+  },
+  "months": {
+    "values": [
+      {
+        "name": "Agnen",
+        "abbreviation": "Agn",
+        "ordinal": 1,
+        "days": 28,
+        "startingWeekday": 0,
+        "dawn": "0.36",
+        "dusk": "0.77"
+      },
+      {
+        "name": "Eshmen",
+        "abbreviation": "Esh",
+        "ordinal": 2,
+        "days": 28,
+        "startingWeekday": 0,
+        "dawn": "0.33",
+        "dusk": "0.77"
+      },
+      {
+        "name": "Diermen",
+        "abbreviation": "Dier",
+        "ordinal": 3,
+        "days": 28,
+        "startingWeekday": 0,
+        "dawn": "0.33",
+        "dusk": "0.77"
+      },
+      {
+        "name": "Citren",
+        "abbreviation": "Cit",
+        "ordinal": 4,
+        "days": 28,
+        "startingWeekday": 0,
+        "dawn": "0.32",
+        "dusk": "0.77"
+      },
+      {
+        "name": "Qasren",
+        "abbreviation": "Qas",
+        "ordinal": 5,
+        "days": 28,
+        "startingWeekday": 0,
+        "dawn": "0.3",
+        "dusk": "0.77"
+      },
+      {
+        "name": "Kaelen",
+        "abbreviation": "Kae",
+        "ordinal": 6,
+        "days": 28,
+        "startingWeekday": 0,
+        "dawn": "0.29",
+        "dusk": "0.77"
+      },
+      {
+        "name": "Soaten",
+        "abbreviation": "Soa",
+        "ordinal": 7,
+        "days": 28,
+        "startingWeekday": 0,
+        "dawn": "0.26",
+        "dusk": "0.77"
+      },
+      {
+        "name": "Xenaren",
+        "abbreviation": "Xen",
+        "ordinal": 8,
+        "days": 28,
+        "startingWeekday": 0,
+        "dawn": "0.22",
+        "dusk": "0.77"
+      },
+      {
+        "name": "Vorthen",
+        "abbreviation": "Vor",
+        "ordinal": 9,
+        "days": 28,
+        "startingWeekday": 0,
+        "dawn": "0.27",
+        "dusk": "0.77"
+      },
+      {
+        "name": "Yneren",
+        "abbreviation": "Yne",
+        "ordinal": 10,
+        "days": 28,
+        "startingWeekday": 0,
+        "dawn": "0.29",
+        "dusk": "0.77"
+      },
+      {
+        "name": "Nelbren",
+        "abbreviation": "Nel",
+        "ordinal": 11,
+        "days": 28,
+        "startingWeekday": 0,
+        "dawn": "0.29",
+        "dusk": "0.77"
+      },
+      {
+        "name": "Valnen",
+        "abbreviation": "Val",
+        "ordinal": 12,
+        "days": 28,
+        "startingWeekday": 0,
+        "dawn": "0.33",
+        "dusk": "0.77"
+      },
+      {
+        "name": "Melen",
+        "abbreviation": "Mel",
+        "ordinal": 13,
+        "days": 28,
+        "startingWeekday": 0,
+        "dawn": "0.33",
+        "dusk": "0.77"
+      }
+    ]
+  },
+  "days": {
+    "values": [
+      {
+        "name": "Fira",
+        "abbreviation": "Fi",
+        "ordinal": 1
+      },
+      {
+        "name": "Terra",
+        "abbreviation": "Te",
+        "ordinal": 2
+      },
+      {
+        "name": "Aquira",
+        "abbreviation": "Aq",
+        "ordinal": 3
+      },
+      {
+        "name": "Aero",
+        "abbreviation": "Ae",
+        "ordinal": 4,
+        "isRestDay": true
+      },
+      {
+        "name": "Electra",
+        "abbreviation": "El",
+        "ordinal": 5
+      },
+      {
+        "name": "Aura",
+        "abbreviation": "Au",
+        "ordinal": 6
+      },
+      {
+        "name": "Isaran",
+        "abbreviation": "Is",
+        "ordinal": 7
+      }
+    ],
+    "daysPerYear": 364,
+    "hoursPerDay": 24,
+    "minutesPerHour": 60,
+    "secondsPerMinute": 60
+  },
+  "seasons": {
+    "values": [
+      {
+        "name": "Spring",
+        "monthStart": 3,
+        "monthEnd": 6,
+        "dayStart": 76,
+        "dayEnd": 161
+      },
+      {
+        "name": "Summer",
+        "monthStart": 6,
+        "monthEnd": 10,
+        "dayStart": 161,
+        "dayEnd": 273
+      },
+      {
+        "name": "Autumn",
+        "monthStart": 10,
+        "monthEnd": 13,
+        "dayStart": 273,
+        "dayEnd": 357
+      },
+      {
+        "name": "Winter",
+        "monthStart": 13,
+        "monthEnd": 3,
+        "dayStart": 357,
+        "dayEnd": 76
+      }
+    ]
+  },
+  "moons": {
+    "values": [
+      {
+        "name": "San",
+        "cycleLength": 29.53059,
+        "offset": 0.4,
+        "phaseNames": [
+          "New Moon",
+          "Waxing Crescent",
+          "First Quarter",
+          "Waxing Gibbous",
+          "Full Moon",
+          "Waning Gibbous",
+          "Last Quarter",
+          "Waning Crescent"
+        ]
+      },
+      {
+        "name": "Dosa",
+        "cycleLength": 62.62045,
+        "offset": 0.621234,
+        "phaseNames": [
+          "New Moon",
+          "Waxing Crescent",
+          "First Quarter",
+          "Waxing Gibbous",
+          "Full Moon",
+          "Waning Gibbous",
+          "Last Quarter",
+          "Waning Crescent"
+        ]
+      }
+    ]
+  }
+}
