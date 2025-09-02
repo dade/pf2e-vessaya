@@ -208,6 +208,9 @@
         },
         "baseWeapons": {
           "gunblade": "Gunblade"
+        },
+        "creatureTraits": {
+          "vulpine": "Vulpine"
         }
       }
     }
