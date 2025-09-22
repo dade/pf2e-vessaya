@@ -57,3 +57,24 @@ export function initPlotDie() {
 	CONFIG.Dice.terms.p = PlotDie
 	CONFIG.Dice.termTypes[PlotDie.name] = PlotDie
 }
+
+export function determineConfigurationMode(...args) {
+	const useOptions = args.length === 1 ? args[0] : undefined
+	const [
+		configure,
+		raiseStakes
+	] = args.length === 1
+		? [
+			useOptions?.configurable,
+			useOptions?.plotDie
+		]
+		: args
+	const modifiers = {
+		raiseStakes: areKeysPressed(KEYBINDINGS.SKIP_DIALOG_RAISE_STAKES)
+	}
+	const fastForward = configure !== undefined
+		? !configure
+		: isFastForward() || Object.value(modifiers).some((k) => k)
+	const plotDie = raiseStakes ?? modifiers.raiseStakes
+	return { fastForward, plotDie }
+}

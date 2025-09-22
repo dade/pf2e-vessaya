@@ -138,5 +138,13 @@
       "TO": "Kingdom of Tor",
       "WE": "The White Expanse"
     }
+  },
+  "DICE": {
+    "PLOT": {
+      "Die": "Plot Die",
+      "RaiseTheStakes": "Raise the Stakes",
+      "Complication": "Complication",
+      "Opportunity": "Opportunity"
+    }
   }
 }

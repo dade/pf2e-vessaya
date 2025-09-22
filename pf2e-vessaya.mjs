@@ -1,4 +1,4 @@
-import { LANGUAGES_BY_RARITY } from "./scripts/consts.mjs"
+import { LANGUAGES_BY_RARITY, IMPORTED_RESOURCES } from "./scripts/consts.mjs"
 import { default as VessayaJournalSheet } from "./scripts/journal/journal-sheet.mjs"
 import { initConfigs } from "./scripts/configs.mjs"
 import { PlotDie, initPlotDie } from "./scripts/variants/plot-die.mjs"
@@ -152,4 +152,27 @@ Hooks.on("renderCheckModifiersDialog", (app, html) => {
 		return
 
 	const page = app.document
+})
+
+Hooks.once("diceSoNiceReady", (dice3d) => {
+	dice3d.addDicePreset({
+		type: "dp",
+		labels: [
+			IMPORTED_RESOURCES.PLOT_DICE_C2,
+			IMPORTED_RESOURCES.PLOT_DICE_C4,
+			IMPORTED_RESOURCES.PLOT_DICE_BLANK,
+			IMPORTED_RESOURCES.PLOT_DICE_BLANK,
+			IMPORTED_RESOURCES.PLOT_DICE_OP,
+			IMPORTED_RESOURCES.PLOT_DICE_OP,
+		],
+		bumpMaps: [
+			IMPORTED_RESOURCES.PLOT_DICE_C2_BUMP,
+			IMPORTED_RESOURCES.PLOT_DICE_C4_BUMP,
+			IMPORTED_RESOURCES.PLOT_DICE_BLANK_BUMP,
+			IMPORTED_RESOURCES.PLOT_DICE_BLANK_BUMP,
+			IMPORTED_RESOURCES.PLOT_DICE_OP_BUMP,
+			IMPORTED_RESOURCES.PLOT_DICE_OP_BUMP,
+		],
+		system: "pf2e"
+	})
 })
