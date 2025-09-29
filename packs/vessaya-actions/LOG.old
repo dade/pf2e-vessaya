@@ -1,3 +1,5 @@
-2025/09/29-00:50:50.498 4bd8 Recovering log #362
-2025/09/29-00:50:50.614 4bd8 Delete type=0 #362
-2025/09/29-00:50:50.614 4bd8 Delete type=3 #361
+2025/09/29-04:19:31.480 8cec Recovering log #366
+2025/09/29-04:19:31.480 8cec Level-0 table #368: started
+2025/09/29-04:19:31.520 8cec Level-0 table #368: 1385 bytes OK
+2025/09/29-04:19:31.602 8cec Delete type=0 #366
+2025/09/29-04:19:31.602 8cec Delete type=3 #365

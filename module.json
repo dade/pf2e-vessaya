@@ -13,7 +13,7 @@
   "version": "2.0.1",
   "compatibility": {
     "minimum": "13",
-    "verified": "13.347"
+    "verified": "13.348"
   },
   "esmodules": ["pf2e-vessaya.mjs"],
   "styles": ["styles/main.css"],
@@ -133,6 +133,18 @@
       "flags": {}
     },
     {
+      "name": "vessaya-animations",
+      "label": "Animations",
+      "path": "packs/vessaya-animations",
+      "type": "Macro",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "pf2e",
+      "flags": {}
+    },
+    {
       "name": "vessaya-equipment-gm",
       "label": "Equipment - GM",
       "path": "packs/vessaya-equipment-gm",
@@ -182,7 +194,8 @@
         "vessaya-equipment",
         "vessaya-feats",
         "vessaya-origins",
-        "vessaya-spells"
+        "vessaya-spells",
+        "vessaya-animations"
       ]
     },
     {
