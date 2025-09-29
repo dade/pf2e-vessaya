@@ -203,13 +203,10 @@
           "ruulkan": "VESSAYA.LANG.RUULKAN",
           "selduin": "VESSAYA.LANG.SELDUIN"
         },
-        "weaponGroups": {
-          "gunblade": "Gunblade"
-        },
-        "baseWeapons": {
-          "gunblade": "Gunblade"
-        },
         "creatureTraits": {
+          "vulpine": "Vulpine"
+        },
+        "featTraits": {
           "vulpine": "Vulpine"
         }
       }
